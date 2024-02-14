@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.App header {
+  display: flex;
+}
+
+.App ul {
+  display: flex;
+  list-style-type: none;
+}
