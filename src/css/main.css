@@ -1,0 +1,36 @@
+* {
+    margin: 0 auto;
+    padding: 0; 
+}
+
+.sub_main {
+    margin: 20px 70px 0px 125px;
+}
+
+.sub_main_list {
+    display: grid;
+    width: 30vh;
+    grid-template-columns:repeat(5, 1fr);
+    grid-column-gap: 25px;
+    float: left;
+}
+
+.sub_main p {
+    float: right;
+}
+
+.main {
+    margin-top: 60px;
+    text-align: center;
+    justify-content: center;
+}
+
+.slider_and_offers img {
+    min-width: 200px;
+}
+
+.slider_and_offers p {
+    font-size: 30px;
+    text-align: left;
+    margin: 30px 0px 30px 45px;
+}
