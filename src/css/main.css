@@ -1,6 +1,6 @@
 * {
     margin: 0 auto;
-    padding: 0; 
+    padding: 0;
 }
 
 .sub_main {
@@ -10,7 +10,7 @@
 .sub_main_list {
     display: grid;
     width: 30vh;
-    grid-template-columns:repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-column-gap: 25px;
     float: left;
 }
@@ -33,4 +33,80 @@
     font-size: 30px;
     text-align: left;
     margin: 30px 0px 30px 45px;
+}
+
+.main_goods {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    background-color: white;
+}
+
+.main_card_ring {
+    width: 300px;
+    height: 220px;
+    border: 6px solid #0DBD0D;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.main_card_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 70px;
+}
+
+.like_img {
+    width: 18%;
+    float: right;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.description_card_price {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-right: 50px;
+}
+
+.price_main {
+    font-size: 26px;
+    margin-right: 15px;
+    color: #0DBD0D;
+}
+
+.price_default {
+    padding-right: 60px;
+    padding-top: 5px;
+    color: #9c9c9c;
+}
+
+.description_topi {
+    width: 255px;
+    font-size: 22px;
+}
+
+.description_topi p {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.button_busket_main {
+    width: 250px;
+}
+
+.button_busket {
+    width: 75%;
+    height: 35px;
+    border-radius: 12px;
+    background-color: #0DBD0D;
+    font-size: 20px;
+    border: 0px;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.main_img {
+    min-width: 195px;
 }

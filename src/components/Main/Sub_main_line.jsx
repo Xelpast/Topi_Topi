@@ -1,6 +1,6 @@
 import { sub_main_list } from "../../data";
 import Sub_main from "./Sub_main";
-import '../../css/main.css';
+
 
 export default function Sub_main_line() {
     return (

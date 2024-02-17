@@ -1,8 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import Sub_main_line from './components/Main/Sub_main_line';
+import Footer from './components/Footer/Footer';
 
 export default function App() {
   return (
@@ -10,6 +10,7 @@ export default function App() {
       <Header />
       <Sub_main_line />
       <Main />
+      <Footer />
     </div>
   );
 }
