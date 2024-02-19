@@ -1,7 +1,6 @@
 import { sub_main_list } from "../../data";
 import Sub_main from "./Sub_main";
 
-
 export default function Sub_main_line() {
     return (
         <div className="sub_main">

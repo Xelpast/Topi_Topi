@@ -6,6 +6,7 @@ export default function Main() {
     return(
         <div className="main">
             <Slider_Offers />
+            <p className="topi_text">ТОПиарии</p>
             <Goods />
         </div>
     );

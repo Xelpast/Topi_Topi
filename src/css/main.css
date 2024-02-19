@@ -20,16 +20,24 @@
 }
 
 .main {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
     margin-top: 60px;
     text-align: center;
     justify-content: center;
 }
 
-.slider_and_offers img {
-    min-width: 200px;
+.slider_and_offers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
-.slider_and_offers p {
+.slider_and_offers img {
+    min-width: 20px;
+}
+
+.topi_text {
     font-size: 30px;
     text-align: left;
     margin: 30px 0px 30px 45px;
