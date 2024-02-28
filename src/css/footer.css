@@ -64,7 +64,13 @@
     justify-content: center;
 }
 
-/* module css ПОСМОТРИ */
+.social_media img {
+    cursor: pointer;
+}
+
+.link {
+    text-decoration: none;
+}
 
 
 

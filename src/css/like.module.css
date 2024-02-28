@@ -1,0 +1,25 @@
+.main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.9fr 1.8fr 0.6fr;
+    min-height: 100vh;
+    margin-top: 60px;
+}
+
+.dop_big_text {
+    font-size: 26px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+.dop_text p {
+    padding-top: 10px;
+}
+
+.underline_like {
+    text-decoration: underline;
+}
+
+.link {
+    text-decoration: none;
+}

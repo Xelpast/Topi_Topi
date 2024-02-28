@@ -1,9 +1,18 @@
+import { Link } from 'react-router-dom';
 import logo from '../../img/logo.png';
 import vk from '../../img/vk.png';
 import telegram from '../../img/telegram.png';
-import facebook from '../../img/facebook.png';
+import ok from '../../img/ok.png';
 
 export default function footer_main() {
+
+        const scrollToTop = () => {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+          });
+        };
+
     return (
         <footer>
             <div className="footer_main">
@@ -26,7 +35,7 @@ export default function footer_main() {
                             <p>Возврат</p>
                             <p>Кредит</p>
                             <p>Акции</p>
-                            <p>Промокоды</p>
+                            <Link to="/promocodes" className='link' onClick={scrollToTop}><p>Промокоды</p></Link>
                         </p>
                     </div>
                     <div className="footer_topitopi">
@@ -52,7 +61,7 @@ export default function footer_main() {
                         <div className="social_media">
                             <img src={vk} alt="" />
                             <img src={telegram} alt="" />
-                            <img src={facebook} alt="" />
+                            <img src={ok} alt="" />
                         </div>
                     </div>
                 </div>

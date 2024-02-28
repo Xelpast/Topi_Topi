@@ -11,12 +11,13 @@
     display: grid;
     width: 30vh;
     grid-template-columns: repeat(5, 1fr);
-    grid-column-gap: 25px;
+    grid-column-gap: 26px;
     float: left;
 }
 
 .sub_main p {
     float: right;
+    font-size: 18px;
 }
 
 .main {
