@@ -17,7 +17,7 @@ export default function Header() {
                             <Link to="/like" className="link"><Header_menu image_header={header_image_arr[0].image_header} title={header_arr[0].title} /></Link>
                             <Header_menu image_header={header_image_arr[1].image_header} title={header_arr[1].title} />
                             <Header_menu image_header={header_image_arr[2].image_header} title={header_arr[2].title} />
-                            <Header_menu image_header={header_image_arr[3].image_header} title={header_arr[3].title} />
+                            <Link to="/profile" className="link"><Header_menu image_header={header_image_arr[3].image_header} title={header_arr[3].title} /></Link>
                             <Header_menu image_header={header_image_arr[3].image_header} title={header_arr[4].title} />
                         </ul>
                     </div>
