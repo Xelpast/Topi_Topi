@@ -172,3 +172,7 @@ u {
     border: none;
     border-radius: 8px;
 }
+
+.link {
+    text-decoration: none;
+}

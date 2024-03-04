@@ -8,7 +8,7 @@ export default function Extra_menu_promocodes() {
             <ul>
                 <li className={style_promocodes.dop_text}>
                     <Link to="/like" className={style_promocodes.link}><p>Избранное</p></Link>
-                    <p>Заказы</p>
+                    <Link to="/order" className={style_promocodes.link}><p>Заказы</p></Link>
                     <p>Купленные товары</p>
                     <p className={style_promocodes.underline_promocodes}>Промокоды</p>
                     <p>Отзывы</p>

@@ -1,0 +1,219 @@
+.main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2.67fr;
+    min-height: 100vh;
+    margin-top: 60px;
+}
+
+.dop_big_text {
+    font-size: 26px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+.dop_text p {
+    padding-top: 10px;
+}
+
+.baskets {
+    margin-left: 20px;
+}
+
+.basket_main {
+    padding-top: 15px;
+    font-size: 26px;
+    padding-left: 10px;
+}
+
+.main_info_basket {
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: 1fr 4fr;
+    font-size: 22px;
+}
+
+.main_info_basket p {
+    margin-left: 10px;
+}
+
+.main_card_basket {
+    width: 1010px;
+    height: auto;
+    border: 6px solid #0DBD0D;
+    border-radius: 20px;
+    margin: 20px 0px 40px 0px;
+    display: grid;
+    grid-template-columns: 1fr 0.4fr;
+}
+
+.card_basket {
+    margin: 20px;
+    font-size: 20px;
+}
+
+.text_choose_all {
+    margin-top: 10px;
+}
+
+.custom_checkbox {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: 4px solid #0DBD0D;
+    vertical-align: middle;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.custom_checkbox::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-image: url("../img/checkmark.png");
+    background-size: contain;
+    transition: 0.2s ease-in;
+}
+
+.main_checkbox:checked + .custom_checkbox::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.main_checkbox {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.info_card_basket {
+    margin-left: 20px;
+}
+
+.product_basket {
+    display: grid;
+    grid-template-columns: 260px 2fr;
+    width: 750px;
+    height: auto;
+    margin-top: 15px;
+    border-top: 4px solid #0DBD0D;
+    margin-left: 0px;
+}
+
+.text_info_basket {
+    margin-top: 20px;
+    font-size: 22px;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.btn_counter {
+    margin-top: 10px;
+    display: flex;
+    margin-left: 0px;
+    width: 95px;
+    border-radius: 10px;
+    background: #0DBD0D;
+    justify-content: center;
+}
+
+.btn_counter_minus {
+    padding-left: 5px;
+    border: none;
+    font-size: 30px;
+    background: #0DBD0D;
+    border-radius: 10px;
+    color: white;
+    height: 25px;
+    cursor: pointer;
+}
+
+.btn_counter_plus {
+    padding-right: 5px;
+    border: none;
+    font-size: 30px;
+    background: #0DBD0D;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    color: white;
+    height: 25px;
+    cursor: pointer;
+}
+
+.input_counter {
+    width: 50px;
+    background: #0DBD0D;
+    color: white;
+    text-align: center;
+    font-size: 28px;
+    border: none;
+    outline: none;
+}
+
+.basket_img {
+    position: relative;
+    cursor: pointer;
+    left: 180px;
+}
+
+.basket_img img {
+    position: absolute;
+    width: 28px;
+}
+
+.product_price {
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.similar_products {
+    margin-top: 10px;
+    color: #0DBD0D;
+    text-decoration: underline;
+    font-size: 22px;
+}
+
+.saving {
+    display: flex;
+    margin-top: 10px;
+    width: 90%;
+    height: 40px;
+    align-items: center;
+    border-radius: 20px;
+    border: 4px solid #0DBD0D;
+    font-size: 16px;
+}
+
+b {
+    color: #0DBD0D;
+}
+
+.preliminary_price {
+    text-align: left;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.btn_basket {
+    width: 90%;
+    height: 35px;
+    border-radius: 16px;
+    background-color: #0DBD0D;
+    font-size: 16px;
+    border: 0px;
+    color: white;
+    margin-top: 6px;
+}

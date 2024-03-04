@@ -1,0 +1,46 @@
+.main {
+    width: 100%;
+    min-height: 100vh;
+    margin-top: 60px;
+}
+
+.order_main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 91%;
+    font-size: 22px;
+}
+
+.help_text {
+    margin-right: 0px;
+}
+
+.placing_an_order {
+    margin-left: 55px;
+}
+
+.region {
+    text-decoration: underline;
+    color: #0DBD0D;
+    font-size: 16px;
+    padding-top: 5px;
+}
+
+.btn_back_basket {
+    width: 200px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #0DBD0D;
+    font-size: 16px;
+    border: 0px;
+    color: white;
+    margin-top: 10px;
+}
+
+.back_img {
+    padding-right: 5px;
+}
+
+.region_and_btn {
+    margin-left: 125px;
+}

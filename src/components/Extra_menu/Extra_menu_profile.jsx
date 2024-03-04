@@ -8,7 +8,7 @@ export default function Extra_menu_profile() {
             <ul>
                 <li className={style_profile.dop_text}>
                     <p>Избранное</p>
-                    <p>Заказы</p>
+                    <Link to="/order" className={style_profile.link}><p>Заказы</p></Link>
                     <p>Купленные товары</p>
                     <p className={style_profile.underline_promocodes}>Промокоды</p>
                     <p>Отзывы</p>

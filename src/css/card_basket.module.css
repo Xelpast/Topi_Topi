@@ -1,0 +1,60 @@
+.main_card {
+    margin-left: 30px;
+}
+
+.main_card_ring {
+    width: 220px;
+    border: 6px solid #0DBD0D;
+    border-radius: 20px;
+    margin: 20px 0px 10px 0px;
+}
+
+.main_card_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 45px;
+}
+
+.main_img {
+    width: 90px;
+}
+
+.like_img {
+    width: 22%;
+    float: right;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.description_card_price {
+    display: grid;
+    width: 300px;
+    grid-template-columns: 0.7fr 1.8fr;
+    margin-left: 15px;
+}
+
+.price_main {
+    font-size: 24px;
+    color: #0DBD0D;
+}
+
+.price_default {
+    font-size: 15px;
+    padding-top: 5px;
+    margin-left: 20px;
+    color: #9c9c9c;
+}
+
+.description_topi {
+    width: 255px;
+    font-size: 20px;
+    margin-left: 0px;
+}
+
+.description_topi p {
+    margin-left: 20px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+

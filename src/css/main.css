@@ -63,7 +63,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 70px;
+    padding-left: 50px;
+}
+
+.main_img {
+    width: 110px;
 }
 
 .like_img {
@@ -115,8 +119,4 @@
     border: 0px;
     color: white;
     margin-bottom: 40px;
-}
-
-.main_img {
-    min-width: 195px;
 }

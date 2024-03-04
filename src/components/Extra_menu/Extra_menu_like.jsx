@@ -8,7 +8,7 @@ export default function Extra_menu_like() {
             <ul>
                 <li className={style_like.dop_text}>
                     <p className={style_like.underline_like}>Избранное</p>
-                    <p>Заказы</p>
+                    <Link to="/order" className={style_like.link}><p>Заказы</p></Link>
                     <p>Купленные товары</p>
                     <Link to="/promocodes" className={style_like.link}><p>Промокоды</p></Link>
                     <p>Отзывы</p>

@@ -26,6 +26,7 @@ a {
 
 .header_band ul {
     display: flex;
+    align-items: center;
 }
 
 .header_band li {
