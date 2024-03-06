@@ -4,7 +4,6 @@ import like_red from '../../img/like_red.png';
 
 export default function Goods_list({main_img, price_main, price_default, description_topi}) {
     const [ImageLike, setImageLike] = useState(true);
-
     const ImageSwitch = () => {
         setImageLike(!ImageLike);
     };
@@ -19,7 +18,7 @@ export default function Goods_list({main_img, price_main, price_default, descrip
                     onClick={ImageSwitch}
                 />
                 <div className="main_card_img">
-                    <img class="main_img" src={main_img} alt="" />
+                    <img className="main_img" src={main_img} alt="" />
                 </div>
             </div>
             <div className="description_card_main">

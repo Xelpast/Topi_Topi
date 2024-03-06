@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import style_basket from '../../css/basket.module.css';
 import Extra_menu_basket from '../Extra_menu/Extra_menu_basket';
 import Baket_item from './Basket_item';
@@ -20,7 +21,7 @@ export default function Basket_main() {
                         <div className={style_basket.text_choose_all}>
                             <label>
                                 <input type="checkbox" className={style_basket.main_checkbox} />
-                                <span className={style_basket.custom_checkbox}></span>
+                                <p className={style_basket.custom_checkbox}></p>
                                 Выбрать всё
                             </label>
                         </div>
@@ -33,7 +34,7 @@ export default function Basket_main() {
                             <p>Экономия: <b>–3 691 ₽</b></p>
                         </div>
                         <p className={style_basket.preliminary_price}>Предварительная цена: <b>12 970 ₽</b></p>
-                        <button className={style_basket.btn_basket}>Оформить заказ</button>
+                        <Link to="/order-pay"><button className={style_basket.btn_basket}>Оформить заказ</button></Link>
                     </div>
                 </div>
             </div>

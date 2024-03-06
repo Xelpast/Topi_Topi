@@ -21,7 +21,7 @@ export default function Card_basket() {
                     onClick={ImageSwitch}
                 />
                 <div className={style_card_basket.main_card_img}>
-                    <img class={style_card_basket.main_img} src={mother_work} alt="" />
+                    <img className={style_card_basket.main_img} src={mother_work} alt="" />
                 </div>
             </div>
             <div className={style_card_basket.description_card_main}>

@@ -7,7 +7,7 @@ export default function Promocodes_list() {
         <div className={style_promocodes.promocodes_contents}>
             <div className={style_promocodes.content_in_promocodes}>
                 <div className={style_promocodes.contents_img}>
-                    <p>Выгода 2 000 ₽ </p>
+                    <p>Выгода 2 000 ₽</p>
                     <img src={info} alt="" />
                 </div>
                 <div className={style_promocodes.contents_text}>

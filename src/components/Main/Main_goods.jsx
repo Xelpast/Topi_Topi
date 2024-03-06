@@ -4,7 +4,7 @@ import { cards } from '../../data';
 export default function Goods() {
     return (
         <div className="main_goods">
-            {cards.map((card) => (<Goods_list {...card} />))}
+            {cards.map((card, id) => (<Goods_list key={id} {...card} />))}
         </div>
     );
 }

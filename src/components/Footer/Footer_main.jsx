@@ -19,16 +19,16 @@ export default function footer_main() {
                 <div className="footer_dop">
                     <div className="footer_topitopi">
                         <p className="footer_text_up">Topi Topi</p>
-                        <p className="footer_dop_text">
+                        <div className="footer_dop_text">
                             <p>О компании</p>
                             <p>Контакты</p>
                             <p>Реквизиты</p>
                             <p>Партнёрская программа</p>
-                        </p>
+                        </div>
                     </div>
                     <div className="footer_topitopi">
                         <p className="footer_text_up">Покупателю</p>
-                        <p className="footer_dop_text">
+                        <div className="footer_dop_text">
                             <p>Помощь покупателю</p>
                             <p>Доставка</p>
                             <p>Оплата</p>
@@ -36,24 +36,24 @@ export default function footer_main() {
                             <p>Кредит</p>
                             <p>Акции</p>
                             <Link to="/promocodes" className='link' onClick={scrollToTop}><p>Промокоды</p></Link>
-                        </p>
+                        </div>
                     </div>
                     <div className="footer_topitopi">
                         <p className="footer_text_up">Продавцам</p>
-                        <p className="footer_dop_text">
+                        <div className="footer_dop_text">
                             <p>База знаний</p>
                             <p>Вход в личный кабинет</p>
                             <p>Приглашение к сотрудничеству</p>
-                        </p>
+                        </div>
                     </div>
                     <div className="footer_topitopi">
-                        <p className="footer_dop_text">
+                        <div className="footer_dop_text">
                             <p className="footer_text_up">Правовая информация</p>
                             <p>Условия пользования сайта</p>
                             <p>Политика обработки персональных данных</p>
                             <p>Условия заказа и доставки</p>
                             <p>Политика cookie-файлов</p>
-                        </p>
+                        </div>
                     </div>
                     <div className="footer_content_dop">
                         <img src={logo} alt="" className='footer_logo' />

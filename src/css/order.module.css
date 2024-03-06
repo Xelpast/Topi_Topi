@@ -1,46 +1,131 @@
 .main {
     width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2.67fr;
     min-height: 100vh;
     margin-top: 60px;
 }
 
+.dop_big_text {
+    font-size: 26px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+.dop_text p {
+    padding-top: 10px;
+}
+
+.orders {
+    margin-left: 20px;
+}
+
 .order_main {
+    padding-top: 22px;
+    font-size: 26px;
+    padding-left: 10px;
+}
+
+.main_info_order {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 91%;
+    margin-top: 20px;
+    grid-template-columns: 0.4fr 1.4fr;
     font-size: 22px;
 }
 
-.help_text {
-    margin-right: 0px;
+.main_info_order p {
+    margin-left: 10px;
 }
 
-.placing_an_order {
-    margin-left: 55px;
-}
-
-.region {
+.underline_order {
     text-decoration: underline;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.orders_contents {
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 800px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    border: 6px solid #0DBD0D;
+    margin-bottom: 30px;
+}
+
+.contents_img {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.content_text {
+    margin-left: 15px;
+}
+
+.order_data {
+    margin-top: 15px;
+    font-size: 26px;
     color: #0DBD0D;
-    font-size: 16px;
-    padding-top: 5px;
 }
 
-.btn_back_basket {
-    width: 200px;
-    height: 35px;
-    border-radius: 10px;
-    background-color: #0DBD0D;
-    font-size: 16px;
-    border: 0px;
+.status {
+    display: flex;
+    align-items: center;
+    width: 170px;
+    background: #0DBD0D;
     color: white;
+    border-radius: 8px;
     margin-top: 10px;
+    font-size: 14px;
+    margin-left: 0px;
 }
 
-.back_img {
-    padding-right: 5px;
+.status img {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
-.region_and_btn {
-    margin-left: 125px;
+.status p {
+    margin-left: 0px;
+}
+
+.number_order_text {
+    margin-top: 10px;  
+    margin-left: 2px; 
+    margin-bottom: 10px;
+}
+
+.date_order_text {
+    margin-top: 4px;
+    font-size: 13px;
+}
+
+.text_order {
+    font-size: 18px; 
+    margin-left: 2px; 
+}
+
+.number_order {
+    width: 220px;
+    background: #0DBD0D;
+    color: white;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-size: 12px;
+    margin-left: 0px;
+    padding: 5px 0px 5px 10px;
+}
+
+.number_order p {
+    margin-top: 2px;
+}
+
+.footer_text_order {
+    width: 45%;
+    display: flex;
+    margin-left: 8px;
+    font-size: 12px;
+    margin-bottom: 10px;
 }

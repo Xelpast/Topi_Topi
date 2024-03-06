@@ -1,0 +1,367 @@
+.main {
+    width: 100%;
+    min-height: 100vh;
+    margin-top: 60px;
+}
+
+.order_main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 91%;
+    font-size: 22px;
+}
+
+.help_text {
+    margin-right: 0px;
+}
+
+.placing_an_order {
+    margin-left: 55px;
+}
+
+.region {
+    text-decoration: underline;
+    color: #0DBD0D;
+    font-size: 16px;
+    padding-top: 5px;
+}
+
+.btn_back_basket {
+    width: 200px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #0DBD0D;
+    font-size: 16px;
+    border: 0px;
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.back_img {
+    padding-right: 5px;
+}
+
+.region_and_btn {
+    margin-left: 125px;
+}
+
+.main_info_order {
+    display: grid;
+    grid-template-columns: 1fr 0.4fr;
+    margin: 20px 0px 20px 190px;
+    width: 1200px;
+    height: auto;
+    border: 6px solid #0DBD0D;
+    border-radius: 20px;
+}
+
+.order_form_pay {
+    width: 200px;
+    height: 200px;
+    border: 4px solid #0DBD0D;
+    margin-top: 30px;
+    margin-left: 75px;
+    border-radius: 16px;
+    font-size: 18px;
+}
+
+.order_form_text {
+    padding-left: 10px;
+}
+
+.order_text {
+    font-size: 22px;
+}
+
+.order_form_text p {
+    margin-top: 3px;
+}
+
+.main_order_choise {
+    margin: 20px 0px 0px 30px;
+}
+
+.total {
+    color: #0DBD0D;
+    font-size: 22px;
+}
+
+.btn_pay {
+    width: 80%;
+    height: 30px;
+    border-radius: 16px;
+    background-color: #0DBD0D;
+    font-size: 18px;
+    border: 0px;
+    color: white;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.btn_pay img {
+    width: 26px;
+    padding-right: 5px;
+}
+
+.method_of_obtaining {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.line_order {
+    width: 850px;
+    margin-top: 20px;
+    border: 2px solid #0DBD0D;
+}
+
+.option_order {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.order_delivery_form, .order_pick_up_form {
+    width: 400px;
+    height: 190px;
+    border: 4px solid #0DBD0D;
+    border-radius: 20px;
+    margin-left: 0px;
+}
+
+/* btn_chekbox_order */
+.content_order {
+    float: left;
+    margin-top: 12px;
+    margin-left: 20px;
+    font-size: 26px;
+}
+
+.content_order_dop p {
+    font-size: 20px;
+    margin-left: 28px;
+    margin-top: 6px;
+}
+
+.content_order_dop img {
+    width: 25px;
+    float: right;
+}
+
+.content_order_dop span {
+    align-items: center;    
+}
+
+
+.content_order_dop input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.content_order_dop span {
+    position: relative;
+}
+
+.content_order_dop span::before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 3px solid #0DBD0D;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.content_order_dop span::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 7px;
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    background-color: #0DBD0D;
+    opacity: 0;
+}
+
+.content_order_dop input[type="radio"]:checked + span::after {
+    opacity: 1;
+}
+
+.details_delivery {
+    font-size: 12px;
+    height: 10px;
+    color: #0DBD0D;
+    text-decoration: underline;
+}
+
+.details_pick_up {
+    font-size: 12px;
+    height: 10px;
+    color: #0DBD0D;
+    text-decoration: underline;
+}
+
+.block_info_order {
+    margin-top: 15px;
+    border-radius: 14px;
+    display: flex;
+    text-align: justify;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+    width: 310px;
+    color: white;
+    height: 70px;
+    background: #0DBD0D;
+    margin-left: 22px;
+}
+
+.order_form {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.order_form_dop_list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);   
+    align-items: baseline;
+}
+
+.order_form_dop_list input {
+    width: 100px;
+    height: 40px;
+    border: 4px solid #0DBD0D;
+    border-radius: 10px;
+    outline: none;
+    font-size: 20px;
+    margin-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}   
+
+.order_textarea {
+    margin-right: 10px;
+}
+
+.order_textarea textarea {
+    width: 370px;
+    height: 130px;
+    resize: none; 
+    border: 4px solid #0DBD0D;
+    outline: none;
+    padding: 8px;
+    font-size: 16px;
+    color: #1e1e1e;
+    border-radius: 16px;
+}
+
+.order_form_dop_list p, .order_textarea p {
+    padding-left: 3px;
+    padding-bottom: 3px;
+}
+
+.address {
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.order_card {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 270px 270px 270px;
+}
+
+.promo_and_pay {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.order_promocodes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 40px;
+    border: 4px solid #0DBD0D;
+    border-radius: 10px;
+    margin: 20px 50px 30px 0px;
+}
+
+.order_promocodes input {
+    width: 235px;
+    height: 22px;
+    outline: none;
+    border: none;
+}
+
+.order_promocodes p {
+    margin-right: 10px;
+    color: #0DBD0D;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.content_pay {
+    display: flex;
+    float: left;
+    margin-top: 25px;
+    text-align: center;
+    font-size: 20px;
+    justify-content: center;
+}
+
+.content_pay_dop span {
+    margin-right: 20px;
+    align-items: center;    
+}
+
+
+.content_pay_dop input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.content_pay_dop span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.content_pay_dop span::before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #0DBD0D;
+    border-radius: 100%;
+    margin-right: 5px;
+}
+
+.content_pay_dop span::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    background-color: #0DBD0D;
+    opacity: 0;
+}
+
+.content_pay_dop input[type="radio"]:checked + span::after {
+    opacity: 1;
+}
+
+.promocode_text, .pay_mathod {
+    margin-top: 20px;
+    font-size: 24px;
+}

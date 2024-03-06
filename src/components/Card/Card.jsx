@@ -20,7 +20,7 @@ export default function Card() {
                     onClick={ImageSwitch}
                 />
                 <div className="main_card_img">
-                    <img class="main_img" src={mother_work} alt="" />
+                    <img className="main_img" src={mother_work} alt="" />
                 </div>
             </div>
             <div className="description_card_main">
