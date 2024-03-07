@@ -3,8 +3,13 @@
     padding: 0;
 }
 
+.header_and_sub {
+    width: 100%;
+}
+
 .sub_main {
-    margin: 20px 70px 0px 125px;
+    margin: 20px 70px 0px 0px;
+    padding-left: 125px;
 }
 
 .sub_main_list {
@@ -49,6 +54,10 @@
     grid-template-columns: repeat(4, 1fr);
     width: 100%;
     background-color: white;
+}
+
+.header_band {
+    width: 95%;
 }
 
 .main_card_ring {
