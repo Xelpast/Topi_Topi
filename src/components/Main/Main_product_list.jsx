@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import like from '../../img/like.png';
 import like_red from '../../img/like_red.png';
 
-export default function Goods_list({main_img, price_main, price_default, description_topi}) {
+export default function Main_product_list({main_img, price_main, price_default, description_topi}) {
     const [ImageLike, setImageLike] = useState(true);
     const ImageSwitch = () => {
         setImageLike(!ImageLike);
