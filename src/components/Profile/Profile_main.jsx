@@ -1,5 +1,5 @@
 import style_profile from '../../css/profile.module.css';
-import Extra_menu_profile from '../Extra_menu/Extra_menu_profile';
+import Extra_menu_profile from '../Extra_menu/Extra_menu_profile.jsx';
 import { Link } from 'react-router-dom';
 
 export default function Profile_main() {
