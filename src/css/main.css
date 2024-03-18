@@ -4,20 +4,25 @@
 }
 
 .header_and_sub {
-    width: 100%;
+    width: 90%;
 }
 
 .sub_main {
-    margin: 20px 70px 0px 0px;
-    padding-left: 125px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between; /* Размещаем элементы как можно ближе к краям контейнера */
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .sub_main_list {
-    display: grid;
-    width: 30vh;
-    grid-template-columns: repeat(5, 1fr);
-    grid-column-gap: 26px;
-    float: left;
+    display: flex;
+    gap: 26px; 
+    margin-left: 15px;
+}
+
+.city {
+    margin-right: 0px;
 }
 
 .sub_main p {
@@ -29,26 +34,40 @@
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
-    margin-top: 60px;
     text-align: center;
     justify-content: center;
 }
+
+/* Пользователь не авторизован */
 
 .isAuthMain {
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
-    margin-top: 60px;
-    text-align: center;
-    justify-content: center;
 }
 
 .isAuthMain_block {
-    width: 1200px;
+    width: 1250px;
     height: 200px;
     border: solid 5px #0DBD0D;
     border-radius: 16px;
 }
+
+.btn_basket {
+    margin-top: 20px;
+}
+
+.btn_come {
+    width: 250px;
+    height: 35px;
+    font-size: 20px;
+    color: white;
+    background-color: #0DBD0D;
+    border: none;
+    border-radius: 8px;
+}
+
+/* Основной контент*/
 
 .slider_and_offers {
     display: grid;
@@ -70,10 +89,6 @@
     grid-template-columns: repeat(4, 1fr);
     width: 100%;
     background-color: white;
-}
-
-.header_band {
-    width: 95%;
 }
 
 .main_card_ring {

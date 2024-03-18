@@ -3,13 +3,12 @@
     display: grid;
     grid-template-columns: 1fr 2.67fr;
     min-height: 100vh;
-    margin-top: 60px;
 }
 
 .dop_big_text {
     font-size: 26px;
     padding-bottom: 10px;
-    padding-top: 20px;
+    padding-top: 15px;
 }
 
 .dop_text p {
