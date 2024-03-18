@@ -12,7 +12,7 @@ export default function Sub_main_line() {
                     <Sub_main sub_main_text={sub_main_list[3].sub_main_text} />
                     <Sub_main sub_main_text={sub_main_list[4].sub_main_text} />
                 </div>
-                <p>Gород</p>
+                <p className="city">Gород</p>
             </div>
         </div>
     );

@@ -1,13 +1,12 @@
-import Admin_page from "../../Pages/Admin_page"
-import Basket_page from "../../Pages/Basket_page"
-import Like_page from "../../Pages/Like_page"
-import Main_page from "../../Pages/Main_page"
-import Order_page from "../../Pages/Order_page"
-import Order_pay_page from "../../Pages/Order_pay_page"
-import Promocodes_page from "../../Pages/Promocodes_page"
-import Topiary_page from "../../Pages/Topiary_page"
-import { ADMIN_ROUTE, AUTH_ROUTE, REG_ROUTE, BASKET_ROUTE, LIKE_ROUTE, MAIN_ROUTE, ORDER_PAY_ROUTE, ORDER_ROUTE, PROMOCODES_ROUTE, TOPIARY_ROUTE } from "../../utils/consts"
-import Header from "../Header/Header"
+import Admin_page from "../../Pages/Admin_page";
+import Basket_page from "../../Pages/Basket_page";
+import Like_page from "../../Pages/Like_page";
+import Main_page from "../../Pages/Main_page";
+import Order_page from "../../Pages/Order_page";
+import Order_pay_page from "../../Pages/Order_pay_page";
+import Profile_page from "../../Pages/Profile_page";
+import Promocodes_page from "../../Pages/Promocodes_page";
+import Error_404_page from "../../Pages/Error_404_page";
 
 export const authRoutes = [
     {
@@ -19,7 +18,7 @@ export const authRoutes = [
         element: <Order_page />
     },
     {
-        path: '/order_pay', 
+        path: '/order-pay', 
         element: <Order_pay_page />
     }
 ]
@@ -29,14 +28,6 @@ export const publicRoutes = [
         path: '/',
         element: <Main_page />
     },
-    // {
-    //     path: AUTH_ROUTE,
-    //     component: Header 
-    // },
-    // {
-    //     path: REG_ROUTE,
-    //     component: Header 
-    // },
     {
         path: '/like',
         element: <Like_page />
@@ -49,8 +40,12 @@ export const publicRoutes = [
         path: '/basket',
         element: <Basket_page />
     },
-    // {
-    //     path: TOPIARY_ROUTE + '/:id',
-    //     component: Topiary_page
-    // }
+    {
+        path: '/profile',
+        element: <Profile_page />
+    },
+    {
+        path: 'error-404',
+        element: <Error_404_page />
+    }
 ]

@@ -44,7 +44,7 @@ export default function Header() {
                                 <div className="form_input_auth">
                                     <input type="text" placeholder="Логин" />
                                     <input type="password" placeholder="Пароль" />
-                                    <button className="btn_auth">Авториазация</button>
+                                    <Link to='/profile'><button className="btn_auth">Авториазация</button></Link>
                                     <p onClick={(e) => {
                                         e.preventDefault();
                                         setRegistration(true);

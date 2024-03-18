@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { authRoutes, publicRoutes } from './routs';
+import { Context } from '../../index';
 
 export default function AppRouter() {
-    const isAuth = true;
+    const {user} = useContext(Context);
     return (
         <Routes>
-            {isAuth && authRoutes.map(({ path, element }) => 
+            {user.isAuth && authRoutes.map(({ path, element }) => 
                 <Route key={path} path={path} element={element} exact />
             )}
             {publicRoutes.map(({ path, element }) =>
                 <Route key={path} path={path} element={element} exact />
             )}
-            <Route path="*" element={<Navigate to="/" />} />
+            <Route path="*" element={<Navigate to="/error-404" />} />
         </Routes>
     );
 }
