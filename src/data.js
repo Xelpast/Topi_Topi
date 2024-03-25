@@ -1,9 +1,9 @@
+import { v4 as uuidv4 } from "uuid";
 import favorites from './img/Favorites.png';
 import busket from './img/Busket.png';
 import order from './img/Order.png';
 import profile from './img/Profile.png';
-import language from './img/ru.png';
-
+import language from './img/language.png';
 import mother_work from "./img/mother_work.png";
 
 export const header_arr = [
@@ -111,5 +111,24 @@ export const cards = [
         price_main: "9 990 ₽",
         price_default: "12 487 ₽",
         description_topi: `Топиарий "Мамины труды"`
+    }
+]
+
+export const slide_img = [
+    {
+        id: uuidv4(),
+        title: "Первый"
+    },
+    {
+        id: uuidv4(),
+        title: "Второй"
+    },
+    {
+        id: uuidv4(),
+        title: "Третий"
+    },
+    {
+        id: uuidv4(),
+        title: "Четвёртый"
     }
 ]
