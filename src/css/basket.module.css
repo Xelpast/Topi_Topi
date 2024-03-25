@@ -217,3 +217,33 @@ b {
     margin-top: 6px;
     cursor: pointer;
 }
+
+/* Пользователь не авторизован */
+
+.isAuthMain {
+    text-align: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.isAuthMain_block {
+    width: 1250px;
+    height: 200px;
+    border: solid 5px #0DBD0D;
+    border-radius: 16px;
+}
+
+.btn_basket_form {
+    margin-top: 20px;
+}
+
+.btn_come {
+    width: 250px;
+    height: 35px;
+    font-size: 20px;
+    color: white;
+    background-color: #0DBD0D;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}

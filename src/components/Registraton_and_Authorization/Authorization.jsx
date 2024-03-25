@@ -1,10 +1,10 @@
 import React from 'react';
-import '../../css/authorization.css';
+import authorization_style from '../../css/authorization.module.css';
 
 export default function Authorization({ active, setActive, children }) {
     return (
-        <div className={active ? "modal active" : "modal"} onClick={() => setActive(false)}>
-            <div className={active ? "modal_content active" : "modal_content"} onClick={a => a.stopPropagation()}>
+        <div className={`${authorization_style.modal} ${active ? authorization_style.active : ''}`} onClick={() => setActive(false)}>
+            <div className={`${authorization_style.modal_content} ${active ? authorization_style.active : ''}`} onClick={e => e.stopPropagation()}>
                 {children}
             </div>
         </div>

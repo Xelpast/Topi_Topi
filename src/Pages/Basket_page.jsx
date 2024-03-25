@@ -5,6 +5,9 @@ import Basket_main from "../components/Basket/Basket_main";
 import Footer from "../components/Footer/Footer";
 import Authorization from "../components/Registraton_and_Authorization/Authorization";
 import Registration from "../components/Registraton_and_Authorization/Registration";
+import basket_style from '../css/basket.module.css';
+import authorization_style from '../css/authorization.module.css';
+import registration_style from '../css/authorization.module.css';
 import { Context } from '../index';
 import { useState, useContext } from "react";
 import topi_logo from '../img/logo_topi.png';
@@ -26,29 +29,29 @@ export default function Basket_page() {
                 <>
                     <Header />
                     <Sub_main_line />
-                    <div className="isAuthMain">
-                        <div className="isAuthMain_block">
+                    <div className={basket_style.isAuthMain}>
+                        <div className={basket_style.isAuthMain_block}>
                             <p>Вы не авторизованы</p>
                             <p>Войдите в аккаунт</p>
-                            <div className="btn_basket">
-                                <button className="btn_come" onClick={() => setModalActive(true)}>Войти</button>
+                            <div className={basket_style.btn_basket_form}>
+                                <button className={basket_style.btn_come} onClick={() => setModalActive(true)}>Войти</button>
                             </div>
                         </div>
                     </div>
                     <Footer />
 
                     <Authorization active={modal_active} setActive={setModalActive}>
-                        <div className="authorization_form">
+                        <div className={authorization_style.authorization_form}>
                             <form action="">
-                                <div className="close_form">
+                                <div className={authorization_style.close_form}>
                                     <p>Авторизация</p>
                                     <img src={close_x} alt="" onClick={handleClose_auth} />
                                 </div>
                                 <img src={topi_logo} alt="" />
-                                <div className="form_input_auth">
+                                <div className={authorization_style.form_input_auth}>
                                     <input type="text" placeholder="Логин" />
                                     <input type="password" placeholder="Пароль" />
-                                    <Link to="/profile"><button className="btn_auth">Авториазация</button></Link>
+                                    <Link to='/profile'><button className={authorization_style.btn_auth}>Авториазация</button></Link>
                                     <p onClick={(e) => {
                                         e.preventDefault();
                                         setRegistration(true);
@@ -59,24 +62,24 @@ export default function Basket_page() {
                         </div>
                     </Authorization>
                     <Registration active={registration} setActive={setRegistration}>
-                        <div className="registration_form">
+                        <div className={registration_style.registration_form}>
                             <form action="">
-                                <div className="close_form_reg">
+                                <div className={registration_style.close_form_reg}>
                                     <p>Регистрация</p>
                                     <img src={close_x} alt="" onClick={handleClose_reg} />
                                 </div>
-                                <div className="form_input_reg">
+                                <div className={registration_style.form_input_reg}>
                                     <input type="text" placeholder="Никнейм" />
                                     <input type="text" placeholder="Логин" />
                                     <input type="password" placeholder="Пароль" />
                                     <input type="password" placeholder="Повторите пароль" />
-                                    <button className="btn_reg">Регистрация</button>
+                                    <button className={registration_style.btn_reg}>Регистрация</button>
                                     <p onClick={(f) => {
                                         f.preventDefault();
                                         setRegistration(false);
                                         setModalActive(true);
                                     }}>Есть аккаунт? Авториазация</p>
-                                    <img src={topi_logo} alt="" className="reg_logo" />
+                                    <img src={topi_logo} alt="" className={registration_style.reg_logo}/>
                                 </div>
                             </form>
                         </div>

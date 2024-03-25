@@ -1,10 +1,10 @@
 import React from 'react';
-import '../../css/registration.css';
+import registration_style from '../../css/registration.module.css';
 
 export default function Registration({active, setActive, children}) {
     return (
-        <div className={active ? "modal_reg active" : "modal_reg"} onClick={() => setActive(false)}>
-            <div className={active ? "modal_content_reg active" : "modal_content_reg"} onClick={r => r.stopPropagation()}>
+        <div className={`${registration_style.modal_reg} ${active ? registration_style.active : ''}`} onClick={() => setActive(false)}>
+            <div className={`${registration_style.modal_content_reg} ${active ? registration_style.active : ''}`} onClick={e => e.stopPropagation()}>
                 {children}
             </div>
         </div>
