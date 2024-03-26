@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Header from "../components/Header/Header";
-import Sub_main_line from "../components/Main/Sub_main_line";
 import Basket_main from "../components/Basket/Basket_main";
 import Footer from "../components/Footer/Footer";
 import Authorization from "../components/Registraton_and_Authorization/Authorization";
@@ -28,7 +27,6 @@ export default function Basket_page() {
             {!user._isAuth ? (
                 <>
                     <Header />
-                    <Sub_main_line />
                     <div className={basket_style.isAuthMain}>
                         <div className={basket_style.isAuthMain_block}>
                             <p>Вы не авторизованы</p>
@@ -89,7 +87,6 @@ export default function Basket_page() {
             ) : (
                 <>
                     <Header />
-                    <Sub_main_line />
                     <Basket_main />
                     <Footer />
                 </>

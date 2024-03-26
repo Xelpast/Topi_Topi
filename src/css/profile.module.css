@@ -1,8 +1,16 @@
 .main {
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 2.67fr;
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
+    margin: 0 auto;
+    max-width: var(--style_main);
+}
+
+.main_content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3.5fr;
 }
 
 .dop_big_text {
@@ -20,6 +28,7 @@
 }
 
 .profile_main {
+    display: flex;
     padding-top: 15px;
     font-size: 26px;
     padding-left: 10px;
