@@ -5,29 +5,29 @@ import BtnSlider from './BtnSlider';
 
 export default function Slider() {
     const [slideIndex, setSlideIndex] = useState(1);
-    
+
     useEffect(() => {
         const interval = setInterval(() => {
             nextSlide();
-        }, 5000); 
+        }, 5000);
 
         return () => clearInterval(interval);
     }, [slideIndex]);
 
     const nextSlide = () => {
-        if(slideIndex !== slide_img.length) {
+        if (slideIndex !== slide_img.length) {
             setSlideIndex(slideIndex + 1);
         }
-        else if(slideIndex === slide_img.length) {
+        else if (slideIndex === slide_img.length) {
             setSlideIndex(1);
         }
     }
 
     const prevSlide = () => {
-        if(slideIndex !== 1) {
+        if (slideIndex !== 1) {
             setSlideIndex(slideIndex - 1);
         }
-        else if(slideIndex === 1) {
+        else if (slideIndex === 1) {
             setSlideIndex(slide_img.length);
         }
     }
@@ -35,20 +35,17 @@ export default function Slider() {
     return (
         <div className={slider_style.container_slider}>
             {slide_img.map((obj, index) => {
+                const animationClassSlider = `${slider_style.slide} ${slideIndex === index + 1 ? slider_style.active_animation : ''}`;
                 return (
                     <div key={obj.id}
-                    className={`${slider_style.slide} ${slideIndex === index + 1 ? slider_style.active_animation : ''}`}>
+                        className={animationClassSlider}>
                         <img src={process.env.PUBLIC_URL + `/Imgs/slide${index + 1}.png`} />
                     </div>
                 )
-            })}   
+            })}
             <BtnSlider moveSlide={nextSlide} direction={slider_style.next} />
             <BtnSlider moveSlide={prevSlide} direction={slider_style.prev} />
         </div>
     );
 }
-
-
-
-
 

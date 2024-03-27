@@ -1,13 +1,23 @@
 .main {
     width: 100%;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: var(--style_main);
 }
 
 .order_main {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 91%;
+    width: 100%;
     font-size: 22px;
+}
+
+.orders {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .help_text {
@@ -15,7 +25,7 @@
 }
 
 .placing_an_order {
-    margin-left: 55px;
+    margin-left: 15px;
 }
 
 .region {
@@ -23,6 +33,7 @@
     color: #0DBD0D;
     font-size: 16px;
     padding-top: 5px;
+    margin-left: 0px;
 }
 
 .btn_back_basket {
@@ -42,17 +53,17 @@
 }
 
 .region_and_btn {
-    margin-left: 125px;
+    margin-left: 15px;
 }
 
 .main_info_order {
     display: grid;
     grid-template-columns: 1fr 0.4fr;
-    margin: 20px 0px 20px 190px;
     width: 1200px;
     height: auto;
     border: 6px solid #0DBD0D;
     border-radius: 20px;
+    margin: 30px auto;
 }
 
 .order_form_pay {
