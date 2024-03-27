@@ -2,6 +2,7 @@ import style_profile from '../../css/profile.module.css';
 import Extra_menu_profile from '../Extra_menu/Extra_menu_profile.jsx';
 import { Link } from 'react-router-dom';
 import Sub_main_line from '../Main/Sub_main_line';
+import Profile_gender from './Profile_gender';
 
 export default function Profile_main() {
     return (
@@ -27,16 +28,8 @@ export default function Profile_main() {
                                 <input type="date" className={style_profile.main_text_form} />
 
                                 <p>Пол</p>
-                                <div className={style_profile.content_gender}>
-                                    <label className={style_profile.content_gender_dop}>
-                                        <input type="radio" name='gender' value="man" />
-                                        <span>Мужской</span>
-                                    </label>
-                                    <label className={style_profile.content_gender_dop}>
-                                        <input type="radio" name='gender' value="woman" />
-                                        <span>Женский</span>
-                                    </label>
-                                </div><br />
+                                <Profile_gender />
+                                <br />
                                 <p>Номер телефона</p>
                                 <input type="text" className={style_profile.main_text_form} placeholder='+7 000 000 00 00' />
                                 <p>E-mail</p>
