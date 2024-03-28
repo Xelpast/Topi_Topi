@@ -20,9 +20,7 @@ export default function Card_order() {
                     alt=""
                     onClick={ImageSwitch}
                 />
-                <div className={style_card_order.main_card_img}>
-                    <img className={style_card_order.main_img} src={mother_work} alt="" />
-                </div>
+                <img className={style_card_order.main_img} src={mother_work} alt="" />
             </div>
             <div className={style_card_order.description_card_main}>
                 <div className={style_card_order.description_card_price}>

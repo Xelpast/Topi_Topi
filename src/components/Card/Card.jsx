@@ -21,7 +21,7 @@ export default function Card() {
                     onClick={ImageSwitch}
                 />
                 <div className={main_style.main_card_img}>
-                    <img className={main_style.main_img}src={mother_work} alt="" />
+                    <img className={main_style.main_img} src={mother_work} alt="" />
                 </div>
             </div>
             <div className={main_style.description_card_main}>
@@ -31,10 +31,10 @@ export default function Card() {
                 </div>
                 <div className={main_style.description_topi}>
                     <p>Топиарий "Мамины труды"</p>
-                    <div className={main_style.button_busket_main}>
-                        <button className={main_style.button_busket}>В корзину</button>
-                    </div>
                 </div>
+            </div>
+            <div className={main_style.button_busket_main}>
+                <button className={main_style.button_busket}>В корзину</button>
             </div>
         </div>
     );

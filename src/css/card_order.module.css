@@ -1,19 +1,16 @@
 .main_card {
-    margin-right: 20px;
+    margin-right: 25px;
 }
 
 .main_card_ring {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 220px;
     border: 6px solid #0DBD0D;
     border-radius: 20px;
     margin: 20px 0px 10px 0px;
-}
-
-.main_card_img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 45px;
 }
 
 .main_img {
@@ -21,8 +18,11 @@
 }
 
 .like_img {
-    width: 22%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
     float: right;
+    width: 23%;
     padding: 10px;
     cursor: pointer;
 }
@@ -32,34 +32,31 @@
 }
 
 .description_card_price {
-    display: grid;
-    grid-template-columns: 90px 90px;
-    width: 100px;
-    margin-left: 15px;
+    display: flex;
 }
 
 .price_main {
     font-size: 24px;
     color: #0DBD0D;
+    margin-left: 10px;
+    margin-right: 20px;
 }
 
 .price_default {
     font-size: 15px;
     padding-top: 5px;
-    margin-left: 20px;
+    margin-left: 0px;
     color: #9c9c9c;
 }
 
 .description_topi {
     width: 255px;
     font-size: 20px;
-    margin-left: 0px;
 }
 
 .description_topi p {
     width: 200px;
-    margin-left: 20px;
-    text-align: left;
+    margin-left: 10px;
     margin-bottom: 10px;
 }
 
