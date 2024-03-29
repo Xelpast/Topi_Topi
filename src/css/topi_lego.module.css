@@ -1,0 +1,85 @@
+.main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: var(--style_main);
+}
+
+.topi_ai {
+    width: 100%;
+    margin-left: 15px;
+    font-size: 30px;    
+}
+
+.topi_description {
+    margin-top: 10px;  
+    font-size: 20px;
+}
+
+.btn_back_site {
+    width: 200px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #0DBD0D;
+    font-size: 16px;
+    border: 0px;
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.back_img {
+    padding-right: 10px;
+}
+
+b {
+    color: #0DBD0D;
+}
+
+.main_form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 1330px;
+    height: 1000px;
+    border: 8px #0DBD0D solid;
+    border-radius: 30px;
+}
+
+.main_form p {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+
+.input_ai {
+    width: 600px;
+    height: 52px;
+    border: 3px solid #339933;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.input_text {
+    width: 100%;
+    padding-left: 5px;
+    border-radius: 18px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+}
+
+.input_main {
+    display: flex;
+    width: 100%;
+    padding-left: 10px;
+    margin-top: 7.5px;
+}
+
+.input_icon img {
+    width: 50%;
+    cursor: pointer;
+}
