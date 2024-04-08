@@ -13,6 +13,10 @@
     grid-template-columns: 1fr 3.5fr;
 }
 
+.dop_info {
+    margin-left: 15px;
+}
+
 .dop_big_text {
     font-size: 26px;
     padding-bottom: 10px;
@@ -183,4 +187,37 @@ u {
 
 .link {
     text-decoration: none;
+}
+
+@media only screen and (max-width: 1100px) {
+    .content_profile {
+        width: 660px;
+    }
+
+    .dop_info {
+        margin-left: 42px;
+    }
+}
+
+@media only screen and (max-width: 930px) {
+    .content_profile {
+        width: 440px;
+        height: 730px;
+    }
+
+    .text_agreement_policy br{
+        display: none;
+    }
+
+    .dop_big_text {
+        font-size: 24px;
+    }
+
+    .dop_text {
+        font-size: 14px
+    }
+
+    .profile_main {
+        font-size: 24px;
+    }
 }

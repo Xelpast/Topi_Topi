@@ -41,8 +41,8 @@ export default function footer_main() {
                         </div>
                     </div>
                     <div className={footer_style.footer_topitopi}>
-                        <div className={footer_style.footer_dop_text}>
                             <p className={footer_style.footer_text_up}>Правовая информация</p>
+                        <div className={footer_style.footer_dop_text}>
                             <p>Условия пользования сайта</p>
                             <p>Политика обработки персональных данных</p>
                             <p>Условия заказа и доставки</p>

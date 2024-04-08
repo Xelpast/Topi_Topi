@@ -1,7 +1,7 @@
 import style_like from '../../css/like.module.css';
 import Extra_menu_like from '../Extra_menu/Extra_menu_like';
 import Sub_main_line from '../Main/Sub_main_line';
-import Card from '../Card/Card';
+import Card_like from '../Card/Card_like';
 
 export default function Like_main() {
     return (
@@ -16,10 +16,10 @@ export default function Like_main() {
                         <p>Покупали</p>
                     </div>
                     <div className={style_like.card_like}>
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
+                        <Card_like />
+                        <Card_like />
+                        <Card_like />
+                        <Card_like />
                     </div>
                 </div>
             </div>

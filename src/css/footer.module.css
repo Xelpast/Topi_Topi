@@ -17,7 +17,7 @@
 
 .footer_dop {
     display: grid;
-    grid-template-columns: 1fr 0.6fr 1fr 1.2fr 1.2fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1.5fr;
     width: 100%;
 }
 
@@ -70,4 +70,18 @@
 
 .link {
     text-decoration: none;
+}
+
+@media only screen and (max-width: 930px) {
+    .footer_dop {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer_topitopi {
+        margin-left: 30px;
+    }
+
+    .footer_content_dop {
+        grid-column: 1/3;
+    }
 }

@@ -3,6 +3,7 @@ import style_basket from '../../css/basket.module.css';
 import Extra_menu_basket from '../Extra_menu/Extra_menu_basket';
 import Baket_item from './Basket_item';
 import Sub_main_line from '../Main/Sub_main_line';
+import { scrollToTop } from '../../utils/const';
 
 export default function Basket_main() {
     return (
@@ -35,7 +36,7 @@ export default function Basket_main() {
                                 <p>Экономия: <b>–3 691 ₽</b></p>
                             </div>
                             <p className={style_basket.preliminary_price}>Предварительная цена: <b>12 970 ₽</b></p>
-                            <Link to="/order-pay"><button className={style_basket.btn_basket}>Оформить заказ</button></Link>
+                            <Link to="/order-pay" onClick={scrollToTop}><button className={style_basket.btn_basket}>Оформить заказ</button></Link>
                         </div>
                     </div>
                 </div>

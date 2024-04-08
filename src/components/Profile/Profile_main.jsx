@@ -38,7 +38,7 @@ export default function Profile_main() {
                                     <label>
                                         <input type="checkbox" className={style_profile.main_checkbox} />
                                         <span className={style_profile.custom_checkbox}></span>
-                                        Я соглашаюсь на обработку персональных данных, в соответствии с<br /><u><Link to='https://google.com' className={style_profile.link_profile}>Условиями пользования, Политикой обработки персональных данных.</Link></u>
+                                        Я соглашаюсь на обработку персональных данных, в соответствии с <br /><u><Link to='https://google.com' className={style_profile.link_profile}>Условиями пользования, Политикой обработки персональных данных.</Link></u>
                                     </label>
                                 </div>
                                 <div className={style_profile.btn_profile}>
