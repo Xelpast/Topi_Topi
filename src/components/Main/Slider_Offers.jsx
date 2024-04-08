@@ -8,11 +8,11 @@ export default function Slider_Offers() {
     return (
         <div className={offers_style.main_offers}>
             <div className={offers_style.slider_and_offers}>
-                <div className={offers_style.adv_left}>
-                    <img src={offers_left} alt="offers topi" />
-                </div>
                 <div className={offers_style.slider_main}>
                     <Slider />
+                </div>
+                <div className={offers_style.adv_left}>
+                    <img src={offers_left} alt="offers topi" />
                 </div>
                 <div className={offers_style.adv_right}>
                     <img src={offers_right} alt="offers topi" />

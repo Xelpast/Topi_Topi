@@ -7,6 +7,7 @@ export default function CardHitsList() {
             <CardHits />
             <CardHits />
             <CardHits />
+            <CardHits />
         </>
     );
 }

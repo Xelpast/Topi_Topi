@@ -5,6 +5,7 @@ import back from '../../img/back.png';
 import pay from '../../img/pay.png';
 import info from '../../img/info.png';
 import Sub_main_line from '../Main/Sub_main_line';
+import { scrollToTop } from '../../utils/const';
 
 export default function Order_pay_main() {
     return (
@@ -17,7 +18,7 @@ export default function Order_pay_main() {
                 </div>
                 <div className={style_order_pay.region_and_btn}>
                     <p className={style_order_pay.region}>Ваш регион: Пензенская область</p>
-                    <Link to="/basket"><button className={style_order_pay.btn_back_basket}><img src={back} alt="" className={style_order_pay.back_img} />Вернуться в корзину</button></Link>
+                    <Link to="/basket" onClick={scrollToTop}><button className={style_order_pay.btn_back_basket}><img src={back} alt="" className={style_order_pay.back_img} />Вернуться в корзину</button></Link>
                 </div>
             </div>
             <div className={style_order_pay.main_info_order}>
@@ -89,7 +90,7 @@ export default function Order_pay_main() {
                                 <Card_basket />
                             </div>
                             <div className={style_order_pay.promo_and_pay}>
-                                <div className={style_order_pay.order_poromocodes_main}>
+                                <div className={style_order_pay.order_promocodes_main}>
                                     <p className={style_order_pay.promocode_text}>Промокод</p>
                                     <div className={style_order_pay.order_promocodes}>
                                         <input type="text" placeholder="Введите промокод" />

@@ -59,17 +59,61 @@
 }
 
 .button_hits_main {
-    width: 250px;
+    width: 300px;
     text-align: center;
 }
 
 .button_hits {
-    width: 75%;
+    width: 200px;
     height: 35px;
     border-radius: 12px;
     background-color: #0DBD0D;
     font-size: 20px;
     border: 0px;
     color: white;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+
+@media only screen and (max-width: 1100px) {
+    .main_card_ring {
+        width: 260px;
+        height: 200px;
+        border: 6px solid #0DBD0D;
+    }
+    
+    .main_img {
+        width: 95px;
+    }
+    
+    .like_img {
+        width: 20%;
+    }
+    
+    .description_card_main {
+        width: 260px;
+    }
+    
+    
+    .price_main {
+        font-size: 24px;
+    }
+    
+    .price_default {
+        font-size: 14px;
+        padding-top: 6px;
+    }
+    
+    .description_topi {
+        width: 220px;
+    }
+    
+    .button_hits_main {
+        width: 260px;
+    }
+    
+    .button_hits {
+        width: 160px;
+        font-size: 18px;
+    }
 }

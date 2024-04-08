@@ -60,3 +60,12 @@
     margin-bottom: 10px;
 }
 
+@media only screen and (max-width: 930px) {
+    .main_card {
+        margin-right: auto;
+    }
+
+    .description_topi p {
+        margin-bottom: 30px;
+    }
+}

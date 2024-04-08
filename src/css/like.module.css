@@ -13,6 +13,10 @@
     grid-template-columns: 1fr 3.5fr;
 }
 
+.dop_info {
+    margin-left: 15px;
+}
+
 .dop_big_text {
     font-size: 26px;
     padding-bottom: 10px;
@@ -32,7 +36,7 @@
 }
 
 .likes {
-    margin-left: 20px;
+    margin-left: 0px;
 }
 
 .like_main {
@@ -43,10 +47,12 @@
 }
 
 .main_info_like {
+    width: 300px;
     display: grid;
     margin-top: 20px;
-    grid-template-columns: 0.2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     font-size: 22px;
+    margin-left: 0px;
 }
 
 .main_info_like p {
@@ -55,7 +61,229 @@
 
 .card_like {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 30px;
     margin-top: 20px;
+}
+
+.main_card_ring {
+    position: relative;
+    width: 300px;
+    height: 240px;
+    border: 8px solid #0DBD0D;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.main_card_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 285px;
+    height: 225px;
+}
+
+.main_img {
+    width: 110px;
+}
+
+.like_img {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    float: right;
+    width: 18%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.description_card_price {
+    display: flex;
+}
+
+.price_main {
+    font-size: 26px;
+    color: #0DBD0D;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.price_default {
+    margin-left: 0px;
+    padding-top: 5px;
+    color: #9C9C9C;
+}
+
+.description_topi {
+    width: 255px;
+    font-size: 22px;
+    margin-left: 0px;
+}
+
+.description_topi p {
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.button_busket_main {
+    width: 300px;
+    text-align: center;
+}
+
+.button_busket {
+    width: 200px;
+    height: 35px;
+    border-radius: 12px;
+    background-color: #0DBD0D;
+    font-size: 20px;
+    border: 0px;
+    color: white;
+    margin-bottom: 40px;
+}
+
+
+@media only screen and (max-width: 1800px) {
+    .card_like {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .dop_info {
+        margin-left: 65px;
+    }
+}
+
+@media only screen and (max-width: 1240px) {
+    .card_like {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .likes {
+        margin-left: auto;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    
+    .dop_info {
+        margin-left: 42px;
+    }
+
+    .main_card_ring {
+        width: 260px;
+        height: 200px;
+        border: 6px solid #0DBD0D;
+    }
+    
+    .main_card_img {
+        width: 260px;
+        height: 190px;
+    }
+    
+    .main_img {
+        width: 100px;
+    }
+    
+    .like_img {
+        width: 20%;
+    }
+    
+    .description_card_price {
+        display: flex;
+    }
+    
+    .price_main {
+        font-size: 24px;
+    }
+    
+    .price_default {
+        font-size: 14px;
+        padding-top: 6px;
+    }
+    
+    .description_topi {
+        font-size: 22px;
+    }
+    
+    .button_busket_main {
+        width: 260px;
+    }
+    
+    .button_busket {
+        width: 160px;
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 930px) {
+
+    .card_like {
+        grid-template-columns: repeat(2, 1fr);
+    } 
+
+    .dop_big_text {
+        font-size: 24px;
+    }
+
+    .dop_text {
+        font-size: 14px
+    }
+
+    .like_main {
+        font-size: 24px;
+    }
+
+    .main_info_like {
+        font-size: 20px;
+    }
+
+    .main_card_ring {
+        width: 200px;
+        height: 160px;
+        border: 5px solid #0DBD0D;
+    }
+    
+    .main_card_img {
+        width: 180px;
+        height: 150px;
+    }
+    
+    .main_img {
+        width: 80px;
+    }
+    
+    .like_img {
+        width: 24%;
+    }
+    
+    .price_main {
+        font-size: 18px;
+        margin-left: 10px;
+    }
+    
+    .price_default {
+        font-size: 10px;
+        padding-top: 5px;
+    }
+    
+    .description_card_price {
+        width: 200px;
+    }
+
+    .description_topi {
+        width: 200px;
+        font-size: 16px;
+    }
+
+    .description_topi p {
+        margin-left: 10px;
+    }
+    
+    .button_busket_main {
+        width: 200px;
+    }
+    
+    .button_busket {
+        width: 120px;
+        height: 30px;
+        font-size: 16px;
+    }
 }

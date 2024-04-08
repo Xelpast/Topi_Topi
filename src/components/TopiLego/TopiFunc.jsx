@@ -5,10 +5,12 @@ import open_ai from '../../img/open_ai.png';
 export default function TopiFunc() {
     const API_KEY = "";
     const [inputValue, setInputValue] = useState("");
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
     const handleSubmit = async () => {
         setError(null);
+        setLoading(true);
 
         const options = {
             method: "POST",
@@ -25,10 +27,13 @@ export default function TopiFunc() {
 
         try {
             const res = await fetch("https://api.openai.com/v1/images/generations", options);
+            console.log("Status:", res.status);
             const data = await res.json();
-            console.log(data);
+            console.log("Data:", data);
         } catch (error) {
             setError(error.message);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -57,7 +62,10 @@ export default function TopiFunc() {
                     </div>
                 </div>
             </div>
-            <section className={style_topi.section_img}></section>
+            <section className={style_topi.section_img}>
+                {loading && <p>Loading...</p>}
+                {error && <p>Error: {error}</p>}
+            </section>
         </>
     );
 }

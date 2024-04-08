@@ -56,3 +56,9 @@
     margin-bottom: 10px;
 }
 
+@media only screen and (max-width: 930px) {
+    .main_card {
+        margin-left: auto;
+    }
+}
+

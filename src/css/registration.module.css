@@ -95,3 +95,14 @@
     width: 200px;
     margin-right: 5px;
 }
+
+@media only screen and (max-width: 930px) {
+    .modal_content_reg {
+        width: 600px;
+        height: 450px;
+    }
+
+    .reg_logo {
+        display: none;
+    }
+}
