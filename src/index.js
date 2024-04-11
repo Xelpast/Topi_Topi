@@ -5,13 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import UserStore from './store/UserStore';
 import TopiaryStore from './store/TopiaryStore';
-export const Context = createContext(null);
 
+export const Context = createContext(null);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Context.Provider value={{
         user: new UserStore(),
-        topiary: new TopiaryStore()
+        topiary: new TopiaryStore(),
     }} >
         <App />
     </Context.Provider>

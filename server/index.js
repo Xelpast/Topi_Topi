@@ -14,6 +14,11 @@ app_exp.use(express.json());
 app_exp.use(express.static(path.resolve(__dirname, 'static')));
 app_exp.use(fileUpload({}));
 app_exp.use('/api', router);
+app_exp.get('/api', (req, res) => {
+    res.json({
+        message: "LETS'GO"
+    })
+})
 
 //Обработка middleware должна проходить в конце
 app_exp.use(errorHandler);

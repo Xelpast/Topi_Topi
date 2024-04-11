@@ -14,13 +14,15 @@ export default function CardHits() {
     return (
         <div className={style_card_hits.main_card}>
             <div className={style_card_hits.main_card_ring}>
-                <img
-                    className={style_card_hits.like_img}
-                    src={ImageLike ? like : like_red}
-                    alt=""
-                    onClick={ImageSwitch}
-                />
-                <img className={style_card_hits.main_img} src={mother_work} alt="" />
+                <div className={style_card_hits.main_card_img}>
+                    <img
+                        className={style_card_hits.like_img}
+                        src={ImageLike ? like : like_red}
+                        alt=""
+                        onClick={ImageSwitch}
+                    />
+                    <img className={style_card_hits.main_img} src={mother_work} alt="" />
+                </div>
             </div>
             <div className={style_card_hits.description_card_main}>
                 <div className={style_card_hits.description_card_price}>

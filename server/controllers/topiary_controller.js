@@ -6,7 +6,7 @@ const ApiError = require('../error/ApiError');
 class TopiaryController {
     async create(req, res, next) {
         try {
-            const { name, price, hitId, categoryId, info } = req.body;
+            const { name, price_default, price_main, hitId, categoryId, info } = req.body;
             const { img } = req.files;
             let fileName = uuid.v4() + ".png";
             img.mv(path.resolve(__dirname, '..', 'static', fileName));
@@ -20,7 +20,7 @@ class TopiaryController {
                 }))
             }
 
-            const topiary = await Topiary.create({ name, price, hitId, categoryId, img: fileName });
+            const topiary = await Topiary.create({ name, price_default, price_main, hitId, categoryId, img: fileName });
             return res.json(topiary);
 
         } catch (e) {

@@ -7,10 +7,10 @@ export default function Extra_menu_profile() {
             <p className={style_profile.dop_big_text}>Покупки</p>
             <ul>
                 <li className={style_profile.dop_text}>
-                    <p>Избранное</p>
+                    <Link to="/like" className={style_profile.link}><p>Избранное</p></Link>
                     <Link to="/order" className={style_profile.link}><p>Заказы</p></Link>
                     <p>Купленные товары</p>
-                    <p className={style_profile.underline_promocodes}>Промокоды</p>
+                    <Link to="/promocodes" className={style_profile.link}><p className={style_profile.underline_promocodes}>Промокоды</p></Link>
                     <p>Отзывы</p>
                     <p>Вопросы о товарах</p>
                 </li>

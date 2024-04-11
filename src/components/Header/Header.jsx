@@ -4,12 +4,15 @@ import { header_arr, header_image_arr } from '../../data';
 import header_style from '../../css/header.module.css';
 import Header_search from './Header_search';
 import Header_menu from './Header_menu';
-import { useState } from "react";
+import { useState, useContext } from "react";
 import AuthReg from "../Registraton_and_Authorization/AuthReg";
 import { scrollToTop } from "../../utils/const";
 import Burger from "./Burger";
+import { Context } from "../../index";
+
 
 export default function Header() {
+    const { user } = useContext(Context);
     const [modalActive, setModalActive] = useState(false);
     const [registration, setRegistration] = useState(false);
     const [menuActive, setMenuActive] = useState(false);
@@ -25,7 +28,9 @@ export default function Header() {
                             <Link to="/like" className={header_style.link} onClick={scrollToTop}><Header_menu image_header={header_image_arr[0].image_header} title={header_arr[0].title} /></Link>
                             <Link to="/order" className={header_style.link} onClick={scrollToTop}><Header_menu image_header={header_image_arr[1].image_header} title={header_arr[1].title} /></Link>
                             <Link to="/basket" className={header_style.link} onClick={scrollToTop}><Header_menu image_header={header_image_arr[2].image_header} title={header_arr[2].title} /></Link>
-                            <Link className={header_style.link} onClick={() => setModalActive(true)}><Header_menu image_header={header_image_arr[3].image_header} title={header_arr[3].title} /></Link>
+                            {user._isAuth ?
+                                <Link className={header_style.link} onClick={() => setModalActive(true)}><Header_menu image_header={header_image_arr[3].image_header} title={header_arr[3].title} /></Link>
+                            : <Link className={header_style.link} to="/profile"><Header_menu image_header={header_image_arr[3].image_header} title={header_arr[3].title} /></Link>}
                             <Link className={header_style.link}><Header_menu image_header={header_image_arr[4].image_header} title={header_arr[4].title} /></ Link>
                         </ul>
                         <div className={header_style.burger_menu} onClick={() => setMenuActive(!menuActive)}><span></span></div>

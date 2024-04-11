@@ -9,8 +9,15 @@
     border-radius: 20px 20px 0px 0px;
 }
 
+.main_card_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;    
+}
+
 .main_img {
-    width: 100px;
+    width: 105px;
 }
 
 .like_img {

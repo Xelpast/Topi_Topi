@@ -17,7 +17,7 @@ a {
     width: 100%;
     background: white;
     box-shadow: 2px 2px 12px 2px rgba(228, 228, 228, 0.8);
-    z-index: 999;
+    z-index: 998;
 }
 
 .header_band {
@@ -225,5 +225,14 @@ a {
         font-size: 1.5rem;
         color: wheat;
     }
+}
 
+@media only screen and (max-width: 640px) {
+    .menu_content {
+        width: 100%;
+    }
+
+    .blur {
+        backdrop-filter: none;
+    }
 }

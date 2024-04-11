@@ -8,6 +8,9 @@ import Profile_page from "../../Pages/Profile_page";
 import Promocodes_page from "../../Pages/Promocodes_page";
 import Error_404_page from "../../Pages/Error_404_page";
 import TopiLegoPage from "../../Pages/TopiLegoPage";
+import Topiary_page from "../../Pages/Topiary_page";
+import Authorization from "../Registraton_and_Authorization/Authorization";
+import Registration from "../Registraton_and_Authorization/Registration";
 
 export const authRoutes = [
     {
@@ -52,5 +55,21 @@ export const publicRoutes = [
     {
         path: 'topi-lego',
         element: <TopiLegoPage />
+    },
+    {
+        path: '/profile',
+        element: <Profile_page />
+    },
+    // {
+    //     path: '/authorization',
+    //     element: <Authorization />
+    // },
+    // {
+    //     path: '/registration',
+    //     element: <Registration />
+    // }
+    {
+        path: '/topiary/:id?',
+        element: <Topiary_page />
     }
 ]

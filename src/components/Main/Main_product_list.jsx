@@ -2,18 +2,26 @@ import React, { useState } from 'react';
 import like from '../../img/like.png';
 import like_red from '../../img/like_red.png';
 import main_style from '../../css/main.module.css';
+import { useNavigate } from 'react-router-dom';
+import { scrollToTop } from '../../utils/const';
 
-export default function Main_product_list({ main_img, price_main, price_default, description_topi }) {
+export default function Main_product_list({ topiary }) {
+    const navigate = useNavigate();
     const [ImageLike, setImageLike] = useState(true);
     const ImageSwitch = () => {
         setImageLike(!ImageLike);
     };
 
+    const handleButtonClick = () => {
+        scrollToTop();
+        navigate(`/topiary/${topiary.id}`);
+      };
+
     return (
         <div className={main_style.main_card}>
-            <div className={main_style.main_card_ring}>
-                <div className={main_style.main_card_img}>
-                    <img className={main_style.main_img} src={main_img} alt="" />
+            <div className={main_style.main_card_ring} >
+                <div className={main_style.main_card_img} onClick={handleButtonClick}>
+                    <img className={main_style.main_img} src={topiary.img} alt="" />
                 </div>
                 <img
                     className={main_style.like_img}
@@ -24,11 +32,11 @@ export default function Main_product_list({ main_img, price_main, price_default,
             </div>
             <div className={main_style.description_card_main}>
                 <div className={main_style.description_card_price}>
-                    <p className={main_style.price_main}>{price_main}</p>
-                    <p className={main_style.price_default}><s>{price_default}</s></p>
+                    <p className={main_style.price_main}>{topiary.price.toLocaleString()} ₽</p>
+                    <p className={main_style.price_default}><s>{topiary.price_default.toLocaleString()} ₽</s></p>
                 </div>
                 <div className={main_style.description_topi}>
-                    <p>{description_topi}</p>
+                    <p>Топиарий "{topiary.name}"</p>
                     <div className={main_style.button_busket_main}>
                         <button className={main_style.button_busket}>В корзину</button>
                     </div>
