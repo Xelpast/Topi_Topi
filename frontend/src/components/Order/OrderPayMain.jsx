@@ -18,7 +18,7 @@ export default function OrderPayMain() {
                 </div>
                 <div className={style_order_pay.region_and_btn}>
                     <p className={style_order_pay.region}>Ваш регион: Пензенская область</p>
-                    <Link to="/basket" onClick={scrollToTop}><button className={style_order_pay.btn_back_basket}><img src={back} alt="" className={style_order_pay.back_img} />Вернуться в корзину</button></Link>
+                    <Link to="/basket" onClick={scrollToTop}><button className={style_order_pay.btn_back_basket}><img src={back} alt="back" className={style_order_pay.back_img} />Вернуться в корзину</button></Link>
                 </div>
             </div>
             <div className={style_order_pay.main_info_order}>
@@ -33,7 +33,7 @@ export default function OrderPayMain() {
                                 <label className={style_order_pay.content_order_dop}>
                                     <input type="radio" name='order' value="delivery" />
                                     <span>Доставка курьером</span>
-                                    <Link to="https://google.com"><img src={info} alt="" /></Link>
+                                    <Link to="https://google.com"><img src={info} alt="info" /></Link>
                                     <p>C 12 июня, 144 ₽</p>
                                 </label>
                                 <div className={style_order_pay.block_info_order}>Товары забирает курьер и везёт на указанный адрес. В течении 1-2 часов заказ будет у Вас.</div>
@@ -44,7 +44,7 @@ export default function OrderPayMain() {
                                 <label className={style_order_pay.content_order_dop}>
                                     <input type="radio" name='order' value="pick_up" />
                                     <span>Самовывоз</span>
-                                    <Link to="https://google.com"><img src={info} alt="" /></Link>
+                                    <Link to="https://google.com"><img src={info} alt="info" /></Link>
                                     <p>C 13 июня, 0 ₽</p>
                                 </label>
                                 <div className={style_order_pay.block_info_order}>Товары можно забрать в течение 7 дней, далее присутсвует возможность продлить срок хранения на 3 дня.</div>
@@ -123,7 +123,7 @@ export default function OrderPayMain() {
                             <p>Скидка: –3 691 ₽</p>
                             <p className={style_order_pay.total}>Итого: 13 114 ₽</p>
                         </div>
-                        <button className={style_order_pay.btn_pay}> <img src={pay} alt="" />Оплатить</button>
+                        <button className={style_order_pay.btn_pay}> <img src={pay} alt="pay" />Оплатить</button>
                     </div>
                 </div>
             </div>

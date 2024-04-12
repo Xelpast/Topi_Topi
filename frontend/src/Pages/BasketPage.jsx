@@ -43,9 +43,9 @@ export default function BasketPage() {
                             <form action="">
                                 <div className={authorization_style.close_form}>
                                     <p>Авторизация</p>
-                                    <img src={close_x} alt="" onClick={handleClose_auth} />
+                                    <img src={close_x} alt="CloseX" onClick={handleClose_auth} />
                                 </div>
-                                <img src={topi_logo} alt="" />
+                                <img src={topi_logo} alt="TopiLego" />
                                 <div className={authorization_style.form_input_auth}>
                                     <input type="text" placeholder="Логин" />
                                     <input type="password" placeholder="Пароль" />
@@ -64,7 +64,7 @@ export default function BasketPage() {
                             <form action="">
                                 <div className={registration_style.close_form_reg}>
                                     <p>Регистрация</p>
-                                    <img src={close_x} alt="" onClick={handleClose_reg} />
+                                    <img src={close_x} alt="CloseX" onClick={handleClose_reg} />
                                 </div>
                                 <div className={registration_style.form_input_reg}>
                                     <input type="text" placeholder="Никнейм" />
@@ -77,7 +77,7 @@ export default function BasketPage() {
                                         setRegistration(false);
                                         setModalActive(true);
                                     }}>Есть аккаунт? Авториазация</p>
-                                    <img src={topi_logo} alt="" className={registration_style.reg_logo}/>
+                                    <img src={topi_logo} alt="TopiLogo" className={registration_style.reg_logo}/>
                                 </div>
                             </form>
                         </div>

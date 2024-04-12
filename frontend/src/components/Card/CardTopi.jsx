@@ -17,11 +17,11 @@ export default function CardTopi() {
                 <img
                     className={style_topiary.like_img}
                     src={ImageLike ? like_red : like}
-                    alt=""
+                    alt="IconLike"
                     onClick={ImageSwitch}
                 />
                 <div className={style_topiary.main_card_img}>
-                    <img className={style_topiary.main_img} src={topi} alt="" />
+                    <img className={style_topiary.main_img} src={topi} alt="TopyProduct" />
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@ export default function OrderList() {
                     <div className={style_order.content_text}>
                         <p className={style_order.order_data}>Заказ от 7 июня</p>
                         <div className={style_order.status}>
-                            <img src={status} alt="" />
+                            <img src={status} alt="status" />
                             <p>Статус: получен</p>
                         </div>
                         <div className={style_order.text_order}>

@@ -18,11 +18,11 @@ export default function CardLike() {
                 <img
                     className={like_style.like_img}
                     src={ImageLike ? like_red : like}
-                    alt=""
+                    alt="IconLike"
                     onClick={ImageSwitch}
                 />
                 <div className={like_style.main_card_img}>
-                    <img className={like_style.main_img} src={mother_work} alt="" />
+                    <img className={like_style.main_img} src={mother_work} alt="TopyProduct" />
                 </div>
             </div>
             <div className={like_style.description_card_main}>

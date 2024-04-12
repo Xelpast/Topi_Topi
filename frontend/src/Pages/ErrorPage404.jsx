@@ -6,7 +6,7 @@ export default function ErrorPage404() {
     return (
         <div>
             <Header />
-            <img src={error_404} alt="" style={{width: "100vh", marginTop: "110px", display: "flex", textAlign: "center"}}/>
+            <img src={error_404} alt="Error404" style={{width: "100vh", marginTop: "110px", display: "flex", textAlign: "center"}}/>
         </div>
     );
 }

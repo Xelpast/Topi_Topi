@@ -50,12 +50,12 @@ export default function FooterMain() {
                         </div>
                     </div>
                     <div className={footer_style.footer_content_dop}>
-                        <img src={logo} alt="" className={footer_style.footer_logo} />
+                        <img src={logo} alt="TopiLogo" className={footer_style.footer_logo} />
                         <p>ПОЛЬЗОВАТЕЛЬСКОЕ СОГЛАШЕНИЕ</p>
                         <div className={footer_style.social_media}>
-                            <img src={vk} alt="" />
-                            <img src={telegram} alt="" />
-                            <img src={ok} alt="" />
+                            <img src={vk} alt="IconVk" />
+                            <img src={telegram} alt="IconTg" />
+                            <img src={ok} alt="IconOk" />
                         </div>
                     </div>
                 </div>

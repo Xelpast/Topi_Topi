@@ -14,7 +14,7 @@ export default function TopiLegoMain() {
                 <div className={style_topi.topi_description}>
                     <p>ИИ придумает дизайн в стиле LEGO, а если он Вам понравится!</p>
                     <p><b>Наши партнёры</b> сделают конструктор и отправят в любой город России, Беларуси, Казахстана</p>
-                    <Link to="/"><button className={style_topi.btn_back_site}><img src={back} alt="" className={style_topi.back_img} />Вернуться на сайт</button></Link>
+                    <Link to="/"><button className={style_topi.btn_back_site}><img src={back} alt="back" className={style_topi.back_img} />Вернуться на сайт</button></Link>
                 </div>
             </div>
             <div className={style_topi.main_form}>

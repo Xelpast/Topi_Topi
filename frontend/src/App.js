@@ -6,7 +6,6 @@ import axios from 'axios';
 
 export default function App() {
   const [topiaries, setTopiaries] = useState([]);
-  console.log(topiaries)
   useEffect(() => {
     axios.get('http://localhost:5000/api/topiary/')
       .then(response => {

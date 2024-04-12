@@ -21,7 +21,7 @@ export default function Header() {
             <AuthReg modal_active={modalActive} setModalActive={setModalActive} registration={registration} setRegistration={setRegistration} />
             <div className={header_style.header}>
                 <div className={header_style.header_band}>
-                    <Link to="/" onClick={scrollToTop}><img className={header_style.logo} src={topi_logo} alt="" /></Link>
+                    <Link to="/" onClick={scrollToTop}><img className={header_style.logo} src={topi_logo} alt="TopiLogo" /></Link>
                     <HeaderSearch />
                     <div className={header_style.header_menu}>
                         <ul>

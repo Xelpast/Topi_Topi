@@ -13,7 +13,7 @@ export default function BasketItem() {
                     <input type="text" value="1" className={style_basket.input_counter} readOnly />
                     <button className={style_basket.btn_counter_plus}>+</button>
                     <div className={style_basket.basket_img}>
-                        <img src={basket} alt="" />
+                        <img src={basket} alt="basket" />
                     </div>
                 </div>
                 <p className={style_basket.similar_products}>Посмотреть похожие товары</p>

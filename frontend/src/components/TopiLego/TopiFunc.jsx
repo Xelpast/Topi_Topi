@@ -27,9 +27,7 @@ export default function TopiFunc() {
 
         try {
             const res = await fetch("https://api.openai.com/v1/images/generations", options);
-            console.log("Status:", res.status);
             const data = await res.json();
-            console.log("Data:", data);
         } catch (error) {
             setError(error.message);
         } finally {

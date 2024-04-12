@@ -21,12 +21,12 @@ export default function MainProductList({ topiary }) {
         <div className={main_style.main_card}>
             <div className={main_style.main_card_ring} >
                 <div className={main_style.main_card_img} onClick={handleButtonClick}>
-                    <img className={main_style.main_img} src={topiary.img} alt="" />
+                    <img className={main_style.main_img} src={topiary.img} alt="TopiProduct" />
                 </div>
                 <img
                     className={main_style.like_img}
                     src={ImageLike ? like : like_red}
-                    alt=""
+                    alt="IconLike"
                     onClick={ImageSwitch}
                 />
             </div>

@@ -17,11 +17,11 @@ export default function Card() {
                 <img
                     className={main_style.like_img}
                     src={ImageLike ? like_red : like}
-                    alt=""
+                    alt="IconLike"
                     onClick={ImageSwitch}
                 />
                 <div className={main_style.main_card_img}>
-                    <img className={main_style.main_img} src={mother_work} alt="" />
+                    <img className={main_style.main_img} src={mother_work} alt="TopyProduct" />
                 </div>
             </div>
             <div className={main_style.description_card_main}>

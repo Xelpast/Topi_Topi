@@ -17,10 +17,10 @@ export default function CardOrder() {
                 <img
                     className={style_card_order.like_img}
                     src={ImageLike ? like_red : like}
-                    alt=""
+                    alt="IconLike"
                     onClick={ImageSwitch}
                 />
-                <img className={style_card_order.main_img} src={mother_work} alt="" />
+                <img className={style_card_order.main_img} src={mother_work} alt="TopyProduct" />
             </div>
             <div className={style_card_order.description_card_main}>
                 <div className={style_card_order.description_card_price}>

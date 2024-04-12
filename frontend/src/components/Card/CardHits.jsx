@@ -18,10 +18,10 @@ export default function CardHits() {
                     <img
                         className={style_card_hits.like_img}
                         src={ImageLike ? like : like_red}
-                        alt=""
+                        alt="IconLike"
                         onClick={ImageSwitch}
                     />
-                    <img className={style_card_hits.main_img} src={mother_work} alt="" />
+                    <img className={style_card_hits.main_img} src={mother_work} alt="TopyProduct" />
                 </div>
             </div>
             <div className={style_card_hits.description_card_main}>
