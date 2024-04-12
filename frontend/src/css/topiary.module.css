@@ -1,0 +1,154 @@
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0 auto;
+    max-width: var(--style_main);
+}
+
+.main_content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3.5fr;
+}
+
+.dop_info {
+    margin-left: 15px;
+}
+
+.dop_big_text {
+    font-size: 26px;
+    padding-bottom: 10px;
+    padding-top: 15px;
+}
+
+.dop_text p {
+    padding-top: 10px;
+}
+
+.topiares {
+    display: flex;
+    width: 100%;
+    height: auto;
+    border: 8px solid #0DBD0D;
+    border-radius: 20px;
+    margin-top: 15px;
+}
+
+.image_description {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.topiary_description {
+    margin: 50px 0px 95px 20px;
+    font-size: 20px;
+}
+
+.topiary_description_main {
+    font-size: 26px;
+}
+
+.topiary_description p:not(:first-of-type) {
+    padding-top: 20px;
+}
+
+.name_topi {
+    font-size: 46px;
+}
+
+.total_availability {
+    display: flex;
+    margin-left: 0px;
+}
+
+.total, .аvailability  {
+    font-size: 28px;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.prices {
+    display: flex;
+    justify-content: center;
+    text-decoration: line-through;
+    color: #9C9C9C;
+    font-size: 20px;
+}
+
+.total_text {
+    display: flex;
+    justify-content: center;
+    color: #0DBD0D;
+    font-size: 24px;
+}
+
+.button_topi_main {
+    text-align: center;
+}
+
+.button_topi {
+    width: 250px;
+    height: 45px;
+    border-radius: 12px;
+    background-color: #0DBD0D;
+    font-size: 20px;
+    border: 0px;
+    color: white;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.total_main {
+    display: flex;
+    font-size: 26px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    width: 250px;
+    height: 45px;
+    border: 4px solid #0DBD0D;
+    border-radius: 15px;
+}
+
+.link {
+    text-decoration: none;
+}
+
+/* Карточка */
+
+.topiary_image {
+    margin: 50px 0 50px 50px;
+}
+
+.main_card_ring {
+    position: relative;
+    width: 580px;
+    height: 520px;
+    border: 8px solid #0DBD0D;
+    border-radius: 20px;
+    margin-left: 0px;
+}
+
+.main_card_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.main_img {
+    width: 260px;
+}
+
+.like_img {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    float: right;
+    width: 20%;
+    padding: 30px;
+    cursor: pointer;
+}

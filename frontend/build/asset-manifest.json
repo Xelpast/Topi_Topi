@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f9f432fb.css",
+    "main.js": "/static/js/main.8d95c705.js",
+    "static/js/592.b70e9302.chunk.js": "/static/js/592.b70e9302.chunk.js",
+    "static/media/offers_bottom.png": "/static/media/offers_bottom.b95601a0b95f2063eeec.png",
+    "static/media/Lato-Bold.ttf": "/static/media/Lato-Bold.0baf4e4829ca0a3e1e5c.ttf",
+    "static/media/error_404.png": "/static/media/error_404.2965b3214e83e22e96c6.png",
+    "static/media/topi.png": "/static/media/topi.7d8ef6271d4c2ac40d27.png",
+    "static/media/offers_left.png": "/static/media/offers_left.f6517f78563c044efe7a.png",
+    "static/media/offers_right.png": "/static/media/offers_right.d36990d073585aded521.png",
+    "static/media/mother_work.png": "/static/media/mother_work.f086a654030bdaaef20d.png",
+    "static/media/logo.png": "/static/media/logo.3673adb0d16bf4017beb.png",
+    "static/media/logo_topi.png": "/static/media/logo_topi.fac678b7e0399e91343b.png",
+    "index.html": "/index.html",
+    "main.f9f432fb.css.map": "/static/css/main.f9f432fb.css.map",
+    "main.8d95c705.js.map": "/static/js/main.8d95c705.js.map",
+    "592.b70e9302.chunk.js.map": "/static/js/592.b70e9302.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f9f432fb.css",
+    "static/js/main.8d95c705.js"
+  ]
+}
