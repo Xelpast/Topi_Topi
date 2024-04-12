@@ -1,15 +1,3 @@
-import React, { useState } from 'react';
-import like from '../../img/like.png';
-import like_red from '../../img/like_red.png';
-import mother_work from '../../img/mother_work.png';
-import style_card_hits from '../../css/card_hits.module.css';
-
-export default function CardHits() {
-    const [ImageLike, setImageLike] = useState(true);
-
-    const ImageSwitch = () => {
-        setImageLike(!ImageLike);
-    };
 
     return (
         <div className={style_card_hits.main_card}>
