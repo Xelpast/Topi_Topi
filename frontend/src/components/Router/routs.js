@@ -22,7 +22,11 @@ export const authRoutes = [
     {
         path: '/order-pay', 
         element: <OrderPayPage />
-    }
+    },
+    {
+        path: '/profile',
+        element: <ProfilePage />
+    },
 ]
 
 export const publicRoutes = [
@@ -43,20 +47,12 @@ export const publicRoutes = [
         element: <BasketPage />
     },
     {
-        path: '/profile',
-        element: <ProfilePage />
-    },
-    {
         path: 'error-404',
         element: <ErrorPage404 />
     },
     {
         path: 'topi-lego',
         element: <TopiLegoPage />
-    },
-    {
-        path: '/profile',
-        element: <ProfilePage />
     },
     // {
     //     path: '/authorization',

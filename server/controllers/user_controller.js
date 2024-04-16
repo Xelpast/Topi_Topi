@@ -17,7 +17,7 @@ class UserController {
             return next(ApiError.badRequest("Пользователь с таким логином уже существует"));
         } 
         const hashPassword = await bcrypt.hash(password, 4);
-        const user = await User.create({login, role, password, password: hashPassword});
+        const user = await User.create({login, role, password: hashPassword});
         const basket = await Basket.create({userId: user.id});
         const token = generateJwt(user.id, user.login, user.role);
         return res.json({token});
@@ -37,7 +37,7 @@ class UserController {
         return res.json({token});
     }
 
-    async check(req, res, next) {
+    async check(req, res) {
         const token = generateJwt(req.user.id, req.user.login, req.user.role);
         return res.json({token});
     }
