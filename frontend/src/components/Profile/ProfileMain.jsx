@@ -1,10 +1,40 @@
 import style_profile from '../../css/profile.module.css';
 import ExtraMenuProfile from '../Extra_menu/ExtraMenuProfile';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import SubMainLine from '../Main/SubMainLine';
 import ProfileGender from './ProfileGender';
+import { Context } from "../../index";
+import { useContext, useEffect, useState } from 'react';
+import axios from 'axios';
+import { getUserData } from '../../http/userApi';
 
 export default function ProfileMain() {
+    const { user } = useContext(Context);
+    const [userData, setUserData] = useState(null);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                const userData = await getUserData();
+                user.setUser(userData); // Обновляем данные пользователя в хранилище MobX
+            } catch (error) {
+                console.error('Ошибка при загрузке данных о пользователе:', error);
+            }
+        };
+
+        fetchUserData(); 
+    }, []);
+
+    console.log(userData);
+
+    const logOut = async () => {
+        localStorage.removeItem('token'); // Удалить токен из localStorage
+        user.setUser({});
+        await user.setIsAuth(false); // Ждем обновления статуса аутентификации
+        navigate('/');
+        window.location.reload();
+    }
     return (
         <div className={style_profile.main}>
             <SubMainLine />
@@ -16,7 +46,12 @@ export default function ProfileMain() {
                         <div className={style_profile.form_profile}>
                             <form action="">
                                 <p>Имя</p>
-                                <input type="text" placeholder='Александр' className={style_profile.main_text_form} />
+                                <input
+                                    type="text"
+                                    placeholder="Александр"
+                                    className={style_profile.main_text_form}
+                                    value=""
+                                />
 
                                 <p>Фамилия</p>
                                 <input type="text" placeholder='Тарасов' className={style_profile.main_text_form} />
@@ -43,6 +78,7 @@ export default function ProfileMain() {
                                 </div>
                                 <div className={style_profile.btn_profile}>
                                     <button className={style_profile.btn_save_info}>Сохранить настройки</button>
+                                    <button className={style_profile.btn_logout} onClick={() => logOut()}>Выйти из аккаунта</button>
                                 </div>
                             </form>
                         </div>

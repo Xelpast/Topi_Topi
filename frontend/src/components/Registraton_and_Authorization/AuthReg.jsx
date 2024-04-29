@@ -1,5 +1,4 @@
 import { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Context } from '../../index';
 import { registrations, authorizations } from '../../http/userApi';
 import Authorization from './Authorization';
@@ -11,7 +10,6 @@ import topi_logo from '../../img/logo_topi.png';
 
 export default function AuthReg({ modal_active, setModalActive, registration, setRegistration }) {
     const { user } = useContext(Context);
-    const navigate = useNavigate();
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [repeatPassword, setRepeatPassword] = useState('');
@@ -22,7 +20,6 @@ export default function AuthReg({ modal_active, setModalActive, registration, se
             data_auth = await authorizations(login, password);
             user.setUser(user);
             user.setIsAuth(true);
-            navigate("/");
         } catch (error) {
             alert(error.response.data.message)
         }
