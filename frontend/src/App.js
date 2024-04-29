@@ -12,11 +12,21 @@ const App = observer(() => {
   const [loading, setLoading] = useState(true);
   
   useEffect(() => {
-    check().then(data => {
-      user.setUser(true);
-      user.setIsAuth(true);
-    }).finally(() => setLoading(false));
-  }, [])
+    const fetchData = async () => {
+      try {
+        await check();
+        user.setUser(true);
+        user.setIsAuth(true);
+      } catch (error) {
+        user.setUser(false);
+        user.setIsAuth(false);
+      } finally {
+        setLoading(false);
+      }
+    };
+  
+    fetchData();
+  }, []);
 
   if (loading) {
     return <Spinner />;

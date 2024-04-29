@@ -13,15 +13,9 @@ import { Context } from "../../index";
 
 export default function Header() {
     const { user } = useContext(Context);
-    const navigate = useNavigate();
     const [modalActive, setModalActive] = useState(false);
     const [registration, setRegistration] = useState(false);
     const [menuActive, setMenuActive] = useState(false);
-    const logOut = () => {
-        user.setUser({});
-        user.setIsAuth(false);
-        navigate('/');
-    }
     return (
         <header>
             <AuthReg modal_active={modalActive} setModalActive={setModalActive} registration={registration} setRegistration={setRegistration} />
@@ -37,8 +31,7 @@ export default function Header() {
                             {!user._isAuth ?
                                 <Link className={header_style.link} onClick={() => setModalActive(true)}><HeaderMenu image_header={header_image_arr[3].image_header} title={header_arr[3].title} /></Link>
                             : <Link className={header_style.link} to="/profile"><HeaderMenu image_header={header_image_arr[3].image_header} title={header_arr[3].title} /></Link>}
-                            <button style={{width: "30px", height: "30px"}} onClick={() => logOut()}></button>
-                             {/* <HeaderMenu image_header={header_image_arr[3].image_header} title={header_arr[3].title} /> */}
+                             <HeaderMenu image_header={header_image_arr[4].image_header} title={header_arr[4].title} />
                         </ul>
                         <div className={header_style.burger_menu} onClick={() => setMenuActive(!menuActive)}><span></span></div>
                     </div>

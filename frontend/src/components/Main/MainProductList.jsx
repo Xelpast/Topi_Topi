@@ -4,6 +4,7 @@ import like_red from '../../img/like_red.png';
 import main_style from '../../css/main.module.css';
 import { useNavigate } from 'react-router-dom';
 import { scrollToTop } from '../../utils/const';
+import { AXIOS_URL } from '../../http/indexHttp';
 
 export default function MainProductList({ topiary }) {
     const navigate = useNavigate();
@@ -14,14 +15,13 @@ export default function MainProductList({ topiary }) {
 
     const handleButtonClick = () => {
         scrollToTop();
-        navigate(`/topiary/${topiary.id}`);
+        navigate('/topiary' + '/' + `${topiary.id}`);
       };
-
     return (
         <div className={main_style.main_card}>
             <div className={main_style.main_card_ring} >
                 <div className={main_style.main_card_img} onClick={handleButtonClick}>
-                    <img className={main_style.main_img} src={topiary.img} alt="TopiProduct" />
+                    <img className={main_style.main_img} src={AXIOS_URL + topiary.img} alt="TopiProduct" />
                 </div>
                 <img
                     className={main_style.like_img}

@@ -9,7 +9,7 @@ import { Context } from '../../index';
 
 export default function Burger({active, setActive}) {
     const { user } = useContext(Context);
-    const [modalActive, setModalActive] = useState(false); 
+    const [modalActive, setModalActive] = useState(false);
     const [registration, setRegistration] = useState(false);
     return (
         <div onClick={() => setActive(false)} className={active ? `${header_style.menu} ${header_style.active}` : `${header_style.menu}` }>
@@ -23,7 +23,7 @@ export default function Burger({active, setActive}) {
                         <Link to="/basket" className={header_style.link} onClick={scrollToTop}><BurgerMenu image_header_bm={header_image_arr_burger[2].image_header_bm} title={header_arr[2].title} /></Link>
                         {!user._isAuth ?
                                 <Link className={header_style.link} onClick={() => setModalActive(true)}><BurgerMenu image_header_bm={header_image_arr_burger[3].image_header_bm} title={header_arr[3].title} /></Link>
-                            : <Link className={header_style.link} ><BurgerMenu image_header_bm={header_image_arr_burger[3].image_header_bm} title={header_arr[3].title} /></Link>}
+                            : <Link className={header_style.link} to="/profile"><BurgerMenu image_header_bm={header_image_arr_burger[3].image_header_bm} title={header_arr[3].title} /></Link>}
                         <Link className={header_style.link}><BurgerMenu image_header_bm={header_image_arr_burger[4].image_header_bm} title={header_arr[4].title} /></ Link>
                     </ul>
                 </div>

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import like from '../../img/like.png';
 import like_red from '../../img/like_red.png';
-import topi from '../../img/topi.png';
+import { AXIOS_URL } from '../../http/indexHttp';
 import style_topiary from '../../css/topiary.module.css';
 
-export default function CardTopi() {
+export default function CardTopi({topiares}) {
     const [ImageLike, setImageLike] = useState(true);
 
     const ImageSwitch = () => {
@@ -21,7 +21,7 @@ export default function CardTopi() {
                     onClick={ImageSwitch}
                 />
                 <div className={style_topiary.main_card_img}>
-                    <img className={style_topiary.main_img} src={topi} alt="TopyProduct" />
+                    <img className={style_topiary.main_img} src={AXIOS_URL + topiares.img} alt="TopyProduct" />
                 </div>
             </div>
         </div>

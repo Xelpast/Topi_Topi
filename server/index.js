@@ -1,35 +1,34 @@
-require('dotenv').config();
-const express = require('express');
-const sequelize = require('./db');
-const PORT = process.env.PORT || 5000;
-const cors = require('cors');
-const fileUpload = require('express-fileupload');
-const router = require('./routes/index_router');
-const errorHandler = require('./middleware/ErrorHandlingMiddleware');
-const path = require('path');
+import express from 'express';
+import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
+import { SETTINGS } from './settings.js'
+import { sequelize } from './db.js';
+import { topiaryRouter } from './routes/topiaryRouter.js';
+import cors from 'cors';
+import fileUpload from 'express-fileupload';
+import { errorHandler } from './middleware/ErrorHandlingMiddleware.js';
+import { userRouter } from "./routes/UserRouter.js";
+import path, {dirname} from 'path';
 
-const app_exp = express();
-app_exp.use(cors());
-app_exp.use(express.json());
-app_exp.use(express.static(path.resolve(__dirname, 'static')));
-app_exp.use(fileUpload({}));
-app_exp.use('/api', router);
-app_exp.get('/api', (req, res) => {
-    res.json({
-        message: "LETS'GO"
-    })
-})
+dotenv.config();
+const app = express();
+app.use(cors());
+app.use(express.json());
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+app.use(express.static(path.resolve(__dirname, 'static')));
+app.use(fileUpload({}));
+
+app.use(SETTINGS.PATH.TOPIARY, topiaryRouter);
+app.use(SETTINGS.PATH.USER, userRouter);
 
 //Обработка middleware должна проходить в конце
-app_exp.use(errorHandler);
-
-const models = require('./models/models');
-
+app.use(errorHandler);
 const start = async () => {
     try {
         await sequelize.authenticate();
         await sequelize.sync();
-        app_exp.listen(PORT, () => console.log(`SERVER started on PORT: ${PORT}`));
+        app.listen(SETTINGS.PORT, () => console.log(`SERVER started on PORT: ${SETTINGS.PORT}`));
     } catch (e) {
         console.log(e);
     }
