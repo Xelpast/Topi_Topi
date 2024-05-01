@@ -7,4 +7,4 @@ export const userRouter = Router();
 userRouter.post('/registration', UserController.registration);
 userRouter.post('/authorization', UserController.authorization);
 userRouter.get('/auth', authMiddleware, UserController.check);
-userRouter.get('/auth', UserController.getUserData);
+userRouter.get('/profile', authMiddleware, UserController.getUserData);

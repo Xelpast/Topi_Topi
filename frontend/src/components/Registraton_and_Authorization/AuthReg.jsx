@@ -9,7 +9,7 @@ import close_x from '../../img/close_x.png';
 import topi_logo from '../../img/logo_topi.png';
 
 export default function AuthReg({ modal_active, setModalActive, registration, setRegistration }) {
-    const { user } = useContext(Context);
+    const { userState } = useContext(Context);
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [repeatPassword, setRepeatPassword] = useState('');
@@ -18,8 +18,8 @@ export default function AuthReg({ modal_active, setModalActive, registration, se
         try {
             let data_auth;
             data_auth = await authorizations(login, password);
-            user.setUser(user);
-            user.setIsAuth(true);
+            // user.setUser();
+            userState.setIsAuth(true);
         } catch (error) {
             alert(error.response.data.message)
         }

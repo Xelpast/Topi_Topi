@@ -12,7 +12,7 @@ import { Context } from "../../index";
 
 
 export default function Header() {
-    const { user } = useContext(Context);
+    const { userState } = useContext(Context);
     const [modalActive, setModalActive] = useState(false);
     const [registration, setRegistration] = useState(false);
     const [menuActive, setMenuActive] = useState(false);
@@ -28,7 +28,7 @@ export default function Header() {
                             <Link to="/like" className={header_style.link} onClick={scrollToTop}><HeaderMenu image_header={header_image_arr[0].image_header} title={header_arr[0].title} /></Link>
                             <Link to="/order" className={header_style.link} onClick={scrollToTop}><HeaderMenu image_header={header_image_arr[1].image_header} title={header_arr[1].title} /></Link>
                             <Link to="/basket" className={header_style.link} onClick={scrollToTop}><HeaderMenu image_header={header_image_arr[2].image_header} title={header_arr[2].title} /></Link>
-                            {!user._isAuth ?
+                            {!userState._isAuth ?
                                 <Link className={header_style.link} onClick={() => setModalActive(true)}><HeaderMenu image_header={header_image_arr[3].image_header} title={header_arr[3].title} /></Link>
                             : <Link className={header_style.link} to="/profile"><HeaderMenu image_header={header_image_arr[3].image_header} title={header_arr[3].title} /></Link>}
                              <HeaderMenu image_header={header_image_arr[4].image_header} title={header_arr[4].title} />

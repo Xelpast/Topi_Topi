@@ -6,32 +6,24 @@ import ProfileGender from './ProfileGender';
 import { Context } from "../../index";
 import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-import { getUserData } from '../../http/userApi';
+import { fetchUser, getUserData } from '../../http/userApi';
 
 export default function ProfileMain() {
-    const { user } = useContext(Context);
-    const [userData, setUserData] = useState(null);
+    const { userState } = useContext(Context);
     const navigate = useNavigate();
+    const [login, setLogin] = useState('');
 
     useEffect(() => {
-        const fetchUserData = async () => {
-            try {
-                const userData = await getUserData();
-                user.setUser(userData); // Обновляем данные пользователя в хранилище MobX
-            } catch (error) {
-                console.error('Ошибка при загрузке данных о пользователе:', error);
-            }
-        };
-
-        fetchUserData(); 
-    }, []);
-
-    console.log(userData);
-
+        fetchUser().then(data => {
+            userState.setUser(data);
+            setLogin(data.login);  //put - вся форма(data), //patch - data.login(отдельное поле)
+        })
+    }, [])
+    
     const logOut = async () => {
         localStorage.removeItem('token'); // Удалить токен из localStorage
-        user.setUser({});
-        await user.setIsAuth(false); // Ждем обновления статуса аутентификации
+        userState.setUser({});
+        await userState.setIsAuth(false); // Ждем обновления статуса аутентификации
         navigate('/');
         window.location.reload();
     }
@@ -50,7 +42,8 @@ export default function ProfileMain() {
                                     type="text"
                                     placeholder="Александр"
                                     className={style_profile.main_text_form}
-                                    value=""
+                                    onChange={(e) => setLogin(e.target.value)}
+                                    value={login}
                                 />
 
                                 <p>Фамилия</p>

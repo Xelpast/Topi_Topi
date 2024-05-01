@@ -8,18 +8,16 @@ import { check } from './http/userApi';
 import Spinner from './components/Spinner/Spinner';
 
 const App = observer(() => {
-  const { user } = useContext(Context);
+  const { userState } = useContext(Context);
   const [loading, setLoading] = useState(true);
   
   useEffect(() => {
     const fetchData = async () => {
       try {
         await check();
-        user.setUser(true);
-        user.setIsAuth(true);
+        userState.setIsAuth(true);
       } catch (error) {
-        user.setUser(false);
-        user.setIsAuth(false);
+        userState.setIsAuth(false);
       } finally {
         setLoading(false);
       }

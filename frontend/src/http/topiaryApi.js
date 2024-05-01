@@ -1,4 +1,4 @@
-import { $host, $authHost } from "./indexHttp";
+import { $host, $authHost } from "./indexHttp.js";
 
 export const fetchTopiary = async () => {
     const {data} = await $host.get('/topiary') 

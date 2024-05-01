@@ -4,10 +4,10 @@ import { authRoutes, publicRoutes } from './routs';
 import { Context } from '../../index';
 
 export default function AppRouter() {
-    const {user} = useContext(Context);
+    const {userState} = useContext(Context);
     return (
         <Routes>
-            {user.isAuth && authRoutes.map(({ path, element }) => 
+            {userState.isAuth && authRoutes.map(({ path, element }) => 
                 <Route key={path} path={path} element={element} exact />
             )}
             {publicRoutes.map(({ path, element }) =>
