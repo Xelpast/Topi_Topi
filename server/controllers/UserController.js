@@ -59,12 +59,11 @@ export const UserController = {
 
     getUserData: async (req, res, next) => {
         try {
-            const userId = req.user.id; // получаем id пользователя из запроса (предполагается, что он уже был аутентифицирован)
-            const userData = await User.findByPk(userId); // находим пользователя в базе данных по его id
+            const userId = req.user.id; 
+            const userData = await User.findByPk(userId); 
             if (!userData) {
                 return next(ApiError.notFound("Пользователь не найден"));
             }
-            // Если пользователь найден, отправляем его данные клиенту
             res.json(userData);
         } catch (error) {
             return next(ApiError.internalServerError("Ошибка получения данных о пользователе", error));

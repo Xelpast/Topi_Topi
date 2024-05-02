@@ -3,11 +3,12 @@ import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
 import { SETTINGS } from './settings.js'
 import { sequelize } from './db.js';
-import { topiaryRouter } from './routes/topiaryRouter.js';
+import { topiaryRouter } from './routes/TopiaryRouter.js';
 import cors from 'cors';
 import fileUpload from 'express-fileupload';
 import { errorHandler } from './middleware/ErrorHandlingMiddleware.js';
 import { userRouter } from "./routes/UserRouter.js";
+import { basketRouter } from './routes/BasketRouter.js';
 import path, {dirname} from 'path';
 
 dotenv.config();
@@ -21,6 +22,7 @@ app.use(fileUpload({}));
 
 app.use(SETTINGS.PATH.TOPIARY, topiaryRouter);
 app.use(SETTINGS.PATH.USER, userRouter);
+app.use(SETTINGS.PATH.BASKET, basketRouter);
 
 //Обработка middleware должна проходить в конце
 app.use(errorHandler);

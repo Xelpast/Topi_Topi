@@ -5,6 +5,7 @@ export const SETTINGS = {
     PORT: process.env.PORT || 5000,
     PATH: {
         TOPIARY: '/topiary',
-        USER: '/user'
+        USER: '/user',
+        BASKET: '/basket',
     },
 }

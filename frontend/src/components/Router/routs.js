@@ -9,6 +9,7 @@ import PromocodesPage from "../../Pages/PromocodesPage";
 import ErrorPage404 from "../../Pages/ErrorPage404";
 import TopiLegoPage from "../../Pages/TopiLegoPage";
 import TopiaryPage from "../../Pages/TopiaryPage";
+import Spinner from "../Spinner/Spinner";
 
 export const authRoutes = [
     {
@@ -47,21 +48,13 @@ export const publicRoutes = [
         element: <BasketPage />
     },
     {
-        path: 'error-404',
+        path: '/error-404',
         element: <ErrorPage404 />
     },
     {
-        path: 'topi-lego',
+        path: '/topi-lego',
         element: <TopiLegoPage />
     },
-    // {
-    //     path: '/authorization',
-    //     element: <Authorization />
-    // },
-    // {
-    //     path: '/registration',
-    //     element: <Registration />
-    // }
     {
         path: '/topiary/:id?',
         element: <TopiaryPage />

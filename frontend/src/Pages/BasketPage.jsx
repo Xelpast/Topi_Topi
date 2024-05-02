@@ -13,7 +13,7 @@ import topi_logo from '../img/logo_topi.png';
 import close_x from '../img/close_x.png';
 
 export default function BasketPage() {
-    const { user } = useContext(Context);
+    const { userState } = useContext(Context);
     const [modal_active, setModalActive] = useState(false);
     const [registration, setRegistration] = useState(false);
     const handleClose_auth = () => {
@@ -24,7 +24,7 @@ export default function BasketPage() {
     };
     return (
         <>
-            {!user._isAuth ? (
+            {!userState._isAuth ? (
                 <>
                     <Header />
                     <div className={basket_style.isAuthMain}>
