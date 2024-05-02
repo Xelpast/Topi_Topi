@@ -16,7 +16,8 @@ export default function ProfileMain() {
     useEffect(() => {
         fetchUser().then(data => {
             userState.setUser(data);
-            setLogin(data.login);  //put - вся форма(data), //patch - data.login(отдельное поле)
+            setLogin(data.login); 
+            console.log(data) //put - вся форма(data), //patch - data.login(отдельное поле)
         })
     }, [])
     
