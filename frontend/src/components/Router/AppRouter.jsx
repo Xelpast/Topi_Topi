@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { authRoutes, publicRoutes } from './routs';
 import { Context } from '../../index';
+import { observer } from 'mobx-react';
 
-export default function AppRouter() {
+const AppRouter = observer(()=> {
     const {userState} = useContext(Context);
     return (
         <Routes>
@@ -16,4 +17,6 @@ export default function AppRouter() {
             <Route path="*" element={<Navigate to="/error-404" />} />
         </Routes>
     );
-}
+});
+
+export default AppRouter;

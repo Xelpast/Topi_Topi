@@ -14,7 +14,7 @@ const App = observer(() => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        await check();
+        await check()
         userState.setIsAuth(true);
       } catch (error) {
         userState.setIsAuth(false);

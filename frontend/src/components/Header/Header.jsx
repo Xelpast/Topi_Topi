@@ -9,9 +9,10 @@ import AuthReg from "../Registraton_and_Authorization/AuthReg";
 import { scrollToTop } from "../../utils/const";
 import Burger from "./Burger";
 import { Context } from "../../index";
+import { observer } from "mobx-react";
 
 
-export default function Header() {
+const Header = observer(() => {
     const { userState } = useContext(Context);
     const [modalActive, setModalActive] = useState(false);
     const [registration, setRegistration] = useState(false);
@@ -40,4 +41,6 @@ export default function Header() {
             <Burger active={menuActive} setActive={setMenuActive} />
         </header>
     );
-}
+})
+
+export default Header;

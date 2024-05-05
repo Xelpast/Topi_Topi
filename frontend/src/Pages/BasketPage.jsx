@@ -11,8 +11,9 @@ import { Context } from '../index';
 import { useState, useContext } from "react";
 import topi_logo from '../img/logo_topi.png';
 import close_x from '../img/close_x.png';
+import { observer } from "mobx-react";
 
-export default function BasketPage() {
+const BasketPage = observer(() => {
     const { userState } = useContext(Context);
     const [modal_active, setModalActive] = useState(false);
     const [registration, setRegistration] = useState(false);
@@ -94,4 +95,6 @@ export default function BasketPage() {
             }
         </>
     );
-}
+});
+
+export default BasketPage;

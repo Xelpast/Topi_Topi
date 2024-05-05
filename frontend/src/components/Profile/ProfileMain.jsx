@@ -6,9 +6,10 @@ import ProfileGender from './ProfileGender';
 import { Context } from "../../index";
 import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-import { fetchUser, getUserData } from '../../http/userApi';
+import { fetchUser } from '../../http/userApi';
+import { observer } from 'mobx-react';
 
-export default function ProfileMain() {
+const ProfileMain = observer(() => {
     const { userState } = useContext(Context);
     const navigate = useNavigate();
     const [login, setLogin] = useState('');
@@ -17,16 +18,15 @@ export default function ProfileMain() {
         fetchUser().then(data => {
             userState.setUser(data);
             setLogin(data.login); 
-            console.log(data) //put - вся форма(data), //patch - data.login(отдельное поле)
         })
     }, [])
     
     const logOut = async () => {
         localStorage.removeItem('token'); // Удалить токен из localStorage
-        userState.setUser({});
         await userState.setIsAuth(false); // Ждем обновления статуса аутентификации
-        navigate('/');
-        window.location.reload();
+        await userState.setUser({});
+        navigate("/");
+        // window.location.reload();
     }
     return (
         <div className={style_profile.main}>
@@ -81,4 +81,6 @@ export default function ProfileMain() {
             </div>
         </div>
     );
-}
+}) 
+
+export default ProfileMain;

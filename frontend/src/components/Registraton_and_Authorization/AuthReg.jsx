@@ -7,21 +7,28 @@ import registration_style from '../../css/registration.module.css';
 import authorization_style from '../../css/authorization.module.css';
 import close_x from '../../img/close_x.png';
 import topi_logo from '../../img/logo_topi.png';
+import { observer } from 'mobx-react';
+import { useNavigate } from 'react-router-dom';
 
-export default function AuthReg({ modal_active, setModalActive, registration, setRegistration }) {
+const AuthReg = observer(({ modal_active, setModalActive, registration, setRegistration }) => {
+    const navigate = useNavigate();
     const { userState } = useContext(Context);
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [repeatPassword, setRepeatPassword] = useState('');
-
     const click_auth = async () => {
         try {
-            let data_auth;
-            data_auth = await authorizations(login, password);
-            // user.setUser();
+            const data_auth = await authorizations(login, password);
+            userState.setUser(data_auth);
             userState.setIsAuth(true);
+            navigate("/profile");
         } catch (error) {
-            alert(error.response.data.message)
+            if (error.response && error.response.data) {
+                console.log('Данные ответа:', error.response.data);
+            }
+            console.log('Ошибка при авторизации:', error);
+            console.log('Сообщение об ошибке:', error.message);
+            alert("Произошла ошибка при попытке авторизации");
         }
     }
     const click_reg = async () => {
@@ -41,6 +48,7 @@ export default function AuthReg({ modal_active, setModalActive, registration, se
     const handleClose_reg = () => {
         setRegistration(false);
     };
+
     return (
         <>
             <Authorization active={modal_active} setActive={setModalActive}>
@@ -54,7 +62,10 @@ export default function AuthReg({ modal_active, setModalActive, registration, se
                         <div className={authorization_style.form_input_auth}>
                             <input type="text" placeholder="Логин" value={login} onChange={e => setLogin(e.target.value)} />
                             <input type="password" placeholder="Пароль" value={password} onChange={e => setPassword(e.target.value)} />
-                            <button onClick={click_auth} className={authorization_style.btn_auth}>Авториазация</button>
+                            <button onClick={(e) => {
+                                e.preventDefault();
+                                click_auth();
+                                }} className={authorization_style.btn_auth}>Авториазация</button>
                             <p onClick={(e) => {
                                 e.preventDefault();
                                 setRegistration(true);
@@ -75,7 +86,7 @@ export default function AuthReg({ modal_active, setModalActive, registration, se
                             <input type="text" placeholder="Логин" value={login} onChange={e => setLogin(e.target.value)} />
                             <input type="password" placeholder="Пароль" value={password} onChange={e => setPassword(e.target.value)} />
                             <input type="password" placeholder="Повторите пароль" value={repeatPassword} onChange={e => setRepeatPassword(e.target.value)} />
-                            <button onClick={click_reg} className={registration_style.btn_reg}>Регистрация</button>
+                            <button onClick={() => click_reg()} className={registration_style.btn_reg}>Регистрация</button>
                             <p onClick={(f) => {
                                 f.preventDefault();
                                 setRegistration(false);
@@ -88,4 +99,6 @@ export default function AuthReg({ modal_active, setModalActive, registration, se
             </Registration>
         </>
     );
-}
+});
+
+export default AuthReg;

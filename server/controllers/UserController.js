@@ -2,6 +2,7 @@ import ApiError from '../error/ApiError.js';
 import bcrypt from 'bcrypt';
 import models from '../models/models.js';
 import jwt from 'jsonwebtoken';
+
 const generateJwt = (id, login, role) => {
     return jwt.sign({id, login, role}, process.env.SECRET_KEY, {expiresIn: '24h'});
 }
