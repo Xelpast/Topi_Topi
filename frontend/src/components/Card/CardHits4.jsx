@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import like from '../../img/like.png';
 import like_red from '../../img/like_red.png';
-import mother_work from '../../img/topi0.png';
+import mother_work from '../../img/mother_work.png';
 import style_card_hits from '../../css/card_hits.module.css';
+import topi4 from '../../img/topi4.png';
 
 export default function CardHits() {
     const [ImageLike, setImageLike] = useState(true);
@@ -21,7 +22,7 @@ export default function CardHits() {
                         alt="IconLike"
                         onClick={ImageSwitch}
                     />
-                    <img className={style_card_hits.main_img} src={mother_work} alt="TopyProduct" />
+                    <img className={style_card_hits.main_img} src={topi4} alt="TopyProduct" />
                 </div>
             </div>
             <div className={style_card_hits.description_card_main}>

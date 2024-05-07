@@ -6,6 +6,8 @@ import { Context } from './index';
 import { useContext, useEffect, useState } from 'react';
 import { check } from './http/userApi';
 import Spinner from './components/Spinner/Spinner';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = observer(() => {
   const { userState } = useContext(Context);
@@ -33,6 +35,7 @@ const App = observer(() => {
   return (
     <BrowserRouter>
       <AppRouter />
+      <ToastContainer />
     </BrowserRouter>
   );
 })

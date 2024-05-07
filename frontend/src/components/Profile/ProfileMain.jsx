@@ -5,9 +5,9 @@ import SubMainLine from '../Main/SubMainLine';
 import ProfileGender from './ProfileGender';
 import { Context } from "../../index";
 import { useContext, useEffect, useState } from 'react';
-import axios from 'axios';
 import { fetchUser } from '../../http/userApi';
 import { observer } from 'mobx-react';
+import { toast } from 'react-toastify';
 
 const ProfileMain = observer(() => {
     const { userState } = useContext(Context);
@@ -17,17 +17,27 @@ const ProfileMain = observer(() => {
     useEffect(() => {
         fetchUser().then(data => {
             userState.setUser(data);
-            setLogin(data.login); 
+            setLogin(data.login);
         })
     }, [])
-    
+
     const logOut = async () => {
         localStorage.removeItem('token'); // Удалить токен из localStorage
         await userState.setIsAuth(false); // Ждем обновления статуса аутентификации
         await userState.setUser({});
+        toast.success('Вы успешно вышли из аккаунта!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+        });
         navigate("/");
-        // window.location.reload();
     }
+
     return (
         <div className={style_profile.main}>
             <SubMainLine />
@@ -81,6 +91,6 @@ const ProfileMain = observer(() => {
             </div>
         </div>
     );
-}) 
+})
 
 export default ProfileMain;

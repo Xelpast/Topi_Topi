@@ -24,3 +24,12 @@ export const fetchUser = async () => {
     return data;
 }
 
+export const checkLogin = async (login) => {
+    try {
+        const { data } = await $host.post('user/checkLogin', { login }); 
+        return data;
+    } catch (error) {
+        return error; 
+    }
+}
+

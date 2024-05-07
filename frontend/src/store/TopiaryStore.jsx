@@ -1,21 +1,28 @@
 import {makeAutoObservable} from 'mobx';
-import mother_work from "../img/mother_work.png";
 
 export default class TopiaryStore {
     constructor() {
-        this._topiares = []
+        this._topiares = [];
+        this._filteredTopiares = [];
         makeAutoObservable(this);
     }
-
+    
     setTopiares(topiares) {
         this._topiares = topiares;
+    }
+    setFilteredTopiares(topiares) {
+        this._filteredTopiares = topiares;
+    }
+
+    getTopiaryById(id) {
+        return this._topiares.find(topiary => topiary.id === id);
     }
 
     get topiares() {
         return this._topiares;
     }
-
-    getTopiaryById(id) {
-        return this._topiares.find(topiary => topiary.id === id);
+    
+    get filteredTopiares() {
+        return this._filteredTopiares;
     }
 }

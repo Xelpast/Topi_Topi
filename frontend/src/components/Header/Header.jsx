@@ -11,7 +11,6 @@ import Burger from "./Burger";
 import { Context } from "../../index";
 import { observer } from "mobx-react";
 
-
 const Header = observer(() => {
     const { userState } = useContext(Context);
     const [modalActive, setModalActive] = useState(false);
@@ -31,8 +30,8 @@ const Header = observer(() => {
                             <Link to="/basket" className={header_style.link} onClick={scrollToTop}><HeaderMenu image_header={header_image_arr[2].image_header} title={header_arr[2].title} /></Link>
                             {!userState._isAuth ?
                                 <Link className={header_style.link} onClick={() => setModalActive(true)}><HeaderMenu image_header={header_image_arr[3].image_header} title={header_arr[3].title} /></Link>
-                            : <Link className={header_style.link} to="/profile"><HeaderMenu image_header={header_image_arr[3].image_header} title={header_arr[3].title} /></Link>}
-                             <HeaderMenu image_header={header_image_arr[4].image_header} title={header_arr[4].title} />
+                                : <Link className={header_style.link} to="/profile"><HeaderMenu image_header={header_image_arr[3].image_header} title={header_arr[3].title} /></Link>}
+                            <HeaderMenu image_header={header_image_arr[4].image_header} title={header_arr[4].title} />
                         </ul>
                         <div className={header_style.burger_menu} onClick={() => setMenuActive(!menuActive)}><span></span></div>
                     </div>

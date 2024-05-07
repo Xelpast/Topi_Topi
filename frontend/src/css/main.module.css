@@ -85,10 +85,6 @@
     cursor: pointer;
 }
 
-.main_img {
-    width: 110px;
-}
-
 .like_img {
     position: absolute;
     top: 0px;

@@ -69,5 +69,19 @@ export const UserController = {
         } catch (error) {
             return next(ApiError.internalServerError("Ошибка получения данных о пользователе", error));
         } 
+    },
+
+    checkLogin: async (req, res, next) => {
+        const { login } = req.body;
+        try {
+            const existingUser = await User.findOne({ where: { login } });
+            if (existingUser) {
+                return res.json({ isUnique: false }); 
+            } else {
+                return res.json({ isUnique: true }); 
+            }
+        } catch (error) {
+            return next(ApiError.internalServerError("Ошибка при проверке уникальности логина", error));
+        }
     }
 };
