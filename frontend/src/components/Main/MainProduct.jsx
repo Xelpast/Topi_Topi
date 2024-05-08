@@ -1,5 +1,6 @@
 import MainProductList from "./MainProductList";
 import main_style from '../../css/main.module.css';
+import sprout from '../../img/sprout.jpg';
 import { useContext, useEffect, useState } from "react";
 import { Context } from "../../index";
 import { observer } from 'mobx-react';
@@ -16,11 +17,19 @@ const Main_product = observer(() => {
     useEffect(() => {
         setFilteredTopiares(topiary.filteredTopiares);
     }, [topiary.filteredTopiares]);
+    
 
     return (
         <div className={main_style.main_goods}>
-            {topiary.filteredTopiares.map(topiary =>
-                <MainProductList key={topiary.id} topiary={topiary} />
+            {filteredTopiares.length === 0 ? (
+                <div className={main_style.search_clear}>
+                    <p>Оой... по вашему запросу ничего не найдено</p>
+                    <img src={sprout} alt="росток" />
+                </div>
+            ) : (
+                filteredTopiares.map(topiary =>
+                    <MainProductList key={topiary.id} topiary={topiary} />
+                )
             )}
         </div>
     );

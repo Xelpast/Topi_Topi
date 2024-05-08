@@ -83,6 +83,9 @@ Basket_topiary.belongsTo(Product);
 Product.hasMany(Like_topiary);
 Like_topiary.belongsTo(Product);
 
+Product.hasMany(Order_topiary);
+Order_topiary.belongsTo(Product);
+
 Product.hasMany(Topiary_info, { as: 'info' });
 Topiary_info.belongsTo(Product);
 

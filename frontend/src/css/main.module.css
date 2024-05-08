@@ -43,6 +43,14 @@
     max-width: var(--style_main);
 }
 
+.main_img {
+    height: 180px;
+}
+
+.main_img img{
+    object-fit: cover;
+}
+
 .topi_text {
     font-size: 30px;
     margin: 20px 0px 20px 10px;
@@ -143,6 +151,20 @@
     border: 0px;
     color: white;
     margin-bottom: 40px;
+}
+
+.search_clear {
+    display: flex;
+    flex-direction: column;
+    width: 1700px;
+    justify-content: center;
+    font-size: 40px;
+    margin-left: 20px;
+    color: #0DBD0D;
+}
+
+.search_clear img {
+    width: 382px;
 }
 
 /* Слайдер */
@@ -392,7 +414,7 @@
     }
 
     .main_img {
-        width: 100px;
+        height: 155px;
     }
 
     .like_img {
