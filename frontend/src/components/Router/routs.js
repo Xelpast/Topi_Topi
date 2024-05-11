@@ -12,10 +12,10 @@ import TopiaryPage from "../../Pages/TopiaryPage";
 import Spinner from "../Spinner/Spinner";
 
 export const authRoutes = [
-    {
-        path: '/admin',
-        element: <AdminPage />
-    },
+    // {
+    //     path: '/admin',
+    //     element: <AdminPage />
+    // },
     {
         path: '/order',
         element: <OrderPage />

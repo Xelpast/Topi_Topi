@@ -1,0 +1,12 @@
+.main_error404 {
+    display: flex;
+    text-align: center;
+    width: 100vh;
+    margin-top: 110px;
+}
+
+@media only screen and (max-width: 930px) {
+    .main_error404 {
+        width: 100%;
+    }
+}

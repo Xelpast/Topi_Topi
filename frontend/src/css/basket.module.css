@@ -95,7 +95,7 @@
     transition: 0.2s ease-in;
 }
 
-.main_checkbox:checked + .custom_checkbox::before {
+.main_checkbox:checked+.custom_checkbox::before {
     transform: translate(-50%, -50%) scale(1);
 }
 
@@ -237,16 +237,14 @@ b {
 /* Пользователь не авторизован */
 
 .isAuthMain {
-    text-align: center;
-    justify-content: center;
     min-height: 100vh;
+    max-width: var(--style_main);
 }
 
 .isAuthMain_block {
-    width: 1250px;
-    height: 200px;
-    border: solid 5px #0DBD0D;
-    border-radius: 16px;
+    width: 550px;
+    height: 160px;
+    margin-left: 14px;
 }
 
 .btn_basket_form {
@@ -254,9 +252,9 @@ b {
 }
 
 .btn_come {
-    width: 250px;
-    height: 35px;
-    font-size: 20px;
+    width: 120px;
+    height: 30px;
+    font-size: 18px;
     color: white;
     background-color: #0DBD0D;
     border: none;
@@ -264,11 +262,24 @@ b {
     cursor: pointer;
 }
 
+.basket_clear {
+    color: #0DBD0D;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.recommend_topi {
+    font-size: 30px;
+    margin-left: 12px;
+    margin-bottom: 15px;
+}
+
 @media only screen and (max-width: 1800px) {
     .main_card_basket {
         width: 1050px;
     }
-    
+
     .product_basket {
         width: 750px;
     }
@@ -276,15 +287,29 @@ b {
     .dop_info {
         margin-left: 65px;
     }
+
+    /* Пользователь не авторизован */
+
+    .isAuthMain_block,
+    .recommend_topi {
+        margin-left: 75px;
+    }
 }
 
 @media only screen and (max-width: 1400px) {
     .main_card_basket {
         width: 900px;
     }
-    
+
     .product_basket {
         width: 600px;
+    }
+
+    /* Пользователь не авторизован */
+
+    .isAuthMain_block,
+    .recommend_topi {
+        margin-left: 65px;
     }
 }
 
@@ -292,7 +317,7 @@ b {
     .main_card_basket {
         width: 800px;
     }
-    
+
     .product_basket {
         width: 500px;
     }
@@ -303,6 +328,12 @@ b {
 
     .basket_img {
         left: 95px;
+    }
+
+    /* Пользователь не авторизован */
+    
+    .isAuthMain_block, .recommend_topi {
+         margin-left: 50px;
     }
 }
 
@@ -319,8 +350,8 @@ b {
 
     .product_basket {
         width: 580px;
-    } 
-    
+    }
+
     .product_price {
         margin-left: auto;
     }
@@ -367,4 +398,10 @@ b {
     .main_info_basket {
         font-size: 20px;
     }
+
+    /* Пользователь не авторизован */
+
+    .isAuthMain_block, .recommend_topi {
+        margin-left: 38px;
+   }
 }

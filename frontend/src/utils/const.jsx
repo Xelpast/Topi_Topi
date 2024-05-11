@@ -5,3 +5,10 @@ export const scrollToTop = () => {
     });
 };
 
+export const scrollToTopAnimation = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });
+};
+

@@ -3,7 +3,8 @@ import logo from '../../img/logo.png';
 import vk from '../../img/vk.png';
 import telegram from '../../img/telegram.png';
 import ok from '../../img/ok.png';
-import { scrollToTop } from '../../utils/const';
+import up from '../../img/up.png';
+import { scrollToTopAnimation, scrollToTop } from '../../utils/const';
 import footer_style from '../../css/footer.module.css';
 
 export default function FooterMain() {
@@ -41,7 +42,7 @@ export default function FooterMain() {
                         </div>
                     </div>
                     <div className={footer_style.footer_topitopi}>
-                            <p className={footer_style.footer_text_up}>Правовая информация</p>
+                        <p className={footer_style.footer_text_up}>Правовая информация</p>
                         <div className={footer_style.footer_dop_text}>
                             <p>Условия пользования сайта</p>
                             <p>Политика обработки персональных данных</p>
@@ -56,6 +57,7 @@ export default function FooterMain() {
                             <img src={vk} alt="IconVk" />
                             <img src={telegram} alt="IconTg" />
                             <img src={ok} alt="IconOk" />
+                            <img className={footer_style.scrollToTopImg} src={up} alt="upButton" onClick={scrollToTopAnimation}/>
                         </div>
                     </div>
                 </div>

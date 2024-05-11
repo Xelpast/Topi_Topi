@@ -13,37 +13,51 @@ const HeaderSearch = observer(() => {
 
     const refClick = () => {
         const anchorElement = document.getElementById("anchorTopi");
-        anchorElement.scrollIntoView({ behavior: 'smooth' });
-        navigate('/');
+        if (anchorElement) {
+            anchorElement.scrollIntoView({ behavior: 'smooth' });
+            navigate('/', { state: { afterRedirect: true } });
+        } else {
+            navigate('/');
+        }
     };
 
-    const filterTopiares = (searchText, topiares) => {
-        if (!searchText) {
-            return topiares;
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            refClick();
         }
-        return topiares.filter(({ name }) => 
-            name.toLowerCase().includes(searchText.toLowerCase())
-        );
-    }
+    };
 
     useEffect(() => {
         const debounceTimer = setTimeout(() => {
             const filteredTopiares = filterTopiares(searchTerm, topiary.topiares);
-            topiary.setFilteredTopiares(filteredTopiares); 
+            topiary.setFilteredTopiares(filteredTopiares);
         }, 0);
 
         return () => clearTimeout(debounceTimer);
     }, [searchTerm, topiary.topiares]);
 
+    const filterTopiares = (searchText, topiares) => {
+        if (!searchText) {
+            return topiares;
+        }
+        return topiares.filter(({ name }) =>
+            name.toLowerCase().includes(searchText.toLowerCase())
+        );
+    }
+
     return (
         <div className={header_style.search} ref={ref}>
             <div className={header_style.search_main}>
-                <input className={header_style.search_text} 
-                type="text" 
-                name="" 
-                placeholder="Поиск..." 
-                onChange={(search_topi) => setSearchTerm(search_topi.target.value)}/>
-                <Link onClick={refClick} className={header_style.search_icon}><img src={search} alt="search" /></Link>
+                <input className={header_style.search_text}
+                    type="text"
+                    name=""
+                    placeholder="Поиск..."
+                    onChange={(search_topi) => setSearchTerm(search_topi.target.value)}
+                    onKeyDown={handleKeyDown} />
+                <Link onClick={(e) => {
+                    e.preventDefault();
+                    refClick();
+                }} className={header_style.search_icon}><img src={search} alt="search" /></Link>
             </div>
         </div>
     );

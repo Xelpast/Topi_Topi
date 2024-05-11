@@ -10,6 +10,7 @@ import order_bm from './img/Order_bm.png';
 import basket_bm from './img/Busket_bm.png';
 import profile_bm from './img/Profile_bm.png';
 import language_bm from './img/Language_bm.png';
+import profileAuth from './img/profileAuth.png';
 
 export const header_arr = [
     {
@@ -26,7 +27,7 @@ export const header_arr = [
     },
     {
         title: "Язык"
-    }
+    },
 ]
 
 export const header_image_arr = [
@@ -44,6 +45,9 @@ export const header_image_arr = [
     },
     {
         image_header: language
+    },
+    {
+        image_header: profileAuth
     }
 ]
 

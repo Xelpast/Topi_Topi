@@ -46,7 +46,8 @@ const AuthReg = observer(({ modal_active, setModalActive, registration, setRegis
                 progress: undefined,
                 theme: "dark",
             });
-            navigate("/profile");
+            handleClose_auth();
+            navigate("/");
         } catch (error) {
             toast.error('Неверный логин или пароль!', {
                 position: "top-right",

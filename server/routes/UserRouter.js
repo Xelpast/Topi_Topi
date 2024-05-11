@@ -9,3 +9,4 @@ userRouter.post('/authorization', UserController.authorization);
 userRouter.post('/checkLogin', UserController.checkLogin);
 userRouter.get('/auth', authMiddleware, UserController.check);
 userRouter.get('/profile', authMiddleware, UserController.getUserData);
+userRouter.put('/profile', authMiddleware, UserController.updateUserData)

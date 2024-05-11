@@ -24,6 +24,15 @@ export const fetchUser = async () => {
     return data;
 }
 
+export const updateUser = async (userData) => {
+    try {
+        const response = await $authHost.put('/user/profile', userData);
+        return response.data;
+    } catch (error) {
+        throw new Error('Ошибка при обновлении данных пользователя');
+    }
+};
+
 export const checkLogin = async (login) => {
     try {
         const { data } = await $host.post('user/checkLogin', { login }); 

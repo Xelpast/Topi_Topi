@@ -7,24 +7,28 @@ import { useContext, useEffect, useState } from 'react';
 import { check } from './http/userApi';
 import Spinner from './components/Spinner/Spinner';
 import { ToastContainer } from 'react-toastify';
+import { fetchUser } from './http/userApi';
 import 'react-toastify/dist/ReactToastify.css';
 
 const App = observer(() => {
   const { userState } = useContext(Context);
   const [loading, setLoading] = useState(true);
-  
+  console.log(userState);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        await check()
+        await check();
         userState.setIsAuth(true);
+        const userData = await fetchUser();
+        userState.setUser(userData);
       } catch (error) {
         userState.setIsAuth(false);
       } finally {
         setLoading(false);
       }
     };
-  
+
     fetchData();
   }, []);
 

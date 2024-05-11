@@ -13,9 +13,15 @@ import { observer } from "mobx-react";
 
 const Header = observer(() => {
     const { userState } = useContext(Context);
+    const navigate = useNavigate();
     const [modalActive, setModalActive] = useState(false);
     const [registration, setRegistration] = useState(false);
     const [menuActive, setMenuActive] = useState(false);
+
+    const handleProfileClick = () => {
+        navigate("/profile", { replace: true });
+        window.location.reload();
+    };
     return (
         <header>
             <AuthReg modal_active={modalActive} setModalActive={setModalActive} registration={registration} setRegistration={setRegistration} />
@@ -30,7 +36,7 @@ const Header = observer(() => {
                             <Link to="/basket" className={header_style.link} onClick={scrollToTop}><HeaderMenu image_header={header_image_arr[2].image_header} title={header_arr[2].title} /></Link>
                             {!userState._isAuth ?
                                 <Link className={header_style.link} onClick={() => setModalActive(true)}><HeaderMenu image_header={header_image_arr[3].image_header} title={header_arr[3].title} /></Link>
-                                : <Link className={header_style.link} to="/profile"><HeaderMenu image_header={header_image_arr[3].image_header} title={header_arr[3].title} /></Link>}
+                                : <div className={header_style.link} onClick={handleProfileClick }><HeaderMenu image_header={header_image_arr[5].image_header} title={header_arr[3].title} /></div>}
                             <HeaderMenu image_header={header_image_arr[4].image_header} title={header_arr[4].title} />
                         </ul>
                         <div className={header_style.burger_menu} onClick={() => setMenuActive(!menuActive)}><span></span></div>
