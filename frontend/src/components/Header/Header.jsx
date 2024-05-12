@@ -37,7 +37,7 @@ const Header = observer(() => {
                             {!userState._isAuth ?
                                 <Link className={header_style.link} onClick={() => setModalActive(true)}><HeaderMenu image_header={header_image_arr[3].image_header} title={header_arr[3].title} /></Link>
                                 : <div className={header_style.link} onClick={handleProfileClick }><HeaderMenu image_header={header_image_arr[5].image_header} title={header_arr[3].title} /></div>}
-                            <HeaderMenu image_header={header_image_arr[4].image_header} title={header_arr[4].title} />
+                            {userState.user.role === "ADMIN" ? <Link to="/admin" onClick={scrollToTop} className={header_style.link}><HeaderMenu image_header={header_image_arr[6].image_header} title={header_arr[5].title} /></Link> : <Link to="/promocodes" onClick={scrollToTop} className={header_style.link}><HeaderMenu image_header={header_image_arr[4].image_header} title={header_arr[4].title} /></Link>}
                         </ul>
                         <div className={header_style.burger_menu} onClick={() => setMenuActive(!menuActive)}><span></span></div>
                     </div>

@@ -23,8 +23,8 @@ export default function Burger({active, setActive}) {
                         <Link to="/basket" className={header_style.link} onClick={scrollToTop}><BurgerMenu image_header_bm={header_image_arr_burger[2].image_header_bm} title={header_arr[2].title} /></Link>
                         {!userState._isAuth ?
                                 <Link className={header_style.link} onClick={() => setModalActive(true)}><BurgerMenu image_header_bm={header_image_arr_burger[3].image_header_bm} title={header_arr[3].title} /></Link>
-                            : <Link className={header_style.link} to="/profile"><BurgerMenu image_header_bm={header_image_arr_burger[3].image_header_bm} title={header_arr[3].title} /></Link>}
-                        <Link className={header_style.link}><BurgerMenu image_header_bm={header_image_arr_burger[4].image_header_bm} title={header_arr[4].title} /></ Link>
+                            : <Link className={header_style.link} to="/profile" onClick={scrollToTop}><BurgerMenu image_header_bm={header_image_arr_burger[5].image_header_bm} title={header_arr[3].title} /></Link>}
+                        {userState.user.role === "ADMIN" ? <Link to="/admin" onClick={scrollToTop} className={header_style.link}><BurgerMenu image_header_bm={header_image_arr_burger[6].image_header_bm} title={header_arr[5].title} /></Link> : <Link to="/promocodes" onClick={scrollToTop} className={header_style.link}><BurgerMenu image_header_bm={header_image_arr_burger[4].image_header_bm} title={header_arr[4].title} /></Link>}
                     </ul>
                 </div>
             </div>

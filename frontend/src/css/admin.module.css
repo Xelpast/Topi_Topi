@@ -1,0 +1,174 @@
+.main_admin {
+    margin-top: 110px;
+    max-width: var(--style_main);
+}
+
+.admin_page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.welcome_admin {
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.block_admin {
+    display: flex;
+    gap: 20px;
+}
+
+.btn_addNewProduct {
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    border: solid 0px;
+    background: #0DBD0D;
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.btn_updateScreen {
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    border: solid 4px #0DBD0D;
+    background: white;
+    color: #0DBD0D;
+    font-size: 24px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.ListAll_product {
+    font-size: 30px;
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+.modal {
+    z-index: 999;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+    scrollbar-gutter: stable;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal_content {
+    padding: 20px;
+    border-radius: 12px;
+    border: 5px solid #0DBD0D;
+    background-color: white;
+    width: 750px;
+    height: 500px;
+    transition: 0.4s all;
+}
+
+.modal_content.active {
+    transform: scale(1);
+}
+
+.admin_form {
+    text-align: center;
+    font-size: 20px;
+}
+
+.admin_form p {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.admin_form img {
+    width: 50%;
+}
+
+.close_form img {
+    cursor: pointer;
+    position: absolute;
+    width: 18px;
+    top: 7%;
+    right: 7%;
+}
+
+.form_input_admin {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 20px;
+}
+
+.form_input_admin p {
+    font-size: 20px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.form_input_admin input{
+    width: 320px;
+    height: 40px;
+    margin-top: 20px;
+    font-size: 17px;
+    padding: 5px;
+    border: 3px solid #0DBD0D;
+    border-radius: 7px;
+    outline: none;
+}
+
+.form_input_admin input[type="file"] {
+    grid-column: span 2;
+    width: 96%;
+    color: #0DBD0D;
+    cursor: pointer;
+}
+
+.inputFile::-webkit-file-upload-button {
+    color: white;
+    font-weight: bold;
+    background-color: #0DBD0D; 
+    border: none;
+    padding: 2.5px 10px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+  }
+
+.form_input_admin input:focus {
+    border: 3px solid #0a7135;
+}
+
+.btn_admin {
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    color: white;
+    background: #0DBD0D;
+    border-radius: 6px;
+    border: none;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 930px) {
+    .modal_content {
+        width: 600px;
+        height: 450px;
+    }
+}

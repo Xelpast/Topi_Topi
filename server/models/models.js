@@ -53,10 +53,8 @@ const Topiary_info = sequelize.define('topiary_info', {
     material: { type: DataTypes.STRING, allowNull: false },
     size: { type: DataTypes.STRING, allowNull: false },
     weight: { type: DataTypes.STRING, allowNull: false },
-    category: { type: DataTypes.STRING, allowNull: false },
-    action: { type: DataTypes.STRING, allowNull: false }
+    category: { type: DataTypes.STRING, allowNull: false }
 });
-
 
 // Связи
 User.hasOne(Basket);

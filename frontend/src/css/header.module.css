@@ -234,6 +234,7 @@ a {
     }
 
     .blur {
+        display: none;
         backdrop-filter: none;
     }
 }

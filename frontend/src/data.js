@@ -3,14 +3,17 @@ import favorites from './img/Favorites.png';
 import basket from './img/Busket.png';
 import order from './img/Order.png';
 import profile from './img/Profile.png';
-import language from './img/language.png';
+import ticket from './img/ticket.png';
 import mother_work from "./img/mother_work.png";
 import like_bm from './img/like_bm.png';
 import order_bm from './img/Order_bm.png';
 import basket_bm from './img/Busket_bm.png';
 import profile_bm from './img/Profile_bm.png';
-import language_bm from './img/Language_bm.png';
 import profileAuth from './img/profileAuth.png';
+import admin from './img/admin.png';
+import admin_bm from './img/admin_bm.png';
+import ticket_bm from './img/ticket_bm.png';
+import profileAuth_bm from './img/profileAuth_bm.png';
 
 export const header_arr = [
     {
@@ -26,8 +29,11 @@ export const header_arr = [
         title: "Профиль"
     },
     {
-        title: "Язык"
+        title: "Промо"
     },
+    {
+        title: "Админка"
+    }
 ]
 
 export const header_image_arr = [
@@ -44,10 +50,13 @@ export const header_image_arr = [
         image_header: profile
     },
     {
-        image_header: language
+        image_header: ticket
     },
     {
         image_header: profileAuth
+    },
+    {
+        image_header: admin
     }
 ]
 
@@ -65,7 +74,13 @@ export const header_image_arr_burger = [
         image_header_bm: profile_bm
     },
     {
-        image_header_bm: language_bm
+        image_header_bm: ticket_bm
+    },
+    {
+        image_header_bm: profileAuth_bm
+    },
+    {
+        image_header_bm: admin_bm
     }
 ]
 
