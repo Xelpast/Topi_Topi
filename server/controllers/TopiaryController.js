@@ -93,13 +93,19 @@ export const TopiaryController = {
     const { id } = req.params;
 
     try {
-      const deletedRows = await Product.destroy({ where: { id } });
-      await Topiary_info.destroy({ where: { productId: id } });
-
-      if (!deletedRows) {
+      // Получаем productId из таблицы topiary_infos по id товара из таблицы products
+      const product = await Product.findOne({ where: { id } });
+      if (!product) {
         throw new Error('Товар не найден');
       }
-      
+      const productId = product.id;
+
+      // Удаление информации о товаре
+      await Topiary_info.destroy({ where: { productId } });
+
+      // Удаление товара
+      await Product.destroy({ where: { id } });
+
       return res.json({ message: 'Товар успешно удален' });
     } catch (error) {
       next(ApiError.internalServerError(error.message));
