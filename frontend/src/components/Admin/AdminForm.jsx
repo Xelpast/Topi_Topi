@@ -88,14 +88,14 @@ export default function AdminForm({ modalActiveAdmin, setModalActiveAdmin }) {
                             />
                             <input
                                 type="text"
-                                placeholder="Цена (скидочная)"
+                                placeholder="Цена (без скидки)"
                                 name="price_default"
                                 value={formData.price_default}
                                 onChange={handleChange}
                             />
                             <input
                                 type="text"
-                                placeholder="Цена (без скидки)"
+                                placeholder="Цена (скидочная)"
                                 name="price"
                                 value={formData.price}
                                 onChange={handleChange}

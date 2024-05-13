@@ -27,6 +27,7 @@ const MainProductList = observer(({ topiary }) => {
     const handleDeleteButtonClick = async () => {
         try {
             await deleteTopiary(topiary.id);
+            window.confirm("Вы точно хотите удалить товар?");
             window.location.reload();
         } catch (error) {
             console.error('Ошибка при удалении товара:', error);

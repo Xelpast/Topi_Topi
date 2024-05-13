@@ -40,8 +40,8 @@ export default function Topiary() {
                             </div>
                             <div className={style_topiary.total_availability}>
                                 <div className={style_topiary.total}>
-                                    <p className={style_topiary.prices}>Цена: {topiares.price} ₽</p>
-                                    <div className={style_topiary.total_main}><p>Итого: <b>{topiares.price_default} ₽</b></p></div>
+                                    <p className={style_topiary.prices}>Цена: {topiares.price_default} ₽</p>
+                                    <div className={style_topiary.total_main}><p>Итого: <b>{topiares.price} ₽</b></p></div>
                                 </div>
                                 <div className={style_topiary.аvailability}>
                                     <p>Товар: <b>есть в наличии</b></p>
