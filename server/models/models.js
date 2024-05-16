@@ -66,8 +66,8 @@ Like.belongsTo(User);
 User.hasOne(Order);
 Order.belongsTo(User);
 
-Basket.hasMany(Basket_topiary);
-Basket_topiary.belongsTo(Basket);
+Basket.hasMany(Basket_topiary, { foreignKey: 'basketId' });
+Basket_topiary.belongsTo(Basket, { foreignKey: 'basketId' });
 
 Like.hasMany(Like_topiary, { foreignKey: 'likeId' });
 Like_topiary.belongsTo(Like, { foreignKey: 'likeId' });

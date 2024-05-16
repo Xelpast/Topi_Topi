@@ -7,15 +7,22 @@ import { observer } from 'mobx-react';
 import { fetchTopiary } from "../../http/topiaryApi";
 import Spinner from "../Spinner/Spinner";
 
+import { fetchUserLikes } from "../../http/likeApi";
+
 const Main_product = observer(() => {
     const { topiary } = useContext(Context);
     const [filteredTopiares, setFilteredTopiares] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [userLikes, setUserLikes] = useState([]);
 
     useEffect(() => {
         fetchTopiary().then(data => {
             topiary.setTopiares(data.rows);
             setLoading(false);
+        });
+        
+        fetchUserLikes().then(data => {
+            setUserLikes(data);
         });
     }, []);
 
@@ -39,7 +46,7 @@ const Main_product = observer(() => {
     return (
         <div className={main_style.main_goods}>
             {filteredTopiares.map(topiary =>
-                <MainProductList key={topiary.id} topiary={topiary} />
+                <MainProductList key={topiary.id} topiary={topiary} userLikes={userLikes} />
             )}
         </div>
     );

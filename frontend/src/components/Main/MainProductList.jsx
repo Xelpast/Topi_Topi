@@ -9,26 +9,21 @@ import { AXIOS_URL } from '../../http/indexHttp';
 import { observer } from 'mobx-react';
 import { Context } from '../../index';
 import { deleteTopiary, updateTopiary } from '../../http/topiaryApi';
-import { addToLike, fetchUserLikes, removeToLike } from '../../http/likeApi'; 
+import { addToLike, removeToLike } from '../../http/likeApi';
+import { addToBasket } from '../../http/basketApi';
 
-const MainProductList = observer(({ topiary }) => {
+const MainProductList = observer(({ topiary, userLikes, updateBasketCount }) => {
     const { userState } = useContext(Context);
     const checkRole = userState.user.role;
     const navigate = useNavigate();
-    const [isLiked, setIsLiked] = useState(false); 
+    const [isLiked, setIsLiked] = useState(false);
 
     useEffect(() => {
-        const fetchLikes = async () => {
-            try {
-                const likes = await fetchUserLikes();
-                const likedProductIds = likes.map(like => like.like_topiaries.map(item => item.productId)).flat();
-                setIsLiked(likedProductIds.includes(topiary.id));
-            } catch (error) {
-                console.log('Ошибка при получении избранных товаров:', error);
-            }
-        };
-        fetchLikes();
-    }, []);
+        if (userLikes && Array.isArray(userLikes)) {
+            const likedProductIds = userLikes.flatMap(like => like.like_topiaries.map(item => item.productId));
+            setIsLiked(likedProductIds.includes(topiary.id));
+        }
+    }, [topiary.id, userLikes]);
 
     const handleButtonClick = () => {
         scrollToTop();
@@ -69,6 +64,16 @@ const MainProductList = observer(({ topiary }) => {
         }
     };
 
+    const handleAddToBasketButtonClick = async () => {
+        try {
+            await addToBasket(topiary.id);
+            updateBasketCount();
+            console.log('Товар успешно добавлен в корзину');
+        } catch (error) {
+            console.error('Ошибка при добавлении товара в корзину:', error);
+        }
+    };
+
     return (
         <div className={main_style.main_card}>
             <div className={main_style.main_card_ring}>
@@ -104,7 +109,7 @@ const MainProductList = observer(({ topiary }) => {
                                 Изменить товар
                             </button>
                         ) : (
-                            <button className={main_style.button_busket}>В корзину</button>
+                            <button className={main_style.button_busket} onClick={handleAddToBasketButtonClick}>В корзину</button>
                         )}
                     </div>
                 </div>

@@ -4,4 +4,7 @@ import authMiddleware from '../middleware/authMiddleware.js';
 
 export const basketRouter = Router();
 
+basketRouter.get('/', authMiddleware, BasketController.getBasket);
 basketRouter.post('/add', authMiddleware, BasketController.addToBasket);
+basketRouter.post('/remove', authMiddleware, BasketController.removeFromBasket);
+basketRouter.post('/clear', authMiddleware, BasketController.clearBasket);
