@@ -1,5 +1,6 @@
-import express from 'express';
 import dotenv from 'dotenv';
+dotenv.config();
+import express from 'express';
 import nocache from 'nocache';
 import { SETTINGS } from './settings.js'
 import { sequelize } from './db.js';
@@ -11,8 +12,8 @@ import { userRouter } from "./routes/UserRouter.js";
 import { basketRouter } from './routes/BasketRouter.js';
 import path, {dirname} from 'path';
 import cors from 'cors';
+import { likeRouter } from './routes/LikeRouter.js';
 
-dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -24,6 +25,7 @@ app.use(fileUpload({}));
 app.use(SETTINGS.PATH.TOPIARY, topiaryRouter);
 app.use(SETTINGS.PATH.USER, userRouter);
 app.use(SETTINGS.PATH.BASKET, basketRouter);
+app.use(SETTINGS.PATH.LIKE, likeRouter);
 
 //Обработка middleware должна проходить в конце
 app.use(errorHandler);
@@ -31,7 +33,7 @@ app.use(errorHandler);
 const start = async () => {
     try {
         await sequelize.authenticate();
-        await sequelize.sync();
+        await sequelize.sync({ alter: true });
         app.listen(SETTINGS.PORT, () => console.log(`SERVER started on PORT: ${SETTINGS.PORT}`));
     } catch (e) {
         console.log(e);

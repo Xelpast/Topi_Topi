@@ -38,7 +38,6 @@ export const TopiaryController = {
         const topiaryId = topiary.id;
         await Promise.all(info.map(async info_topy => {
           try {
-            console.log("Creating Topiary_info:", info_topy);
             await Topiary_info.create({
               manufacturer: info_topy.manufacturer,
               material: info_topy.material,
@@ -47,7 +46,6 @@ export const TopiaryController = {
               category: info_topy.category,
               productId: topiaryId
             });
-            console.log("Topiary_info created");
           } catch (error) {
             console.error("Error creating Topiary_info:", error);
           }

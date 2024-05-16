@@ -154,3 +154,146 @@
     padding: 30px;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 1800px) {
+    .dop_info {
+        margin-left: 70px;
+    }
+
+    .total_availability {
+        margin-top: 40px;
+    }
+    
+    .main_card_ring {
+        width: auto;
+        height: 400px;
+    }
+
+    .topiary_description {
+        margin: 35px 0px 0px 20px;
+    }
+
+    .topiares {
+        width: 1000px;
+    }
+
+    .аvailability, .total {
+        margin-top: 10px;
+    }
+
+    .аvailability p {
+        font-size: 20px;
+    }
+
+    .prices {
+        margin-top: 0px;
+    }
+
+    .total_main, .button_topi {
+        width: 200px;
+        height: 40px;
+        font-size: 19px;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .topiares {
+        width: 900px;
+    }
+
+    .total_main, .button_topi {
+        width: 180px;
+        height: 38px;
+        font-size: 18px;
+    }
+
+    .prices {
+        font-size: 16px;
+    }
+
+    .аvailability p {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 1240px) {
+    .topiares {
+        width: 800px;
+    }
+
+    .main_card_ring {
+        width: 280px;
+        height: 400px;
+    }
+
+    .image_description {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .main_img {
+        height: 300px;
+    }
+
+    .dop_info {
+        margin-left: 65px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .topiares {
+        width: 700px;
+        margin-bottom: 40px;
+    }
+
+    .main_card_ring {
+        width: 400px;
+        height: 400px;
+    }
+
+    .image_description {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .topiary_image {
+        margin: 30px auto;
+    }
+
+    .topiary_description {
+        margin: 0px 0px 0px 10px;
+    }
+
+    .total_availability {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 930px) {
+    .topiares {
+        width: 420px;
+        margin-bottom: 40px;
+    }
+
+    .main_card_ring {
+        width: 320px;
+        height: 320px;
+    }
+
+    .image_description {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .topiary_description {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .total {
+        margin-left: 5px;
+    }
+}

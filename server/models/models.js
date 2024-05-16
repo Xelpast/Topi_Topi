@@ -49,7 +49,7 @@ const Product = sequelize.define('product', {
 
 const Topiary_info = sequelize.define('topiary_info', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    manufacturer: { type: DataTypes.STRING, allowNull: false }, 
+    manufacturer: { type: DataTypes.STRING, allowNull: false },
     material: { type: DataTypes.STRING, allowNull: false },
     size: { type: DataTypes.STRING, allowNull: false },
     weight: { type: DataTypes.STRING, allowNull: false },
@@ -69,8 +69,8 @@ Order.belongsTo(User);
 Basket.hasMany(Basket_topiary);
 Basket_topiary.belongsTo(Basket);
 
-Like.hasMany(Like_topiary);
-Like_topiary.belongsTo(Like);
+Like.hasMany(Like_topiary, { foreignKey: 'likeId' });
+Like_topiary.belongsTo(Like, { foreignKey: 'likeId' });
 
 Order.hasMany(Order_topiary);
 Order_topiary.belongsTo(Order);

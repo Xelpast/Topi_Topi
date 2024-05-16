@@ -13,7 +13,6 @@ import 'react-toastify/dist/ReactToastify.css';
 const App = observer(() => {
   const { userState } = useContext(Context);
   const [loading, setLoading] = useState(true);
-  console.log(userState);
 
   useEffect(() => {
     const fetchData = async () => {

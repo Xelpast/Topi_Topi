@@ -36,18 +36,9 @@ const AuthReg = observer(({ modal_active, setModalActive, registration, setRegis
             const data_auth = await authorizations(login, password);
             userState.setUser(data_auth);
             userState.setIsAuth(true);
-            toast.success('Авторизация прошла успешно!', {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "dark",
-            });
             handleClose_auth();
             navigate("/");
+            window.location.reload();
         } catch (error) {
             toast.error('Неверный логин или пароль!', {
                 position: "top-right",

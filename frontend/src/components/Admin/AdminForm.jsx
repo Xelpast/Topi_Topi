@@ -31,7 +31,6 @@ export default function AdminForm({ modalActiveAdmin, setModalActiveAdmin }) {
 
     const handleFileChange = (e) => {
         const file = e.target.files[0];
-        console.log('Выбранный файл:', file);
         setFormData(prevState => ({
             ...prevState,
             selectedFile: file

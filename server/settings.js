@@ -7,5 +7,6 @@ export const SETTINGS = {
         TOPIARY: '/topiary',
         USER: '/user',
         BASKET: '/basket',
+        LIKE: '/like'
     },
 }

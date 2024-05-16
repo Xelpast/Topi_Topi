@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import like from '../../img/like.png';
 import like_red from '../../img/like_red.png';
 import basket_trach from '../../img/basket.png';
@@ -9,15 +9,26 @@ import { AXIOS_URL } from '../../http/indexHttp';
 import { observer } from 'mobx-react';
 import { Context } from '../../index';
 import { deleteTopiary, updateTopiary } from '../../http/topiaryApi';
+import { addToLike, fetchUserLikes, removeToLike } from '../../http/likeApi'; 
 
 const MainProductList = observer(({ topiary }) => {
     const { userState } = useContext(Context);
     const checkRole = userState.user.role;
     const navigate = useNavigate();
-    const [ImageLike, setImageLike] = useState(true);
-    const ImageSwitch = () => {
-        setImageLike(!ImageLike);
-    };
+    const [isLiked, setIsLiked] = useState(false); 
+
+    useEffect(() => {
+        const fetchLikes = async () => {
+            try {
+                const likes = await fetchUserLikes();
+                const likedProductIds = likes.map(like => like.like_topiaries.map(item => item.productId)).flat();
+                setIsLiked(likedProductIds.includes(topiary.id));
+            } catch (error) {
+                console.log('Ошибка при получении избранных товаров:', error);
+            }
+        };
+        fetchLikes();
+    }, []);
 
     const handleButtonClick = () => {
         scrollToTop();
@@ -36,29 +47,49 @@ const MainProductList = observer(({ topiary }) => {
 
     const handleUpdateButtonClick = async () => {
         try {
-
+            // Обновление товара
         } catch (error) {
             console.error('Ошибка при обновлении товара:', error);
         }
     };
 
+    const handleLikeButtonClick = async () => {
+        try {
+            if (isLiked) {
+                // Если товар уже добавлен в избранное, то удаляем его
+                await removeToLike(topiary.id);
+            } else {
+                // Если товар еще не добавлен в избранное, то добавляем его
+                await addToLike(topiary.id);
+            }
+            // Обновляем состояние лайка
+            setIsLiked(!isLiked);
+        } catch (error) {
+            console.error('Ошибка при обновлении состояния лайка:', error);
+        }
+    };
+
     return (
-        <div className={main_style.main_card} >
-            <div className={main_style.main_card_ring} >
+        <div className={main_style.main_card}>
+            <div className={main_style.main_card_ring}>
                 <div className={main_style.main_card_img} onClick={handleButtonClick}>
                     <img className={main_style.main_img} src={AXIOS_URL + topiary.img} alt="TopiProduct" />
                 </div>
-                {checkRole === "ADMIN" ? <img
-                    className={main_style.like_img}
-                    src={basket_trach}
-                    alt="TrashIcon"
-                    onClick={handleDeleteButtonClick}
-                /> : <img
-                    className={main_style.like_img}
-                    src={ImageLike ? like : like_red}
-                    alt="IconLike"
-                    onClick={ImageSwitch}
-                />}
+                {checkRole === "ADMIN" ? (
+                    <img
+                        className={main_style.like_img}
+                        src={basket_trach}
+                        alt="TrashIcon"
+                        onClick={handleDeleteButtonClick}
+                    />
+                ) : (
+                    <img
+                        className={main_style.like_img}
+                        src={isLiked ? like_red : like}
+                        alt="IconLike"
+                        onClick={handleLikeButtonClick}
+                    />
+                )}
             </div>
             <div className={main_style.description_card_main}>
                 <div className={main_style.description_card_price}>

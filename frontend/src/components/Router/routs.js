@@ -1,4 +1,3 @@
-import AdminPage from "../../Pages/AdminPage";
 import BasketPage from "../../Pages/BasketPage";
 import LikePage from "../../Pages/LikePage";
 import MainPage from "../../Pages/MainPage";
@@ -9,13 +8,8 @@ import PromocodesPage from "../../Pages/PromocodesPage";
 import ErrorPage404 from "../../Pages/ErrorPage404";
 import TopiLegoPage from "../../Pages/TopiLegoPage";
 import TopiaryPage from "../../Pages/TopiaryPage";
-import Spinner from "../Spinner/Spinner";
 
 export const authRoutes = [
-    // {
-    //     path: '/admin',
-    //     element: <AdminPage />
-    // },
     {
         path: '/order',
         element: <OrderPage />
