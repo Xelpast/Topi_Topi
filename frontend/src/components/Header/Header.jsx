@@ -18,6 +18,7 @@ const Header = observer(() => {
     const navigate = useNavigate();
     const [modalActive, setModalActive] = useState(false);
     const [menuActive, setMenuActive] = useState(false);
+    const [registration, setRegistration] = useState(false);
 
     const handleProfileClick = () => {
         navigate("/profile", { replace: true });
@@ -25,7 +26,7 @@ const Header = observer(() => {
 
     return (
         <header>
-            <AuthReg modal_active={modalActive} setModalActive={setModalActive} />
+            <AuthReg modal_active={modalActive} setModalActive={setModalActive} registration={registration} setRegistration={setRegistration}/>
             <div className={header_style.header}>
                 <div className={header_style.header_band}>
                     <Link to="/"><img className={header_style.logo} src={topi_logo} alt="TopiLogo" /></Link>

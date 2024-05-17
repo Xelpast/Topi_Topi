@@ -17,6 +17,7 @@ const AuthReg = observer(({ modal_active, setModalActive, registration, setRegis
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [repeatPassword, setRepeatPassword] = useState('');
+
     const click_auth = async () => {
         if (!login || !password) {
             toast.warn('Обязательно заполните поля логина и пароля!', {
@@ -226,7 +227,7 @@ const AuthReg = observer(({ modal_active, setModalActive, registration, setRegis
                             <button onClick={(e) => {
                                 e.preventDefault();
                                 click_auth();
-                            }} className={authorization_style.btn_auth}>Авториазация</button>
+                            }} className={authorization_style.btn_auth}>Авторизация</button>
                             <p onClick={(e) => {
                                 e.preventDefault();
                                 setRegistration(true);
@@ -255,7 +256,7 @@ const AuthReg = observer(({ modal_active, setModalActive, registration, setRegis
                                 f.preventDefault();
                                 setRegistration(false);
                                 setModalActive(true);
-                            }}>Есть аккаунт? Авториазация</p>
+                            }}>Есть аккаунт? Авторизация</p>
                             <img src={topi_logo} alt="TopiLogo" className={registration_style.reg_logo} />
                         </div>
                     </form>
