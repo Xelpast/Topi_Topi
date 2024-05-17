@@ -10,31 +10,14 @@ import { scrollToTop } from "../../utils/const";
 import Burger from "./Burger";
 import { Context } from "../../index";
 import { observer } from "mobx-react";
-import { fetchUserCart } from "../../http/basketApi";
+import { BasketContext } from '../../context/BasketContext';
 
 const Header = observer(() => {
     const { userState } = useContext(Context);
+    const { basketCount } = useContext(BasketContext);
     const navigate = useNavigate();
     const [modalActive, setModalActive] = useState(false);
     const [menuActive, setMenuActive] = useState(false);
-    const [basketCount, setBasketCount] = useState(0);
-
-    const updateBasketCount = async () => {
-        try {
-            const basket = await fetchUserCart();
-            if (basket && basket.basket_topiaries) {
-                setBasketCount(basket.basket_topiaries.length);
-            } else {
-                setBasketCount(0);
-            }
-        } catch (error) {
-            console.error('Ошибка при получении информации о корзине:', error);
-        }
-    };
-
-    useEffect(() => {
-        updateBasketCount();
-    }, []);
 
     const handleProfileClick = () => {
         navigate("/profile", { replace: true });
@@ -64,6 +47,7 @@ const Header = observer(() => {
                     </div>
                 </div>
             </div>
+            <Burger active={menuActive} setActive={setMenuActive} basketCount={basketCount} />
         </header>
     );
 });

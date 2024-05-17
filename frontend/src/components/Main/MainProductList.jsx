@@ -67,7 +67,7 @@ const MainProductList = observer(({ topiary, userLikes, updateBasketCount }) => 
     const handleAddToBasketButtonClick = async () => {
         try {
             await addToBasket(topiary.id);
-            updateBasketCount();
+            await updateBasketCount();
             console.log('Товар успешно добавлен в корзину');
         } catch (error) {
             console.error('Ошибка при добавлении товара в корзину:', error);
