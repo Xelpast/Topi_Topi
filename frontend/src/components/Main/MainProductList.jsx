@@ -11,9 +11,11 @@ import { Context } from '../../index';
 import { deleteTopiary, updateTopiary } from '../../http/topiaryApi';
 import { addToLike, removeToLike } from '../../http/likeApi';
 import { addToBasket } from '../../http/basketApi';
+import { BasketContext } from '../../context/BasketContext';
 
-const MainProductList = observer(({ topiary, userLikes, updateBasketCount }) => {
+const MainProductList = observer(({ topiary, userLikes }) => {
     const { userState } = useContext(Context);
+    const { basketItems, setBasketItems, updateBasketCount } = useContext(BasketContext);
     const checkRole = userState.user.role;
     const navigate = useNavigate();
     const [isLiked, setIsLiked] = useState(false);
@@ -51,13 +53,10 @@ const MainProductList = observer(({ topiary, userLikes, updateBasketCount }) => 
     const handleLikeButtonClick = async () => {
         try {
             if (isLiked) {
-                // Если товар уже добавлен в избранное, то удаляем его
                 await removeToLike(topiary.id);
             } else {
-                // Если товар еще не добавлен в избранное, то добавляем его
                 await addToLike(topiary.id);
             }
-            // Обновляем состояние лайка
             setIsLiked(!isLiked);
         } catch (error) {
             console.error('Ошибка при обновлении состояния лайка:', error);
@@ -67,8 +66,11 @@ const MainProductList = observer(({ topiary, userLikes, updateBasketCount }) => 
     const handleAddToBasketButtonClick = async () => {
         try {
             await addToBasket(topiary.id);
-            await updateBasketCount();
             console.log('Товар успешно добавлен в корзину');
+            const currentBasketItems = basketItems;
+            const updatedBasketItems = [...currentBasketItems, topiary];
+            setBasketItems(updatedBasketItems);
+            await updateBasketCount();
         } catch (error) {
             console.error('Ошибка при добавлении товара в корзину:', error);
         }

@@ -21,6 +21,7 @@ const Basket = sequelize.define('basket', {
 
 const Basket_topiary = sequelize.define('basket_topiary', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    quantity: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 1 }
 });
 
 const Like = sequelize.define('like', {
@@ -72,8 +73,8 @@ Basket_topiary.belongsTo(Basket, { foreignKey: 'basketId' });
 Like.hasMany(Like_topiary, { foreignKey: 'likeId' });
 Like_topiary.belongsTo(Like, { foreignKey: 'likeId' });
 
-Order.hasMany(Order_topiary);
-Order_topiary.belongsTo(Order);
+Order.hasMany(Order_topiary, { foreignKey: 'orderId'});
+Order_topiary.belongsTo(Order, { foreignKey: 'orderId'});
 
 Product.hasMany(Basket_topiary);
 Basket_topiary.belongsTo(Product);

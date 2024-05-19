@@ -275,6 +275,10 @@ b {
     margin-bottom: 15px;
 }
 
+.basket_container {
+    display: flex;
+}
+
 @media only screen and (max-width: 1800px) {
     .main_card_basket {
         width: 1050px;

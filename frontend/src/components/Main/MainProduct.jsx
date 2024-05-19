@@ -12,7 +12,7 @@ import { BasketContext } from "../../context/BasketContext";
 
 const Main_product = observer(() => {
     const { topiary } = useContext(Context);
-    const { updateBasketCount } = useContext(BasketContext);
+    const { basketItems, setBasketItems } = useContext(BasketContext);
     const [filteredTopiares, setFilteredTopiares] = useState([]);
     const [loading, setLoading] = useState(true);
     const [userLikes, setUserLikes] = useState([]);
@@ -26,8 +26,6 @@ const Main_product = observer(() => {
         fetchUserLikes().then(data => {
             setUserLikes(data);
         });
-
-        updateBasketCount();
     }, []);
 
     useEffect(() => {
@@ -50,7 +48,13 @@ const Main_product = observer(() => {
     return (
         <div className={main_style.main_goods}>
             {filteredTopiares.map(topiary =>
-                <MainProductList key={topiary.id} topiary={topiary} userLikes={userLikes} updateBasketCount={updateBasketCount} />
+                <MainProductList 
+                    key={topiary.id} 
+                    topiary={topiary} 
+                    userLikes={userLikes} 
+                    basketItems={basketItems} 
+                    setBasketItems={setBasketItems} 
+                />
             )}
         </div>
     );

@@ -1,11 +1,18 @@
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import style_basket from '../../css/basket.module.css';
 import ExtraMenuBasket from '../Extra_menu/ExtraMenuBasket';
 import BasketItem from './BasketItem';
 import SubMainLine from '../Main/SubMainLine';
 import { scrollToTop } from '../../utils/const';
+import { observer } from 'mobx-react';
+import { BasketContext } from '../../context/BasketContext';
 
-export default function BasketMain() {
+const BasketMain = observer(() => {
+    const { basketCount, totalPrice, totalSavings } = useContext(BasketContext);
+    console.log('Total Price:', totalPrice);
+    console.log('Total Savings:', totalSavings);
+
     return (
         <div className={style_basket.main}>
             <SubMainLine />
@@ -28,14 +35,13 @@ export default function BasketMain() {
                                 </label>
                             </div>
                             <BasketItem />
-                            <BasketItem />
                         </div>
                         <div className={style_basket.product_price}>
-                            <p>3 товара 6кг.</p>
+                            <p>{basketCount} товара(ов)</p>
                             <div className={style_basket.saving}>
-                                <p>Экономия: <b>–3 691 ₽</b></p>
+                                <p>Экономия: <b>{totalSavings > 0 ? `-${totalSavings} ₽` : `${totalSavings} ₽`}</b></p>
                             </div>
-                            <p className={style_basket.preliminary_price}>Предварительная цена: <b>12 970 ₽</b></p>
+                            <p className={style_basket.preliminary_price}>Предварительная цена: <b>{totalPrice} ₽</b></p>
                             <Link to="/order-pay" onClick={scrollToTop}><button className={style_basket.btn_basket}>Оформить заказ</button></Link>
                         </div>
                     </div>
@@ -43,4 +49,6 @@ export default function BasketMain() {
             </div>
         </div>
     );
-}
+});
+
+export default BasketMain;

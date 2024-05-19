@@ -6,42 +6,40 @@ const { Basket, Basket_topiary } = models;
 export const BasketController = {
     getBasket: async (req, res, next) => {
         try {
-            const userId = req.user.id; 
-            const basket = await Basket.findOne({ where: { userId }, include: Basket_topiary });
-            if (!basket) {
-                return res.json({ message: "Корзина пуста" });
-            }
-            return res.json(basket);
+            const userId = req.user.id;
+            const baskets = await Basket.findAll({
+                where: { userId },
+                include: {
+                    model: Basket_topiary,
+                    attributes: ['productId', 'quantity']
+                }
+            });
+    
+            return res.json(baskets);
         } catch (error) {
-            return next(ApiError.internalServerError("Ошибка при получении корзины", error));
+            return next(ApiError.internalServerError("Ошибка при получении товаров в корзине", error));
         }
     },
 
     addToBasket: async (req, res, next) => {
         const { productId } = req.body;
-        const userId = req.user.id; // получаем идентификатор пользователя из запроса
+        const userId = req.user.id; 
     
         try {
-            // Находим корзину пользователя
             let basket = await Basket.findOne({ where: { userId }, include: Basket_topiary });
     
             if (!basket) {
-                // Если корзина пользователя не найдена, создаем новую корзину
                 basket = await Basket.create({ userId });
             }
     
-            // Проверяем, есть ли уже товар с таким productId в корзине
             let existingProduct = await Basket_topiary.findOne({ where: { basketId: basket.id, productId } });
     
             if (existingProduct) {
-                // Если товар уже есть в корзине, увеличиваем количество на 1
                 await existingProduct.increment('quantity');
             } else {
-                // Если товара нет в корзине, добавляем его с начальным количеством 1
                 existingProduct = await Basket_topiary.create({ productId, basketId: basket.id, quantity: 1 });
             }
     
-            // Обновляем состояние корзины пользователя в базе данных
             basket = await Basket.findOne({ where: { userId }, include: Basket_topiary });
     
             return res.status(201).json({ message: 'Товар успешно добавлен в корзину', basket });
@@ -54,18 +52,14 @@ export const BasketController = {
         try {
             const { productId } = req.body;
             const userId = req.user.id;
-            // Находим запись о товаре в корзине
-            let basketItem = await Basket_topiary.findOne({ where: { basketId: userId, productId } });
     
-            if (basketItem) {
-                // Уменьшаем количество товара на 1
-                await basketItem.decrement('quantity');
+            // Находим все экземпляры товара в корзине пользователя
+            const basketItems = await Basket_topiary.findAll({ where: { basketId: userId, productId } });
     
-                // Если количество достигло нуля, удаляем запись из таблицы
-                if (basketItem.quantity === 0) {
-                    await basketItem.destroy();
-                }
-            }
+            // Удаляем все найденные экземпляры товара из корзины
+            await Promise.all(basketItems.map(async (item) => {
+                await item.destroy();
+            }));
     
             return res.json({ message: "Товар успешно удален из корзины" });
         } catch (error) {
@@ -76,11 +70,33 @@ export const BasketController = {
     clearBasket: async (req, res, next) => {
         try {
             const userId = req.user.id;
-            // Проверки, например, наличия пользователя и корзины
             await Basket_topiary.destroy({ where: { basketId: userId } });
             return res.json({ message: "Корзина успешно очищена" });
         } catch (error) {
             return next(ApiError.internalServerError("Ошибка при очистке корзины", error));
+        }
+    },
+
+    updateBasketProductQuantity: async (req, res, next) => {
+        try {
+            const { productId, quantity } = req.body;
+            const userId = req.user.id;
+
+            const basket = await Basket.findOne({ where: { userId } });
+            if (!basket) {
+                return next(ApiError.notFound('Корзина пользователя не найдена'));
+            }
+
+            let basketItem = await Basket_topiary.findOne({ where: { basketId: basket.id, productId } });
+            if (!basketItem) {
+                return next(ApiError.notFound('Товар не найден в корзине'));
+            }
+
+            await basketItem.update({ quantity });
+
+            return res.json({ message: "Количество товара в корзине обновлено", basketItem });
+        } catch (error) {
+            return next(ApiError.internalServerError("Ошибка при обновлении количества товара в корзине", error));
         }
     }
 };
