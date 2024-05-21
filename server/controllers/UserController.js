@@ -7,8 +7,7 @@ const generateJwt = (id, login, role) => {
     return jwt.sign({ id, login, role }, process.env.SECRET_KEY, { expiresIn: '24h' });
 }
 
-const { User } = models;
-const { Basket } = models; 
+const { User, Basket } = models;
 
 export const UserController = {
     registration: async (req, res, next) => {

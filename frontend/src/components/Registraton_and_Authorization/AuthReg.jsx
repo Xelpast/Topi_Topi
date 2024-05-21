@@ -222,8 +222,8 @@ const AuthReg = observer(({ modal_active, setModalActive, registration, setRegis
                         </div>
                         <img src={topi_logo} alt="TopiLogo" />
                         <div className={authorization_style.form_input_auth}>
-                            <input type="text" placeholder="Логин" value={login} onChange={e => setLogin(e.target.value)} />
-                            <input type="password" placeholder="Пароль" value={password} onChange={e => setPassword(e.target.value)} />
+                            <input type="text" placeholder="Логин" value={login} onChange={e => setLogin(e.target.value)} autoComplete="current-password"/>
+                            <input type="password" placeholder="Пароль" value={password} onChange={e => setPassword(e.target.value)} autoComplete="current-password"/>
                             <button onClick={(e) => {
                                 e.preventDefault();
                                 click_auth();
@@ -245,9 +245,9 @@ const AuthReg = observer(({ modal_active, setModalActive, registration, setRegis
                             <img src={close_x} alt="CloseX" onClick={handleClose_reg} />
                         </div>
                         <div className={registration_style.form_input_reg}>
-                            <input type="text" placeholder="Логин" value={login} onChange={e => setLogin(e.target.value)} />
-                            <input type="password" placeholder="Пароль" value={password} onChange={e => setPassword(e.target.value)} />
-                            <input type="password" placeholder="Повторите пароль" value={repeatPassword} onChange={e => setRepeatPassword(e.target.value)} />
+                            <input type="text" placeholder="Логин" value={login} onChange={e => setLogin(e.target.value)} autoComplete="current-password" />
+                            <input type="password" placeholder="Пароль" value={password} onChange={e => setPassword(e.target.value)} autoComplete="current-password"/>
+                            <input type="password" placeholder="Повторите пароль" value={repeatPassword} onChange={e => setRepeatPassword(e.target.value)} autoComplete="current-password"/>
                             <button onClick={(e) => {
                                 e.preventDefault();
                                 click_reg();

@@ -107,6 +107,7 @@
     color: white;
     margin-top: 15px;
     margin-left: 15px;
+    cursor: pointer;
 }
 
 .btn_pay img {
@@ -284,8 +285,6 @@
 
 .order_card {
     width: 100%;
-    display: grid;
-    grid-template-columns: 270px 270px 270px;
 }
 
 .promo_and_pay {
@@ -311,8 +310,10 @@
     border: none;
 }
 
-.order_promocodes p {
+.order_promocodes button {
     margin-right: 10px;
+    background: white;
+    border: 0px;
     color: #0DBD0D;
     font-size: 14px;
     cursor: pointer;

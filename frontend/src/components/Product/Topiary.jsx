@@ -2,16 +2,42 @@ import style_topiary from '../../css/topiary.module.css';
 import SubMainLine from '../Main/SubMainLine';
 import ExtraMenuTopiary from '../Extra_menu/ExtraMenuTopiary';
 import CardTopi from '../Card/CardTopi';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchOneTopiary } from '../../http/topiaryApi';
+import { BasketContext } from '../../context/BasketContext';
+import { addToBasket } from '../../http/basketApi';
+import { toast } from 'react-toastify';
 
 export default function Topiary() {
-    const [topiares, setTopiares] = useState({ info: [] })
-    const { id } = useParams()
+    const [topiares, setTopiares] = useState({ info: [] });
+    const { id } = useParams();
+    const { basketItems, setBasketItems, updateBasketCount } = useContext(BasketContext);
+
     useEffect(() => {
-        fetchOneTopiary(id).then(data => setTopiares(data))
-    }, []);
+        fetchOneTopiary(id).then(data => setTopiares(data));
+    }, [id]);
+
+    const handleAddToBasketButtonClick = async () => {
+        try {
+            await addToBasket(topiares.id);
+            const updatedBasketItems = [...basketItems, topiares];
+            setBasketItems(updatedBasketItems);
+            await updateBasketCount();
+            toast.success('Товар добавлен в корзину', {
+                position: "top-center",
+                autoClose: 500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+        } catch (error) {
+            console.error('Ошибка при добавлении товара в корзину:', error);
+        }
+    };
 
     return (
         <div className={style_topiary.main}>
@@ -46,7 +72,9 @@ export default function Topiary() {
                                 <div className={style_topiary.аvailability}>
                                     <p>Товар: <b>есть в наличии</b></p>
                                     <div className={style_topiary.button_topi_main}>
-                                        <button className={style_topiary.button_topi}>Добавить в корзину</button>
+                                        <button className={style_topiary.button_topi} onClick={handleAddToBasketButtonClick}>
+                                            Добавить в корзину
+                                        </button>
                                     </div>
                                 </div>
                             </div>

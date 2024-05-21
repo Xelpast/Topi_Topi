@@ -85,7 +85,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(1);
     content: "";
     display: inline-block;
     width: 15px;
@@ -96,7 +96,7 @@
 }
 
 .main_checkbox:checked+.custom_checkbox::before {
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(0);
 }
 
 .main_checkbox {
@@ -232,6 +232,13 @@ b {
     color: white;
     margin-top: 6px;
     cursor: pointer;
+}
+
+.empty_basket {
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: 28px;
+    color: #0DBD0D;
 }
 
 /* Пользователь не авторизован */

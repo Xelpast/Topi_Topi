@@ -22,9 +22,9 @@ const Burger = observer(({ active, setActive, basketCount }) => {
                     <ul>
                         <Link to="/like" className={header_style.link} onClick={scrollToTop}><BurgerMenu image_header_bm={header_image_arr_burger[0].image_header_bm} title={header_arr[0].title} /></Link>
                         <Link to="/order" className={header_style.link} onClick={scrollToTop}><BurgerMenu image_header_bm={header_image_arr_burger[1].image_header_bm} title={header_arr[1].title} /></Link>
-                        <Link to="/basket" className={header_style.link} onClick={scrollToTop}>
+                        <Link to="/basket" className={header_style.link_basket_burger} onClick={scrollToTop}>
                             <BurgerMenu image_header_bm={header_image_arr_burger[2].image_header_bm} title={header_arr[2].title} />
-                            {basketCount > 0 && <span className={header_style.basket_count}>{basketCount}</span>}
+                            {basketCount > 0 && <span className={header_style.basket_count_burger}>{basketCount}</span>}
                         </Link>
                         {!userState._isAuth ?
                             <Link className={header_style.link} onClick={() => setModalActive(true)}><BurgerMenu image_header_bm={header_image_arr_burger[3].image_header_bm} title={header_arr[3].title} /></Link>

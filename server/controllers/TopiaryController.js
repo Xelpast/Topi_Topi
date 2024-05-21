@@ -3,8 +3,7 @@ import path from 'path';
 import models from '../models/models.js';
 import ApiError from '../error/ApiError.js';
 
-const { Product } = models;
-const { Topiary_info } = models;
+const { Product, Topiary_info } = models;
 
 export const TopiaryController = {
   createInfo: async (req, res, next) => {
@@ -121,6 +120,23 @@ export const TopiaryController = {
       return res.json(topiaries);
     } catch (error) {
       return next(ApiError.badRequest(error.message));
+    }
+  },
+
+  getLatestProducts: async (req, res, next) => {
+    try {
+      const latestProducts = await Product.findAll({
+        order: [['createdAt', 'DESC']],
+        limit: 5 
+      });
+  
+      if (!latestProducts || latestProducts.length === 0) {
+        throw new Error('Последние товары не найдены');
+      }
+  
+      return res.json(latestProducts);
+    } catch (error) {
+      next(ApiError.internalServerError(error.message));
     }
   },
 

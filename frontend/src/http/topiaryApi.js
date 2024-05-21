@@ -5,6 +5,17 @@ export const fetchTopiary = async () => {
     return data;
 }
 
+export const fetchLatestProducts = async () => {
+    try {
+        const response = await $host.get('/topiary/latest');
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching latest product:', error);
+        throw error;
+    }
+};
+
+
 export const fetchOneTopiary = async (id) => {
     const { data } = await $host.get('/topiary/' + id)
     return data;

@@ -2,8 +2,10 @@ import SliderOffers from "./SliderOffers";
 import main_style from '../../css/main.module.css';
 import MainProduct from "./MainProduct";
 import SubMainLine from "./SubMainLine";
-import CardHitsList from "../Card/CardHitsList";
 import { forwardRef } from "react";
+import CardHits from "../Card/CardHits";
+import { addToBasket} from "../../http/basketApi";
+import { addToLike, removeToLike } from "../../http/likeApi";
 
 const Main = forwardRef((props, ref) => {
     return (
@@ -12,7 +14,7 @@ const Main = forwardRef((props, ref) => {
             <SliderOffers />
             <p className={main_style.topi_text}>Хиты</p>
             <div className={main_style.main_hits}>
-                <CardHitsList />
+                <CardHits />
             </div>
             <p id="anchorTopi" className={main_style.topi_text}>ТОПиарии</p>
             <MainProduct />

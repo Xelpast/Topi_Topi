@@ -13,6 +13,7 @@ import { basketRouter } from './routes/BasketRouter.js';
 import path, {dirname} from 'path';
 import cors from 'cors';
 import { likeRouter } from './routes/LikeRouter.js';
+import { orderRouter } from './routes/OrderRouter.js';
 
 const app = express();
 app.use(express.json());
@@ -26,6 +27,7 @@ app.use(SETTINGS.PATH.TOPIARY, topiaryRouter);
 app.use(SETTINGS.PATH.USER, userRouter);
 app.use(SETTINGS.PATH.BASKET, basketRouter);
 app.use(SETTINGS.PATH.LIKE, likeRouter);
+app.use(SETTINGS.PATH.ORDER, orderRouter);
 
 //Обработка middleware должна проходить в конце
 app.use(errorHandler);

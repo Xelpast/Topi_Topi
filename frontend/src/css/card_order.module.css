@@ -2,19 +2,25 @@
     margin-right: 25px;
 }
 
+.block_card_pay {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .main_card_ring {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 220px;
+    height: 200px;
     border: 6px solid #0DBD0D;
     border-radius: 20px;
     margin: 20px 0px 10px 0px;
 }
 
 .main_img {
-    width: 90px;
+    height: 140px;
 }
 
 .like_img {

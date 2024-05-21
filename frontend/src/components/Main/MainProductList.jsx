@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import like from '../../img/like.png';
 import like_red from '../../img/like_red.png';
-import basket_trach from '../../img/basket.png';
+import basket_trash from '../../img/basket.png';
 import main_style from '../../css/main.module.css';
 import { useNavigate } from 'react-router-dom';
 import { scrollToTop } from '../../utils/const';
@@ -12,6 +12,7 @@ import { deleteTopiary, updateTopiary } from '../../http/topiaryApi';
 import { addToLike, removeToLike } from '../../http/likeApi';
 import { addToBasket } from '../../http/basketApi';
 import { BasketContext } from '../../context/BasketContext';
+import { toast } from 'react-toastify';
 
 const MainProductList = observer(({ topiary, userLikes }) => {
     const { userState } = useContext(Context);
@@ -34,9 +35,11 @@ const MainProductList = observer(({ topiary, userLikes }) => {
 
     const handleDeleteButtonClick = async () => {
         try {
-            await deleteTopiary(topiary.id);
-            window.confirm("Вы точно хотите удалить товар?");
-            window.location.reload();
+            const confirmed = window.confirm("Вы точно хотите удалить товар?");
+            if (confirmed) {
+                await deleteTopiary(topiary.id);
+                window.location.reload();
+            }
         } catch (error) {
             console.error('Ошибка при удалении товара:', error);
         }
@@ -65,12 +68,34 @@ const MainProductList = observer(({ topiary, userLikes }) => {
 
     const handleAddToBasketButtonClick = async () => {
         try {
+            if (!userState.isAuth) {
+                toast.warn('Войдите в аккаунт, чтобы добавить товар в корзину', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                });
+                return;
+            }
+
             await addToBasket(topiary.id);
-            console.log('Товар успешно добавлен в корзину');
-            const currentBasketItems = basketItems;
-            const updatedBasketItems = [...currentBasketItems, topiary];
+            const updatedBasketItems = [...basketItems, topiary];
             setBasketItems(updatedBasketItems);
             await updateBasketCount();
+            toast.success('Товар добавлен в корзину', {
+                position: "top-center",
+                autoClose: 500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
         } catch (error) {
             console.error('Ошибка при добавлении товара в корзину:', error);
         }
@@ -80,20 +105,20 @@ const MainProductList = observer(({ topiary, userLikes }) => {
         <div className={main_style.main_card}>
             <div className={main_style.main_card_ring}>
                 <div className={main_style.main_card_img} onClick={handleButtonClick}>
-                    <img className={main_style.main_img} src={AXIOS_URL + topiary.img} alt="TopiProduct" />
+                    <img className={main_style.main_img} src={AXIOS_URL + topiary.img} alt="Topiary Product" />
                 </div>
                 {checkRole === "ADMIN" ? (
                     <img
                         className={main_style.like_img}
-                        src={basket_trach}
-                        alt="TrashIcon"
+                        src={basket_trash}
+                        alt="Trash Icon"
                         onClick={handleDeleteButtonClick}
                     />
                 ) : (
                     <img
                         className={main_style.like_img}
                         src={isLiked ? like_red : like}
-                        alt="IconLike"
+                        alt="Like Icon"
                         onClick={handleLikeButtonClick}
                     />
                 )}

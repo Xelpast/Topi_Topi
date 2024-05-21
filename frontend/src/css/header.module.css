@@ -107,8 +107,31 @@ a {
 
 .basket_count {
     position: absolute;
-    top: 5%;
-    right: 14%;
+    top: -15%;
+    right: -10%;
+    background-color: #339933;
+    color: #fff;
+    font-size: 13px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.link_basket {
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.basket_count_burger {
+    position: absolute;
+    top: 12%;
+    left: 32%;
     background-color: #339933;
     color: #fff;
     font-size: 12px;
@@ -120,6 +143,12 @@ a {
     align-items: center;
     font-weight: bold;
     z-index: 10;
+}
+
+.link_basket_burger {
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 1240px) {

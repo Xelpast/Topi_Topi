@@ -7,5 +7,5 @@ export const basketRouter = Router();
 basketRouter.get('/', authMiddleware, BasketController.getBasket);
 basketRouter.post('/add', authMiddleware, BasketController.addToBasket);
 basketRouter.post('/remove', authMiddleware, BasketController.removeFromBasket);
-basketRouter.post('/clear', authMiddleware, BasketController.clearBasket);
+basketRouter.delete('/clear', authMiddleware, BasketController.clearBasket);
 basketRouter.put('/update', authMiddleware, BasketController.updateBasketProductQuantity);

@@ -22,6 +22,7 @@ const Header = observer(() => {
 
     const handleProfileClick = () => {
         navigate("/profile", { replace: true });
+        scrollToTop();
     };
 
     return (
@@ -33,9 +34,9 @@ const Header = observer(() => {
                     <HeaderSearch />
                     <div className={header_style.header_menu}>
                         <ul>
-                            <Link to="/like" className={header_style.link}><HeaderMenu image_header={header_image_arr[0].image_header} title={header_arr[0].title} /></Link>
-                            <Link to="/order" className={header_style.link}><HeaderMenu image_header={header_image_arr[1].image_header} title={header_arr[1].title} /></Link>
-                            <Link to="/basket" className={header_style.link}>
+                            <Link to="/like" onClick={scrollToTop} className={header_style.link}><HeaderMenu image_header={header_image_arr[0].image_header} title={header_arr[0].title} /></Link>
+                            <Link to="/order" onClick={scrollToTop} className={header_style.link}><HeaderMenu image_header={header_image_arr[1].image_header} title={header_arr[1].title} /></Link>
+                            <Link to="/basket" onClick={scrollToTop} className={header_style.link_basket}>
                                 <HeaderMenu image_header={header_image_arr[2].image_header} title={header_arr[2].title} />
                                 {basketCount > 0 && <span className={header_style.basket_count}>{basketCount}</span>}
                             </Link>

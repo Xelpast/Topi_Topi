@@ -5,6 +5,7 @@ import App from './App';
 import UserStore from './store/UserStore';
 import TopiaryStore from './store/TopiaryStore';
 import { BasketProvider } from './context/BasketContext';
+import { OrderProvider } from './context/OrderContext';
 
 export const Context = createContext(null);
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,7 +15,9 @@ root.render(
         topiary: new TopiaryStore(),
     }} >
         <BasketProvider>
-            <App />
+            <OrderProvider>
+                <App />
+            </OrderProvider>
         </BasketProvider>
     </Context.Provider>
 );

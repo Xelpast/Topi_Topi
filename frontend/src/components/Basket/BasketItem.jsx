@@ -6,6 +6,7 @@ import { fetchProductById, removeFromCart, updateBasketProductQuantity } from '.
 import { observer } from 'mobx-react';
 import BasketItemList from './BasketItemList';
 import { fetchUserLikes } from '../../http/likeApi';
+import { toast } from 'react-toastify';
 
 const BasketItem = observer(() => {
     const { basketItems, setBasketItems, updateBasketCount } = useContext(BasketContext);
@@ -67,19 +68,26 @@ const BasketItem = observer(() => {
 
             await removeFromCart(productId);
             
-            // Фильтруем корзину, оставляя только товары, отличные от удаляемого
             const updatedBasketItems = basketItems.filter(item => item.productId !== productId);
             setBasketItems(updatedBasketItems);
 
-            // Удаляем продукт из productQuantities
             setProductQuantities((prevQuantities) => {
                 const newQuantities = { ...prevQuantities };
                 delete newQuantities[productId];
                 return newQuantities;
             });
 
-            // Вычитаем количество удаленных товаров из общего количества в корзине
             await updateBasketCount(-quantityToDelete);
+            toast.success('Товар удалён из корзины', {
+                position: "top-center",
+                autoClose: 500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
         } catch (error) {
             console.error('Ошибка при удалении товара из корзины:', error);
         }
@@ -90,10 +98,11 @@ const BasketItem = observer(() => {
             try {
                 const productIds = basketItems.map(item => item.productId);
                 const productsData = await fetchProductById(productIds);
-
+                
                 if (Array.isArray(productsData.rows)) {
                     const filteredProducts = productsData.rows.filter(product => productIds.includes(product.id));
                     setProducts(filteredProducts);
+                    console.log(filteredProducts);
 
                     const initialQuantities = basketItems.reduce((acc, item) => {
                         acc[item.productId] = item.quantity;
@@ -107,7 +116,7 @@ const BasketItem = observer(() => {
                 console.error('Ошибка при получении информации о продуктах:', error);
             }
         };
-
+        
         getProductDetails();
     }, [basketItems]);
 

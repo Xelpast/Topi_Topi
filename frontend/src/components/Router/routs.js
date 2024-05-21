@@ -50,7 +50,7 @@ export const publicRoutes = [
         element: <TopiLegoPage />
     },
     {
-        path: '/topiary/:id?',
+        path: '/topiary/:id',
         element: <TopiaryPage />
     }
 ]

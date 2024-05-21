@@ -183,6 +183,7 @@ u {
     background-color: #0DBD0D;
     border: none;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .btn_logout {

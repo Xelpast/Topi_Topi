@@ -2,7 +2,7 @@
     height: 300px;
 }
 
-.main_card_ring {
+.main_card_ring, .main_card_ring_order {
     position: relative;
     display: flex;
     justify-content: center;
@@ -10,7 +10,11 @@
     height: 200px;
     border: 6px solid #0DBD0D;
     border-radius: 20px;
-    margin: 20px 0px 10px 0px;
+    margin: 20px 10px 10px 0px;
+}
+
+.main_card_ring_order img {
+    height: 150px;
 }
 
 .main_img {
@@ -47,6 +51,7 @@
     padding-top: 5px;
     margin-left: 0px;
     color: #9c9c9c;
+    text-decoration: line-through;
 }
 
 .description_topi {
@@ -58,6 +63,26 @@
     width: 200px;
     margin-left: 10px;
     margin-bottom: 10px;
+}
+
+.teas {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto; 
+    grid-template-areas: "second third first"; 
+}
+
+.teas > *:nth-child(1) {
+    grid-area: first;
+}
+
+.teas > *:nth-child(2) {
+    grid-area: third;
+}
+
+.teas > *:nth-child(3) {
+    grid-area: second;
 }
 
 @media only screen and (max-width: 930px) {

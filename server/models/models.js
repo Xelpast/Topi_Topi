@@ -1,6 +1,7 @@
 import { sequelize } from '../db.js';
 import { DataTypes } from 'sequelize';
 
+// Define models
 const User = sequelize.define('user', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     login: { type: DataTypes.STRING, unique: true },
@@ -34,10 +35,15 @@ const Like_topiary = sequelize.define('like_topiary', {
 
 const Order = sequelize.define('order', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    status: { type: DataTypes.ENUM, values: ['Ожидание', 'В пути', 'Доставлен', 'Отменён'], defaultValue: 'Ожидание' }
 });
 
 const Order_topiary = sequelize.define('order_topiary', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    quantity: { type: DataTypes.INTEGER, allowNull: false },
+    totalPrice: { type: DataTypes.FLOAT, allowNull: false },
+    discount: { type: DataTypes.FLOAT, allowNull: true },
+    date: { type: DataTypes.DATE, allowNull: false }
 });
 
 const Product = sequelize.define('product', {
@@ -57,7 +63,7 @@ const Topiary_info = sequelize.define('topiary_info', {
     category: { type: DataTypes.STRING, allowNull: false }
 });
 
-// Связи
+// Associations
 User.hasOne(Basket);
 Basket.belongsTo(User);
 
@@ -73,19 +79,28 @@ Basket_topiary.belongsTo(Basket, { foreignKey: 'basketId' });
 Like.hasMany(Like_topiary, { foreignKey: 'likeId' });
 Like_topiary.belongsTo(Like, { foreignKey: 'likeId' });
 
-Order.hasMany(Order_topiary, { foreignKey: 'orderId'});
-Order_topiary.belongsTo(Order, { foreignKey: 'orderId'});
+Order.hasMany(Order_topiary, { foreignKey: 'orderId' });
+Order_topiary.belongsTo(Order, { foreignKey: 'orderId', as: 'associatedOrder' }); // Updated alias
 
-Product.hasMany(Basket_topiary);
-Basket_topiary.belongsTo(Product);
+Product.hasMany(Basket_topiary, { foreignKey: 'productId', as: 'productInBasket' }); // Updated alias
+Basket_topiary.belongsTo(Product, { foreignKey: 'productId', as: 'productInBasket' }); // Updated alias
 
-Product.hasMany(Like_topiary);
-Like_topiary.belongsTo(Product);
+Product.hasMany(Like_topiary, { foreignKey: 'productId', as: 'productInLike' }); // Updated alias
+Like_topiary.belongsTo(Product, { foreignKey: 'productId', as: 'productInLike' }); // Updated alias
 
-Product.hasMany(Order_topiary);
-Order_topiary.belongsTo(Product);
+Product.hasMany(Order_topiary, { foreignKey: 'productId', as: 'productInOrder' }); // Updated alias
+Order_topiary.belongsTo(Product, { foreignKey: 'productId', as: 'productInOrder' }); // Updated alias
 
 Product.hasMany(Topiary_info, { as: 'info' });
 Topiary_info.belongsTo(Product);
 
-export default { User, Basket, Basket_topiary, Product, Topiary_info, Like, Like_topiary, Order, Order_topiary, sequelize };
+const models = { User, Basket, Basket_topiary, Product, Topiary_info, Like, Like_topiary, Order, Order_topiary, sequelize };
+
+// Invoke associations
+Object.values(models).forEach(model => {
+    if (model.associate) {
+        model.associate(models);
+    }
+});
+
+export default models;
