@@ -7,8 +7,7 @@ export default function BtnSlider({ direction, moveSlide }) {
     const conditionClassSlide = direction === `${slider_style.next}` ? `${slider_style.btn_slide} ${slider_style.next}` : `${slider_style.btn_slide} ${slider_style.prev}`;
     return (
         <button onClick={moveSlide} className={conditionClassSlide}>
-            <img src={direction === `${slider_style.next}` ? rightArrow : leftArrow} />
+            <img src={direction === `${slider_style.next}` ? rightArrow : leftArrow} alt="Slider arrow" />
         </button>
     );
 }
-

@@ -46,6 +46,7 @@ const Main_product = observer(() => {
     }
 
     return (
+        // eslint-disable-next-line no-useless-concat
         <div className={main_style.main_goods}>
             {filteredTopiares.map(topiary =>
                 <MainProductList 
