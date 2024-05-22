@@ -30,7 +30,7 @@ const MainProductList = observer(({ topiary, userLikes }) => {
 
     const handleButtonClick = () => {
         scrollToTop();
-        navigate('/topiary' + '/' + `${topiary.id}`);
+        navigate(`/topiary/${topiary.id}`);
     };
 
     const handleDeleteButtonClick = async () => {
