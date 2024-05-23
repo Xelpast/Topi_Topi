@@ -369,3 +369,9 @@
         margin-left: 38px;
    }
 }
+
+@media only screen and (max-width: 930px) { 
+    .like_clear {
+        margin-top: 40px;
+    }
+}

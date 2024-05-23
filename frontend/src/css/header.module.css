@@ -283,4 +283,30 @@ a {
         display: none;
         backdrop-filter: none;
     }
+
+    .logo {
+        width: 100px;
+    }
+
+    .header_band {
+        gap: 10px;
+        height: 90px;
+    }
+
+    .search {
+        height: 40px;
+    }
+
+    .search_main {
+        height: 30px;
+    }
+
+    .search_icon {
+        width: 20%;
+        margin-top: 4px;
+    }
+
+    .burger_menu span{
+        height: 5px;
+    }
 }
