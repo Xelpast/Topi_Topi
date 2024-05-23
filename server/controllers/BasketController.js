@@ -53,10 +53,8 @@ export const BasketController = {
             const { productId } = req.body;
             const userId = req.user.id;
     
-            // Находим все экземпляры товара в корзине пользователя
             const basketItems = await Basket_topiary.findAll({ where: { basketId: userId, productId } });
-    
-            // Удаляем все найденные экземпляры товара из корзины
+
             await Promise.all(basketItems.map(async (item) => {
                 await item.destroy();
             }));

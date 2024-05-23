@@ -61,6 +61,7 @@ b {
     border: 3px solid #339933;
     border-radius: 25px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .input_text {
@@ -81,5 +82,24 @@ b {
 
 .input_icon img {
     width: 50%;
+    cursor: pointer;
+}
+
+
+.random_image {
+    width: 600px;
+    height: 600px;
+}
+
+.button_lego {
+    width: 200px;
+    height: 35px;
+    margin-top: 10px;
+    border-radius: 12px;
+    background-color: #0DBD0D;
+    font-size: 20px;
+    border: 0px;
+    color: white;
+    margin-bottom: 40px;
     cursor: pointer;
 }

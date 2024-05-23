@@ -8,7 +8,7 @@ export default function SubMainLine() {
         <div className={sub_main_style.header_and_sub}>
             <div className={sub_main_style.sub_main}>
                 <div className={sub_main_style.sub_main_list}>
-                    <SubMain sub_main_text={sub_main_list[0].sub_main_text} />
+                    <Link to="/topi-lego" className={sub_main_style.promocodes_sub_text}><SubMain sub_main_text={sub_main_list[0].sub_main_text} /></Link>
                     <Link to="/promocodes" className={sub_main_style.promocodes_sub_text}><SubMain sub_main_text={sub_main_list[1].sub_main_text} /></Link>
                     <SubMain sub_main_text={sub_main_list[2].sub_main_text} />
                     <SubMain sub_main_text={sub_main_list[3].sub_main_text} />

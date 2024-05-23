@@ -2,41 +2,22 @@ import { useState } from 'react';
 import style_topi from '../../css/topi_lego.module.css';
 import open_ai from '../../img/open_ai.png';
 
+import img1 from './imgLego/1.png';
+import img2 from './imgLego/2.png';
+import img3 from './imgLego/3.png';
+import img4 from './imgLego/4.png';
+
+const images = [img1, img2, img3, img4];
+
 export default function TopiFunc() {
-    const API_KEY = "";
     const [inputValue, setInputValue] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-
-    const handleSubmit = async () => {
-        setError(null);
-        setLoading(true);
-
-        const options = {
-            method: "POST",
-            headers: {
-                "Authorization": `Bearer ${API_KEY}`,
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                "prompt": inputValue,
-                "n": 1,
-                "size": "1024x1024",
-            })
-        };
-
-        try {
-            const res = await fetch("https://api.openai.com/v1/images/generations", options);
-            const data = await res.json();
-        } catch (error) {
-            setError(error.message);
-        } finally {
-            setLoading(false);
-        }
-    };
+    const [randomImage, setRandomImage] = useState(null);
 
     const handleButtonClick = () => {
-        handleSubmit();
+        // Select a new random image
+        setRandomImage(images[Math.floor(Math.random() * images.length)]);
     };
 
     return (
@@ -46,7 +27,7 @@ export default function TopiFunc() {
                     <input
                         className={style_topi.input_text}
                         type="text"
-                        placeholder="Зимний топиарий в стиле LEGO..."
+                        placeholder="Топиарий в стиле LEGO..."
                         value={inputValue}
                         onChange={(e) => setInputValue(e.target.value)}
                     />
@@ -63,6 +44,7 @@ export default function TopiFunc() {
             <section className={style_topi.section_img}>
                 {loading && <p>Loading...</p>}
                 {error && <p>Error: {error}</p>}
+                {randomImage && <img src={randomImage} alt="Random LEGO" className={style_topi.random_image} />}
             </section>
         </>
     );

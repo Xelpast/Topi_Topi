@@ -20,7 +20,9 @@ export default function TopiLegoMain() {
             <div className={style_topi.main_form}>
                 <p>Lego x Topi Topi генератор изображений AI</p>
                 <TopiFunc />
-                <section className={style_topi.section_img}></section>
+                <section className={style_topi.section_img}>
+                    <button className={style_topi.button_lego}>Приобрести</button>
+                </section>
             </div>
         </div>
     );

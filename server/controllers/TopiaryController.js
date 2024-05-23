@@ -71,7 +71,6 @@ export const TopiaryController = {
         throw new Error('Товар не найден');
       }
 
-      // Обновление информации о товаре, если есть
       if (info) {
         const topiaryInfo = JSON.parse(info);
         await Topiary_info.destroy({ where: { productId: id } });
@@ -90,17 +89,14 @@ export const TopiaryController = {
     const { id } = req.params;
 
     try {
-      // Получаем productId из таблицы topiary_infos по id товара из таблицы products
       const product = await Product.findOne({ where: { id } });
       if (!product) {
         throw new Error('Товар не найден');
       }
       const productId = product.id;
 
-      // Удаление информации о товаре
       await Topiary_info.destroy({ where: { productId } });
 
-      // Удаление товара
       await Product.destroy({ where: { id } });
 
       return res.json({ message: 'Товар успешно удален' });
@@ -112,7 +108,7 @@ export const TopiaryController = {
   getAll: async (req, res, next) => {
     let { limit, page } = req.query;
     page = page || 1;
-    limit = limit || 8;
+    limit = limit || 24;
     let offset = page * limit - limit;
     let topiaries;
     try {
